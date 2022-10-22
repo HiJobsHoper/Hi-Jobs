@@ -25,7 +25,7 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        reg = (TextView)findViewById(R.id.textView9);
+        reg = findViewById(R.id.textView9);
         btnMasuk = findViewById(R.id.btnLog_Masuk);
         etEmail = findViewById(R.id.txtLog_Email);
         etPass = findViewById(R.id.txtLog_KataSandi);
@@ -53,18 +53,43 @@ public class Login extends AppCompatActivity {
         });
 
         //Tombol masuk
-        /*btnMasuk.setOnClickListener(new View.OnClickListener() {
+        btnMasuk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(etEmail.getText().toString().equalsIgnoreCase() &&
-                        etPass.getText().toString().equalsIgnoreCase()) {
-                    startActivity(new Intent(Login.this, .class));
-                    finish();
-                }else{
-                    Toast.makeText(Login.this,
+                if (cek_Log() == true) {
+                    /*if (etEmail.getText().toString().equalsIgnoreCase() &&
+                            etPass.getText().toString().equalsIgnoreCase()) {
+                        startActivity(new Intent(Login.this,. class));
+                        finish();
+                    } else {
+                        Toast.makeText(Login.this,
                             "Username atau Password Anda Salah", Toast.LENGTH_LONG).show();
+                    }*/
                 }
             }
-        });*/
+        });
+    }
+
+    public boolean cek_Log() {
+        //inisialisasi data ke dalam variabel
+        String Email = etEmail.getText().toString();
+        String Pass = etPass.getText().toString();
+        boolean nilai = false;
+
+        //Memberikan tanda pada data yang belum di isi
+        if (!Pass.isEmpty() && !Email.isEmpty()) {
+            nilai = true;
+        } else {
+            if (Pass.isEmpty()) {
+                etPass.setError("Password required");
+                etPass.requestFocus();
+            }
+            if (Email.isEmpty()) {
+                etEmail.setError("Email required");
+                etEmail.requestFocus();
+            }
+        }
+
+        return nilai;
     }
 }
