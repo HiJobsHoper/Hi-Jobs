@@ -27,19 +27,24 @@ public class Registrasi extends AppCompatActivity {
         etPass = findViewById(R.id.txtReg_KataSandi);
         etPassKon = findViewById(R.id.txtReg_KonfirmasiSandi);
 
+        //Tombol simpan
         btnSimpan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //Inisialisasi data ke dalam variabel
                 String Nama = etNama.getText().toString();
                 String Email = etEmail.getText().toString();
                 String Telvon = etTelvon.getText().toString();
                 String Pass = etPass.getText().toString();
                 String PassKon = etPassKon.getText().toString();
 
-                if (Nama.equals("") || Email.equals("") || Telvon.equals("") || Pass.equals("") || PassKon.equals("")) {
+                //Mengecek apakah ada data yang belum di isi
+                if (Nama.equals("") || Email.equals("") || Telvon.equals("") || Pass.equals("") ||
+                        PassKon.equals("")) {
                     Toast.makeText(Registrasi.this,
                             "Data anda belum lengkap", Toast.LENGTH_LONG).show();
                 } else {
+                    //Memastikan kata sandi dan konfirmasi kata sandi sama
                     if (Pass.equals(PassKon)) {
                         //simpan data pada Database
                     } else {
@@ -47,14 +52,17 @@ public class Registrasi extends AppCompatActivity {
                                 "Kata sandi anda tidak sama", Toast.LENGTH_LONG).show();
                     }
                 }
+                //halaman selanjutnya ...
+                finish();
             }
         });
 
-        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        //getSupportActionBar().setDisplayShowHomeEnabled(true);
+        //Membuat tombol back pada Navigasi Bar
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
     }
 
-    /*@Override
+    @Override
     public boolean onSupportNavigateUp() {
         onBackPressed();
         return true;
@@ -63,5 +71,5 @@ public class Registrasi extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-    }*/
+    }
 }
