@@ -31,29 +31,10 @@ public class Registrasi extends AppCompatActivity {
         btnSimpan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Inisialisasi data ke dalam variabel
-                String Nama = etNama.getText().toString();
-                String Email = etEmail.getText().toString();
-                String Telvon = etTelvon.getText().toString();
-                String Pass = etPass.getText().toString();
-                String PassKon = etPassKon.getText().toString();
-
-                //Mengecek apakah ada data yang belum di isi
-                if (Nama.equals("") || Email.equals("") || Telvon.equals("") || Pass.equals("") ||
-                        PassKon.equals("")) {
-                    Toast.makeText(Registrasi.this,
-                            "Data anda belum lengkap", Toast.LENGTH_LONG).show();
-                } else {
-                    //Memastikan kata sandi dan konfirmasi kata sandi sama
-                    if (Pass.equals(PassKon)) {
-                        //simpan data pada Database
-                    } else {
-                        Toast.makeText(Registrasi.this,
-                                "Kata sandi anda tidak sama", Toast.LENGTH_LONG).show();
-                    }
+                if (cek_Reg() == true) {
+                    //halaman selanjutnya ...
+                    //finish();
                 }
-                //halaman selanjutnya ...
-                finish();
             }
         });
 
@@ -71,5 +52,55 @@ public class Registrasi extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
+    }
+
+    public boolean cek_Reg() {
+        //Inisialisasi data ke dalam variabel
+        String Nama = etNama.getText().toString();
+        String Email = etEmail.getText().toString();
+        String Telvon = etTelvon.getText().toString();
+        String Pass = etPass.getText().toString();
+        String PassKon = etPassKon.getText().toString();
+        boolean nilai = false;
+
+        //Memberikan tanda pada data yang belum di isi
+        if (PassKon.isEmpty()) {
+            etPassKon.setError("Confirm password required");
+            etPassKon.requestFocus();
+        }
+        if (Pass.isEmpty()) {
+            etPass.setError("Password required");
+            etPass.requestFocus();
+        }
+        if (Telvon.isEmpty()) {
+            etTelvon.setError("Phone number required");
+            etTelvon.requestFocus();
+        }
+        if (Email.isEmpty()) {
+            etEmail.setError("Email required");
+            etEmail.requestFocus();
+        }
+        if (Nama.isEmpty()) {
+            etNama.setError("Name required");
+            etNama.requestFocus();
+        }
+
+        //Mengecek apakah ada data yang belum di isi
+        if (Nama.equals("") || Email.equals("") || Telvon.equals("") || Pass.equals("") ||
+                PassKon.equals("")) {
+            Toast.makeText(Registrasi.this,
+                    "Data anda belum lengkap", Toast.LENGTH_LONG).show();
+        } else {
+            //Memastikan kata sandi dan konfirmasi kata sandi sama
+            if (Pass.equals(PassKon)) {
+                nilai = true;
+                //simpan data pada Database
+            } else {
+                Toast.makeText(Registrasi.this,
+                        "Kata sandi anda tidak sama", Toast.LENGTH_LONG).show();
+            }
+        }
+
+        return nilai;
     }
 }
