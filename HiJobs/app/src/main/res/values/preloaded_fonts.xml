@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/andika_new_basic</item>
+        <item>@font/averia_gruesa_libre</item>
+        <item>@font/bellota_text_light</item>
+        <item>@font/im_fell_english</item>
+    </array>
+</resources>
