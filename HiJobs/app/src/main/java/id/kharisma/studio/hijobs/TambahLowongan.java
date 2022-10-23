@@ -2,6 +2,7 @@ package id.kharisma.studio.hijobs;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 public class TambahLowongan extends AppCompatActivity {
@@ -16,12 +17,16 @@ public class TambahLowongan extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
     }
 
+    //Kembali ke halaman login
     @Override
     public boolean onSupportNavigateUp() {
         onBackPressed();
+        startActivity(new Intent(TambahLowongan.this, Login.class)); //Membuka halaman login
+        finish(); //Menutup halaman tambah lowongan
         return true;
     }
 
+    //Mengaktifkan tombol kembali
     @Override
     public void onBackPressed() {
         super.onBackPressed();

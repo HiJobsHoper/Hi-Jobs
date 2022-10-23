@@ -4,24 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TambahLowongan">
+    tools:context=".TambahUsaha">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
-        android:layout_width="411dp"
-        android:layout_height="843dp"
+        android:layout_width="413dp"
+        android:layout_height="726dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        tools:context=".TambahLowongan">
+        app:layout_constraintVertical_bias="1.0">
 
         <ScrollView
-            android:id="@+id/ScrollTbhLow_Scroll"
-            android:layout_width="17dp"
-            android:layout_height="843dp"
+            android:id="@+id/ScrollTbhUsh_Scroll"
+            android:layout_width="19dp"
+            android:layout_height="725dp"
             android:contentDescription="@string/appbar_scrolling_view_behavior"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -36,166 +33,155 @@
                 android:orientation="vertical" />
         </ScrollView>
 
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:text="Informasi Toko :"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.181"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.024" />
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:text="Nama Usaha"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.155"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.081" />
+
         <EditText
-            android:id="@+id/txtTbhLow_SyaratKerja"
+            android:id="@+id/txtTbhUsh_DeskUsaha"
             android:layout_width="315dp"
-            android:layout_height="180dp"
+            android:layout_height="150dp"
             android:background="@drawable/custom_edittext"
             android:ems="10"
-            android:gravity="end|start"
-            android:hint="   Masukkan persyaratan pekerjaan"
-            android:inputType="textPersonName|textMultiLine"
+            android:gravity="start|top"
+            android:hint="   Masukkan deskripsi usaha"
+            android:inputType="textMultiLine"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.531"
+            app:layout_constraintHorizontal_bias="0.489"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.467" />
+            app:layout_constraintVertical_bias="0.324" />
 
         <TextView
-            android:id="@+id/textView12"
+            android:id="@+id/textView17"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Persyaratan"
+            android:fontFamily="sans-serif"
+            android:text="Deskripsi Usaha"
             android:textColor="#000000"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.161"
+            app:layout_constraintHorizontal_bias="0.168"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.338" />
-
-        <TextView
-            android:id="@+id/textView10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Lowongan Pekerjaan"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.209"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.019" />
+            app:layout_constraintVertical_bias="0.217" />
 
         <EditText
-            android:id="@+id/txtTbhLow_Lowongan"
+            android:id="@+id/txtTbhUsh_Usaha"
             android:layout_width="315dp"
             android:layout_height="48dp"
             android:background="@drawable/custom_edittext"
             android:ems="10"
-            android:hint="   Masukkan lowongan yang tersedia"
+            android:hint="   Masukkan nama usaha"
             android:inputType="textPersonName"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.531"
+            app:layout_constraintHorizontal_bias="0.489"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.059" />
+            app:layout_constraintVertical_bias="0.134" />
 
         <EditText
-            android:id="@+id/txtTbhLow_DeskLowongan"
+            android:id="@+id/txtTbhUsh_LksUsaha"
             android:layout_width="315dp"
-            android:layout_height="125dp"
-            android:layout_gravity="center_vertical|end"
+            android:layout_height="100dp"
             android:background="@drawable/custom_edittext"
             android:ems="10"
-            android:gravity="end|start"
-            android:hint="   Masukkan deskripsi lowongan"
-            android:inputType="textPersonName|textMultiLine"
+            android:gravity="start|top"
+            android:hint="   Masukkan alamat usaha"
+            android:inputType="textMultiLine"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.531"
+            app:layout_constraintHorizontal_bias="0.489"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.196" />
+            app:layout_constraintVertical_bias="0.613" />
 
         <TextView
-            android:id="@+id/textView11"
+            android:id="@+id/textView19"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Deksripsi Lowongan"
+            android:fontFamily="sans-serif"
+            android:text="Link Google Maps"
             android:textColor="#000000"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.204"
+            app:layout_constraintHorizontal_bias="0.177"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.133" />
+            app:layout_constraintVertical_bias="0.71" />
 
         <EditText
-            android:id="@+id/txtTbhLow_WaktuKerja"
+            android:id="@+id/txtTbhUsh_Usaha3"
             android:layout_width="315dp"
             android:layout_height="48dp"
             android:background="@drawable/custom_edittext"
             android:ems="10"
-            android:hint="   Masukkan waktu kerja"
+            android:hint="   Masukkan link alamat google maps"
             android:inputType="textPersonName"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.531"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.671" />
-
-        <TextView
-            android:id="@+id/textView14"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Gaji"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.133"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.726" />
-
-        <EditText
-            android:id="@+id/txtTbhLow_Gaji"
-            android:layout_width="315dp"
-            android:layout_height="48dp"
-            android:background="@drawable/custom_edittext"
-            android:ems="10"
-            android:hint="   Masukkan gaji pekerjaan"
-            android:inputType="number"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.531"
+            app:layout_constraintHorizontal_bias="0.489"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.789" />
 
-        <Button
-            android:id="@+id/btnLow_Tambah"
-            android:layout_width="99dp"
-            android:layout_height="52dp"
-            android:text="Tambah"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.855"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.914" />
-
         <TextView
-            android:id="@+id/textView13"
+            android:id="@+id/textView18"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Waktu Kerja"
+            android:fontFamily="sans-serif"
+            android:text="Lokasi Usaha"
             android:textColor="#000000"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.161"
+            app:layout_constraintHorizontal_bias="0.156"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.614" />
+            app:layout_constraintVertical_bias="0.497" />
 
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tambah"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.841"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.917" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

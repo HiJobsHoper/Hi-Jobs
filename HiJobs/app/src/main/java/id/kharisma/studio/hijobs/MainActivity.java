@@ -8,19 +8,24 @@ import android.os.Handler;
 
 public class MainActivity extends AppCompatActivity {
 
-    //lama waktu splash screen
-    private int loading = 1000;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        new Handler().postDelayed(new Runnable() {
-            @Override
+        //Berpindah ke halaman login
+        Thread thread = new Thread() {
             public void run() {
-                startActivity(new Intent(MainActivity.this, Login.class));
+                try{
+                    sleep(1000); //Lama waktu splash screen
+                } catch(InterruptedException ex) {
+                    ex.printStackTrace();
+                } finally {
+                    startActivity(new Intent(MainActivity.this, Login.class));
+                    finish(); //Menutup splash screen
+                }
             }
-        },loading);
+        };
+        thread.start();
     }
 }
