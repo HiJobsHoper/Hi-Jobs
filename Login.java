@@ -25,6 +25,7 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        //Inisialisasi material desain
         reg = findViewById(R.id.textView9);
         btnMasuk = findViewById(R.id.btnLog_Masuk);
         etEmail = findViewById(R.id.txtLog_Email);
@@ -35,8 +36,8 @@ public class Login extends AppCompatActivity {
         reg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Login.this, Registrasi.class));
-                finish();
+                startActivity(new Intent(Login.this, Registrasi.class)); //Membuka halaman registrasi
+                finish(); //Menutup halaman login
             }
         });
 
@@ -57,28 +58,34 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (cek_Log() == true) {
+                    //Mengecek email dan kata sandi terdaftar dalam database
                     /*if (etEmail.getText().toString().equalsIgnoreCase() &&
                             etPass.getText().toString().equalsIgnoreCase()) {
-                        startActivity(new Intent(Login.this,. class));
-                        finish();
+                        startActivity(new Intent(Login.this,.class)); //Membuka halaman ...
+                        finish(); //Menutup halaman login
                     } else {
+                        //Peringatan email atau kata sandi tidak sesuai
                         Toast.makeText(Login.this,
-                            "Username atau Password Anda Salah", Toast.LENGTH_LONG).show();
+                            "Email atau kata sandi anda salah", Toast.LENGTH_LONG).show();
                     }*/
+                    //Test halaman
+                    startActivity(new Intent(Login.this, TambahLowongan.class));
+                    finish();
                 }
             }
         });
     }
 
+    //Memastikan pengisian data sesuai ketentuan
     public boolean cek_Log() {
         //inisialisasi data ke dalam variabel
         String Email = etEmail.getText().toString();
         String Pass = etPass.getText().toString();
         boolean nilai = false;
 
-        //Memberikan tanda pada data yang belum di isi
+        //Memberikan tanda dan mengarahkan pada data yang belum di isi
         if (!Pass.isEmpty() && !Email.isEmpty()) {
-            nilai = true;
+            nilai = true; //Pengisian sesuai ketentuan
         } else {
             if (Pass.isEmpty()) {
                 etPass.setError("Password required");
@@ -89,7 +96,6 @@ public class Login extends AppCompatActivity {
                 etEmail.requestFocus();
             }
         }
-
         return nilai;
     }
 }
