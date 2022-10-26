@@ -6,196 +6,229 @@
     android:layout_height="match_parent"
     tools:context=".TambahLowongan">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
-        android:layout_width="411dp"
-        android:layout_height="843dp"
+    <ScrollView
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        tools:context=".TambahLowongan">
+        tools:ignore="SpeakableTextPresentCheck">
 
-        <ScrollView
-            android:id="@+id/ScrollTbhLow_Scroll"
-            android:layout_width="17dp"
-            android:layout_height="843dp"
-            android:contentDescription="@string/appbar_scrolling_view_behavior"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-            <LinearLayout
+            <Space
                 android:layout_width="match_parent"
+                android:layout_height="16dp" />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical" />
-        </ScrollView>
+                android:text="Lowongan Pekerjaan"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:translationX="50dp"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <EditText
-            android:id="@+id/txtTbhLow_SyaratKerja"
-            android:layout_width="315dp"
-            android:layout_height="180dp"
-            android:background="@drawable/custom_edittext"
-            android:ems="10"
-            android:gravity="end|start"
-            android:hint="   Masukkan persyaratan pekerjaan"
-            android:inputType="textPersonName|textMultiLine"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.531"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.467" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
 
-        <TextView
-            android:id="@+id/textView12"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Persyaratan"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.161"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.338" />
+            <EditText
+                android:id="@+id/txtTbhLow_Lowongan"
+                android:layout_width="315dp"
+                android:layout_height="48dp"
+                android:background="@drawable/custom_edittext"
+                android:ems="10"
+                android:hint="   Masukkan lowongan yang tersedia"
+                android:inputType="textPersonName"
+                android:translationX="50dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.531"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.059" />
 
-        <TextView
-            android:id="@+id/textView10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Lowongan Pekerjaan"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.209"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.019" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
 
-        <EditText
-            android:id="@+id/txtTbhLow_Lowongan"
-            android:layout_width="315dp"
-            android:layout_height="48dp"
-            android:background="@drawable/custom_edittext"
-            android:ems="10"
-            android:hint="   Masukkan lowongan yang tersedia"
-            android:inputType="textPersonName"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.531"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.059" />
+            <TextView
+                android:id="@+id/textView26"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Deksripsi Lowongan"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:translationX="50dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.204"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.133" />
 
-        <EditText
-            android:id="@+id/txtTbhLow_DeskLowongan"
-            android:layout_width="315dp"
-            android:layout_height="125dp"
-            android:layout_gravity="center_vertical|end"
-            android:background="@drawable/custom_edittext"
-            android:ems="10"
-            android:gravity="end|start"
-            android:hint="   Masukkan deskripsi lowongan"
-            android:inputType="textPersonName|textMultiLine"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.531"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.196" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
 
-        <TextView
-            android:id="@+id/textView11"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Deksripsi Lowongan"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.204"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.133" />
+            <EditText
+                android:id="@+id/txtTbhLow_DeskUsaha"
+                android:layout_width="315dp"
+                android:layout_height="125dp"
+                android:layout_gravity="center_vertical|end"
+                android:background="@drawable/custom_edittext"
+                android:ems="10"
+                android:gravity="end|start"
+                android:hint="   Masukkan deskripsi lowongan"
+                android:inputType="textPersonName|textMultiLine"
+                android:translationX="-44dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.531"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.196" />
 
-        <EditText
-            android:id="@+id/txtTbhLow_WaktuKerja"
-            android:layout_width="315dp"
-            android:layout_height="48dp"
-            android:background="@drawable/custom_edittext"
-            android:ems="10"
-            android:hint="   Masukkan waktu kerja"
-            android:inputType="textPersonName"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.531"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.671" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
 
-        <TextView
-            android:id="@+id/textView14"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Gaji"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.133"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.726" />
+            <TextView
+                android:id="@+id/textView27"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Persyaratan"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:translationX="50dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.161"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.338" />
 
-        <EditText
-            android:id="@+id/txtTbhLow_Gaji"
-            android:layout_width="315dp"
-            android:layout_height="48dp"
-            android:background="@drawable/custom_edittext"
-            android:ems="10"
-            android:hint="   Masukkan gaji pekerjaan"
-            android:inputType="number"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.531"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.789" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
 
-        <Button
-            android:id="@+id/btnLow_Tambah"
-            android:layout_width="99dp"
-            android:layout_height="52dp"
-            android:text="Tambah"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.855"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.914" />
+            <EditText
+                android:id="@+id/txtTbhLow_Syarat"
+                android:layout_width="315dp"
+                android:layout_height="180dp"
+                android:background="@drawable/custom_edittext"
+                android:ems="10"
+                android:gravity="end|start"
+                android:hint="   Masukkan persyaratan pekerjaan"
+                android:inputType="textPersonName|textMultiLine"
+                android:translationX="50dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.531"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.467" />
 
-        <TextView
-            android:id="@+id/textView13"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Waktu Kerja"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.161"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.614" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/textView28"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Waktu Kerja"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:translationX="50dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.161"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.614" />
 
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <EditText
+                android:id="@+id/txtTbhLow_WaktuKerja"
+                android:layout_width="315dp"
+                android:layout_height="48dp"
+                android:background="@drawable/custom_edittext"
+                android:ems="10"
+                android:hint="   Masukkan waktu kerja"
+                android:inputType="textPersonName"
+                android:translationX="50dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.531"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.671" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gaji"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:translationX="50dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.133"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.726" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <EditText
+                android:id="@+id/txtTbhLow_Gaji"
+                android:layout_width="315dp"
+                android:layout_height="48dp"
+                android:background="@drawable/custom_edittext"
+                android:ems="10"
+                android:hint="   Masukkan gaji pekerjaan"
+                android:inputType="number"
+                android:translationX="50dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.531"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.789" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="30dp" />
+
+            <Button
+                android:id="@+id/btnTbhLow_Tambah"
+                android:layout_width="99dp"
+                android:layout_height="52dp"
+                android:text="Tambah"
+                android:translationX="265dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

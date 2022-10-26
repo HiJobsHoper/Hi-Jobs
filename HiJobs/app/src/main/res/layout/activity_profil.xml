@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Profil">
+
+    <ScrollView
+        android:layout_width="409dp"
+        android:layout_height="601dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="16dp" />
+
+            <ImageView
+                android:id="@+id/imgProfil_LogoProfil"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:translationX="40dp"
+                app:srcCompat="@drawable/logo_profil" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/txtProfil_Nama"
+                android:layout_width="172dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                android:translationX="155dp"
+                android:translationY="-75dp"
+                tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/textView34"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableEnd="@drawable/ic_baseline_create_24"
+                android:text="Edit"
+                android:textColor="#3F51B5"
+                android:textSize="18sp"
+                android:translationX="330dp"
+                android:translationY="-135dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/textView35"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ubah"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:translationX="70dp"
+                android:translationY="-103dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/textView36"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Identitas Diri"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:translationX="40dp"
+                android:translationY="-70dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <TextView
+                android:id="@+id/textView37"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nama Pengguna"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:translationX="40dp"
+                android:translationY="-70dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <EditText
+                android:id="@+id/txtProfil_NamaPengguna"
+                android:layout_width="325dp"
+                android:layout_height="48dp"
+                android:background="@drawable/custom_edittext"
+                android:ems="10"
+                android:hint="   Masukkan nama pengguna"
+                android:inputType="textPersonName"
+                android:translationX="40dp"
+                android:translationY="-70dp"
+                tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <TextView
+                android:id="@+id/textView38"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Jenis Kelamin"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:translationX="40dp"
+                android:translationY="-70dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <EditText
+                android:id="@+id/txtProfil_JenisKelamin"
+                android:layout_width="325dp"
+                android:layout_height="48dp"
+                android:background="@drawable/custom_edittext"
+                android:ems="10"
+                android:hint="   Pilih jenis kelamin"
+                android:inputType="textPersonName"
+                android:translationX="40dp"
+                android:translationY="-70dp"
+                tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <TextView
+                android:id="@+id/textView39"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tanggal Lahir"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:translationX="40dp"
+                android:translationY="-70dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <EditText
+                android:id="@+id/txtProfil_TglLahir"
+                android:layout_width="325dp"
+                android:layout_height="48dp"
+                android:background="@drawable/custom_edittext"
+                android:ems="10"
+                android:hint="   Pilih tanggal lahir"
+                android:inputType="date"
+                android:translationX="40dp"
+                android:translationY="-70dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <TextView
+                android:id="@+id/textView40"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nomor Telepon"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:translationX="40dp"
+                android:translationY="-70dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <EditText
+                android:id="@+id/txtProfil_Telepon"
+                android:layout_width="325dp"
+                android:layout_height="48dp"
+                android:background="@drawable/custom_edittext"
+                android:ems="10"
+                android:hint="   Masukkan nomor telepon"
+                android:inputType="phone"
+                android:translationX="40dp"
+                android:translationY="-70dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <TextView
+                android:id="@+id/textView41"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:translationX="40dp"
+                android:translationY="-70dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <EditText
+                android:id="@+id/txtProfil_Email"
+                android:layout_width="325dp"
+                android:layout_height="48dp"
+                android:background="@drawable/custom_edittext"
+                android:ems="10"
+                android:hint="   Masukkan email"
+                android:inputType="textEmailAddress"
+                android:translationX="40dp"
+                android:translationY="-70dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <TextView
+                android:id="@+id/textView42"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pendidikan Terakhir"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:translationX="40dp"
+                android:translationY="-70dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <EditText
+                android:id="@+id/txtProfil_Pendidikan"
+                android:layout_width="325dp"
+                android:layout_height="48dp"
+                android:background="@drawable/custom_edittext"
+                android:ems="10"
+                android:hint="   Pilih pendidikan terakhir"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                android:translationX="40dp"
+                android:translationY="-70dp"
+                tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <TextView
+                android:id="@+id/textView43"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Alamat"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:translationX="40dp"
+                android:translationY="-70dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <EditText
+                android:id="@+id/txtProfil_Alamat"
+                android:layout_width="325dp"
+                android:layout_height="100dp"
+                android:background="@drawable/custom_edittext"
+                android:ems="10"
+                android:gravity="start|top"
+                android:hint="   Masukkan alamat pengguna"
+                android:inputType="textMultiLine"
+                android:translationX="40dp"
+                android:translationY="-70dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <TextView
+                android:id="@+id/textView44"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Keahlian"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:translationX="40dp"
+                android:translationY="-70dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <EditText
+                android:id="@+id/txtProfil_Keahlian"
+                android:layout_width="325dp"
+                android:layout_height="48dp"
+                android:background="@drawable/custom_edittext"
+                android:ems="10"
+                android:hint="   Masukkan keahlian"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                android:translationX="40dp"
+                android:translationY="-70dp"
+                tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <TextView
+                android:id="@+id/textView45"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pengalaman Kerja"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:translationX="40dp"
+                android:translationY="-70dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <EditText
+                android:id="@+id/txtProfil_PengalamanKerja"
+                android:layout_width="325dp"
+                android:layout_height="125dp"
+                android:background="@drawable/custom_edittext"
+                android:ems="10"
+                android:gravity="start|top"
+                android:hint="   Masukkan pengalaman kerja"
+                android:inputType="textMultiLine"
+                android:translationX="40dp"
+                android:translationY="-70dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <TextView
+                android:id="@+id/textView46"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kewarganegaraan"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:translationX="40dp"
+                android:translationY="-70dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <EditText
+                android:id="@+id/txtProfil_Kewarganegaraan"
+                android:layout_width="325dp"
+                android:layout_height="48dp"
+                android:background="@drawable/custom_edittext"
+                android:ems="10"
+                android:hint="   Masukkan kewarganegaraan"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                android:translationX="40dp"
+                android:translationY="-70dp"
+                tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="40dp" />
+
+            <TextView
+                android:id="@+id/textView47"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ubah Kata Sandi"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:translationX="40dp"
+                android:translationY="-70dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <TextView
+                android:id="@+id/textView48"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Kata Sandi Sekarang"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:translationX="40dp"
+                android:translationY="-70dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <EditText
+                android:id="@+id/txtProfil_SandiSekarang"
+                android:layout_width="325dp"
+                android:layout_height="48dp"
+                android:background="@drawable/custom_edittext"
+                android:ems="10"
+                android:hint="   Masukkan kata sandi"
+                android:inputType="textPassword"
+                android:translationX="40dp"
+                android:translationY="-70dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <TextView
+                android:id="@+id/textView49"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kata Sandi Baru"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:translationX="40dp"
+                android:translationY="-70dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <EditText
+                android:id="@+id/txtProfil_SandiBaru"
+                android:layout_width="325dp"
+                android:layout_height="48dp"
+                android:background="@drawable/custom_edittext"
+                android:ems="10"
+                android:hint="   Masukkan kata sandi baru"
+                android:inputType="textPassword"
+                android:translationX="40dp"
+                android:translationY="-70dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <TextView
+                android:id="@+id/textView50"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Konfirmasi Kata Sandi"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:translationX="40dp"
+                android:translationY="-70dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <EditText
+                android:id="@+id/txtProfil_KonfirSandi"
+                android:layout_width="325dp"
+                android:layout_height="48dp"
+                android:background="@drawable/custom_edittext"
+                android:ems="10"
+                android:hint="   Masukkan ulang kata sandi baru"
+                android:inputType="textPassword"
+                android:translationX="40dp"
+                android:translationY="-70dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="30dp" />
+
+            <Button
+                android:id="@+id/btnProfil_Simpan"
+                android:layout_width="99dp"
+                android:layout_height="52dp"
+                android:text="Simpan"
+                android:translationX="265dp"
+                android:translationY="-50dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.855"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.914" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

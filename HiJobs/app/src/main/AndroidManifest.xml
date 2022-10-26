@@ -12,6 +12,53 @@
         android:theme="@style/Theme.HiJobs"
         tools:targetApi="31">
         <activity
+            android:name=".Profil"
+            android:exported="false"
+            android:label="Profil">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".RiwayatLamaran"
+            android:exported="false"
+            android:label="Riwayat Lamaran">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".DaftarPelamar"
+            android:exported="false"
+            android:label="Daftar Pelamar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Pekerjaan"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".TambahLowongan"
+            android:exported="false"
+            android:label="Tambah Lowongan">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".TambahUsaha"
+            android:exported="false"
+            android:label="Tambah Usaha">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".Pencarian"
             android:exported="false">
             <meta-data
@@ -22,14 +69,6 @@
             android:name=".Toko"
             android:exported="false"
             android:label="Usaha Saya">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".TambahLowongan"
-            android:exported="false"
-            android:label="Tambah Lowongan">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -54,14 +93,6 @@
             android:name=".Login"
             android:exported="false"
             android:label="Hi Jobs!">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".TambahUsaha"
-            android:exported="false"
-            android:label="Tambah Usaha">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

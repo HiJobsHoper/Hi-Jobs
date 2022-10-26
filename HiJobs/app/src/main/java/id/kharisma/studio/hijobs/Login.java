@@ -1,17 +1,24 @@
 package id.kharisma.studio.hijobs;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class Login extends AppCompatActivity {
 
@@ -57,45 +64,77 @@ public class Login extends AppCompatActivity {
         btnMasuk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (cek_Log() == true) {
-                    //Mengecek email dan kata sandi terdaftar dalam database
-                    /*if (etEmail.getText().toString().equalsIgnoreCase() &&
-                            etPass.getText().toString().equalsIgnoreCase()) {
-                        startActivity(new Intent(Login.this,.class)); //Membuka halaman ...
-                        finish(); //Menutup halaman login
-                    } else {
-                        //Peringatan email atau kata sandi tidak sesuai
-                        Toast.makeText(Login.this,
-                            "Email atau kata sandi anda salah", Toast.LENGTH_LONG).show();
-                    }*/
-                    //Test halaman
-                    startActivity(new Intent(Login.this, TambahLowongan.class));
-                    finish();
+                //inisialisasi data ke dalam variabel
+                String Email = etEmail.getText().toString();
+                String Pass = etPass.getText().toString();
+
+                if (cek_Log(Email,Pass) == true) {
+                    loginAccound(Email,Pass); //Masuk menggunakan akun pada database
                 }
             }
         });
     }
 
     //Memastikan pengisian data sesuai ketentuan
-    public boolean cek_Log() {
-        //inisialisasi data ke dalam variabel
-        String Email = etEmail.getText().toString();
-        String Pass = etPass.getText().toString();
-        boolean nilai = false;
+    public boolean cek_Log(String Email,String Pass) {
 
         //Memberikan tanda dan mengarahkan pada data yang belum di isi
-        if (!Pass.isEmpty() && !Email.isEmpty()) {
-            nilai = true; //Pengisian sesuai ketentuan
+        if (Pass.isEmpty()) {
+            etPass.setError("Password required");
+            etPass.requestFocus();
+        }
+        if (Email.isEmpty()) {
+            etEmail.setError("Email required");
+            etEmail.requestFocus();
+        }
+
+        //Mengecek apakah ada data yang belum di isi
+        if (Email.isEmpty() || Pass.isEmpty()) {
+            return false;
         } else {
-            if (Pass.isEmpty()) {
-                etPass.setError("Password required");
-                etPass.requestFocus();
+            //Memastikan email berformat email
+            if (!Patterns.EMAIL_ADDRESS.matcher(Email).matches()) {
+                etEmail.setError("Email is invalid");
+                Toast.makeText(Login.this,
+                        "Email tidak sesuai", Toast.LENGTH_LONG).show();
+                return false;
             }
-            if (Email.isEmpty()) {
-                etEmail.setError("Email required");
-                etEmail.requestFocus();
+            //Memastikan kata sandi tidak kurang dari 6 karakter
+            if (Pass.length() < 6) {
+                etPass.setError("Password is invalid");
+                Toast.makeText(Login.this,
+                        "Kata sandi kurang dari 6 karakter", Toast.LENGTH_LONG).show();
+                return false;
+            } else {
+                return true;
             }
         }
-        return nilai;
+    }
+
+    //Masuk pada akun database
+    public void loginAccound(String Email,String Pass) {
+
+        FirebaseAuth firebaseauth = FirebaseAuth.getInstance();
+
+        firebaseauth.signInWithEmailAndPassword(Email,Pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()) {
+                    //Berhasil login
+                    if (firebaseauth.getCurrentUser().isEmailVerified()) {
+                        //Test halaman
+                        startActivity(new Intent(Login.this, TambahLowongan.class)); //Membuka halaman ...
+                        finish(); //Menutup halaman login
+                    } else {
+                        Toast.makeText(Login.this,
+                                "Email belum terdaftar", Toast.LENGTH_LONG).show();
+                    }
+                } else {
+                    //Gagal login
+                    Toast.makeText(Login.this,
+                            task.getException().getLocalizedMessage(), Toast.LENGTH_LONG).show();
+                }
+            }
+        });
     }
 }

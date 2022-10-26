@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TambahUsaha">
+    tools:context=".Pekerjaan">
 
     <ScrollView
         android:layout_width="409dp"
-        android:layout_height="601dp"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -18,211 +18,269 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="16dp" />
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/textView26"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="sans-serif"
-                android:text="Informasi Toko :"
-                android:textColor="#000000"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:translationX="50dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.181"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.024" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="10dp" />
-
-            <TextView
-                android:id="@+id/textView22"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif"
-                android:text="Nama Usaha"
+                android:text="Deksripsi Usaha"
                 android:textColor="#000000"
                 android:textSize="18sp"
                 android:translationX="50dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.155"
+                app:layout_constraintHorizontal_bias="0.204"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.081" />
+                app:layout_constraintVertical_bias="0.133" />
 
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="10dp" />
 
             <EditText
-                android:id="@+id/txtTbhUsh_Usaha"
-                android:layout_width="315dp"
-                android:layout_height="48dp"
-                android:background="@drawable/custom_edittext"
-                android:ems="10"
-                android:hint="   Masukkan nama usaha"
-                android:inputType="textPersonName"
-                android:translationX="50dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.489"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.134" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="10dp" />
-
-            <TextView
-                android:id="@+id/textView23"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif"
-                android:text="Deskripsi Usaha"
-                android:textColor="#000000"
-                android:textSize="18sp"
-                android:translationX="50dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.168"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.217" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="10dp" />
-
-            <EditText
-                android:id="@+id/txtTbhUsh_DeskUsaha"
+                android:id="@+id/txtKerja_DeskUsaha"
                 android:layout_width="315dp"
                 android:layout_height="150dp"
-                android:background="@drawable/custom_edittext"
                 android:ems="10"
-                android:gravity="start|top"
-                android:hint="   Masukkan deskripsi usaha"
-                android:inputType="textMultiLine"
+                android:inputType="textPersonName"
                 android:translationX="50dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.489"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.324" />
+                tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="10dp" />
 
             <TextView
-                android:id="@+id/textView25"
+                android:id="@+id/textView27"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="sans-serif"
                 android:text="Lokasi Usaha"
                 android:textColor="#000000"
                 android:textSize="18sp"
                 android:translationX="50dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.156"
+                app:layout_constraintHorizontal_bias="0.161"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.497" />
+                app:layout_constraintVertical_bias="0.338" />
 
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="10dp" />
 
             <EditText
-                android:id="@+id/txtTbhUsh_AlamatUsaha"
+                android:id="@+id/txtKerja_AlamatUsaha"
                 android:layout_width="315dp"
                 android:layout_height="100dp"
-                android:background="@drawable/custom_edittext"
                 android:ems="10"
-                android:gravity="start|top"
-                android:hint="   Masukkan alamat usaha"
-                android:inputType="textMultiLine"
+                android:inputType="textPersonName"
                 android:translationX="50dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.489"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.613" />
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <com.google.android.gms.maps.MapView
+                android:id="@+id/mapKerja_GoogleMaps"
+                android:layout_width="315dp"
+                android:layout_height="125dp"
+                android:translationX="50dp"
+                tools:ignore="SpeakableTextPresentCheck" />
 
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="10dp" />
 
             <TextView
-                android:id="@+id/textView24"
+                android:id="@+id/textView28"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="sans-serif"
-                android:text="Link Google Maps"
+                android:text="Lowongan Pekerjaan"
                 android:textColor="#000000"
                 android:textSize="18sp"
                 android:translationX="50dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.177"
+                app:layout_constraintHorizontal_bias="0.161"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.71" />
+                app:layout_constraintVertical_bias="0.614" />
 
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="10dp" />
 
             <EditText
-                android:id="@+id/txtTbhUsh_LinkMaps"
+                android:id="@+id/txtKerja_LowKerja"
+                android:layout_width="315dp"
+                android:layout_height="125dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:translationX="50dp"
+                tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <TextView
+                android:id="@+id/textView29"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Waktu Kerja"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:translationX="50dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.161"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.614" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <EditText
+                android:id="@+id/txtKerja_WaktuKerja"
                 android:layout_width="315dp"
                 android:layout_height="48dp"
-                android:background="@drawable/custom_edittext"
                 android:ems="10"
-                android:hint="   Masukkan link alamat google maps"
                 android:inputType="textPersonName"
                 android:translationX="50dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.489"
+                app:layout_constraintHorizontal_bias="0.531"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.789" />
+                app:layout_constraintVertical_bias="0.671"
+                tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="30dp" />
+                android:layout_height="10dp" />
 
-            <Button
-                android:id="@+id/btnTbhUsh_Tambah"
-                android:layout_width="99dp"
-                android:layout_height="52dp"
-                android:text="Tambah"
-                android:translationX="265dp"
+            <TextView
+                android:id="@+id/textView30"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gaji Pekerjaan"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:translationX="50dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.841"
+                app:layout_constraintHorizontal_bias="0.133"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.917" />
+                app:layout_constraintVertical_bias="0.726" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <EditText
+                android:id="@+id/txtKerja_Gaji"
+                android:layout_width="315dp"
+                android:layout_height="48dp"
+                android:ems="10"
+                android:inputType="number"
+                android:translationX="50dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.531"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.789"
+                tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <TextView
+                android:id="@+id/textView31"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Syarat Pekerjaan"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:translationX="50dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.161"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.338" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <EditText
+                android:id="@+id/txtKerja_Syarat"
+                android:layout_width="315dp"
+                android:layout_height="180dp"
+                android:ems="10"
+                android:gravity="end|start"
+                android:inputType="textPersonName|textMultiLine"
+                android:translationX="50dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.531"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.467"
+                tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
+            <ImageView
+                android:id="@+id/imgKerja_Favorite"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:translationX="230dp"
+                android:translationY="70dp"
+                app:srcCompat="@drawable/favorite" />
+
+            <ImageView
+                android:id="@+id/imgKerja_Chat"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:translationX="120dp"
+                app:srcCompat="@drawable/chat" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <Button
+                android:id="@+id/btnKerja_Lamar"
+                android:layout_width="260dp"
+                android:layout_height="52dp"
+                android:text="Lamar Sekarang"
+                android:translationX="77dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.855"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.914" />
 
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="50dp" />
+
         </LinearLayout>
+
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
