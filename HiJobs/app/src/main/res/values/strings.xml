@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Hi Jobs!</string>
+    <string name="title_activity_halaman_beranda">HalamanBeranda</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Nama Pengguna</string>
+    <string name="nav_header_subtitle">namapengguna_20@gmail.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_beranda">Beranda</string>
+    <string name="menu_profil">Profil</string>
+    <string name="menu_favorit">Favorit</string>
 </resources>

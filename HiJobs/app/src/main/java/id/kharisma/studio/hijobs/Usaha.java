@@ -4,13 +4,29 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Toast;
+
+import com.getbase.floatingactionbutton.FloatingActionButton;
 
 public class Usaha extends AppCompatActivity {
+
+    FloatingActionButton fab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_usaha);
+
+        //Membuat Floating Action Button
+        fab = findViewById(R.id.fabUsaha_Add);
+
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(Usaha.this, "You have click on floating button", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         //Membuat tombol back pada Navigasi Bar
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

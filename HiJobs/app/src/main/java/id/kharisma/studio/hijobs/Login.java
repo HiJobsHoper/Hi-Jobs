@@ -19,6 +19,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class Login extends AppCompatActivity {
 
@@ -31,6 +32,8 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        //reload(); //Langsung ke halaman utama
 
         //Inisialisasi material desain
         reg = findViewById(R.id.textView9);
@@ -119,16 +122,10 @@ public class Login extends AppCompatActivity {
         firebaseauth.signInWithEmailAndPassword(Email,Pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful()) {
+                if (task.isSuccessful() && task.getResult()!=null) {
                     //Berhasil login
-                    if (firebaseauth.getCurrentUser().isEmailVerified()) {
-                        //Test halaman
-                        startActivity(new Intent(Login.this, TambahLowongan.class)); //Membuka halaman ...
-                        finish(); //Menutup halaman login
-                    } else {
-                        Toast.makeText(Login.this,
-                                "Email belum terdaftar", Toast.LENGTH_LONG).show();
-                    }
+                    startActivity(new Intent(Login.this, HalamanUtama.class)); //Membuka halaman utama
+                    finish(); //Menutup halaman login
                 } else {
                     //Gagal login
                     Toast.makeText(Login.this,
@@ -136,5 +133,16 @@ public class Login extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    //Langsung masuk kalau sudah pernah login
+    public void reload() {
+        FirebaseAuth firebaseauth = FirebaseAuth.getInstance();
+        FirebaseUser currentUser = firebaseauth.getCurrentUser();
+
+        if (currentUser != null) {
+            startActivity(new Intent(Login.this, HalamanUtama.class)); //Membuka halaman utama
+            finish(); //Menutup halaman login
+        }
     }
 }

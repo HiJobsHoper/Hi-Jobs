@@ -4,14 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class DaftarPelamar extends AppCompatActivity {
+public class Chat extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_daftar_pelamar);
+        setContentView(R.layout.activity_chat);
 
-        //Membuat tombol back pada Navigasi Bar
+        //Membuat tombol kembali pada Navigasi Bar
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
     }

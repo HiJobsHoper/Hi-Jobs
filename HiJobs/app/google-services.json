@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "725031315584",
-    "project_id": "hi-jobs",
-    "storage_bucket": "hi-jobs.appspot.com"
+    "project_number": "940426453472",
+    "project_id": "hi-jobs-a1a2b",
+    "storage_bucket": "hi-jobs-a1a2b.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:725031315584:android:e915a9dc98696af5a05e65",
+        "mobilesdk_app_id": "1:940426453472:android:61e9e38cdb446ccc2c4b85",
         "android_client_info": {
           "package_name": "id.kharisma.studio.hijobs"
         }
       },
       "oauth_client": [
         {
-          "client_id": "725031315584-l2d13dkrsvov00snht15bls48r37tuqt.apps.googleusercontent.com",
+          "client_id": "940426453472-fultj1n8qlj8v6dfrqemn9jf39l5713s.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAWPYxfBjGC-XDj5xvw9SVYVfXU6QPtLEM"
+          "current_key": "AIzaSyCOxuyh3hB6ENPL9NfukJfpzzRxdIZfdFg"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "725031315584-l2d13dkrsvov00snht15bls48r37tuqt.apps.googleusercontent.com",
+              "client_id": "940426453472-fultj1n8qlj8v6dfrqemn9jf39l5713s.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

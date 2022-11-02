@@ -142,7 +142,7 @@ public class Registrasi extends AppCompatActivity {
                 Registrasi.this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful()) {
+                if (task.isSuccessful() && task.getResult()!=null) {
                     //Akun berhasil di buat
                     firebaseauth.getCurrentUser().sendEmailVerification(); //Mengirim pemberitahuan ke email
                     firebaseauth.signOut(); //Keluar dari akun

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Profil">
+    tools:context=".KelolaProfil">
 
     <ScrollView
         android:layout_width="409dp"
@@ -25,7 +25,7 @@
                 android:layout_height="16dp" />
 
             <ImageView
-                android:id="@+id/imgProfil_LogoProfil"
+                android:id="@+id/imgKelProfil_LogoProfil"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:translationX="40dp"
@@ -36,10 +36,11 @@
                 android:layout_height="wrap_content" />
 
             <EditText
-                android:id="@+id/txtProfil_Nama"
+                android:id="@+id/txtKelProfil_Nama"
                 android:layout_width="172dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
+                android:background="@null"
                 android:inputType="textPersonName"
                 android:minHeight="48dp"
                 android:translationX="155dp"
@@ -109,13 +110,14 @@
                 android:layout_height="10dp" />
 
             <EditText
-                android:id="@+id/txtProfil_NamaPengguna"
+                android:id="@+id/txtKelProfil_NamaPengguna"
                 android:layout_width="325dp"
                 android:layout_height="48dp"
                 android:background="@drawable/custom_edittext"
                 android:ems="10"
-                android:hint="   Masukkan nama pengguna"
+                android:hint="Masukkan nama pengguna"
                 android:inputType="textPersonName"
+                android:paddingLeft="20dp"
                 android:translationX="40dp"
                 android:translationY="-70dp"
                 tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
@@ -139,13 +141,14 @@
                 android:layout_height="10dp" />
 
             <EditText
-                android:id="@+id/txtProfil_JenisKelamin"
+                android:id="@+id/txtKelProfil_JenisKelamin"
                 android:layout_width="325dp"
                 android:layout_height="48dp"
                 android:background="@drawable/custom_edittext"
                 android:ems="10"
-                android:hint="   Pilih jenis kelamin"
+                android:hint="Pilih jenis kelamin"
                 android:inputType="textPersonName"
+                android:paddingLeft="20dp"
                 android:translationX="40dp"
                 android:translationY="-70dp"
                 tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
@@ -169,13 +172,14 @@
                 android:layout_height="10dp" />
 
             <EditText
-                android:id="@+id/txtProfil_TglLahir"
+                android:id="@+id/txtKelProfil_TglLahir"
                 android:layout_width="325dp"
                 android:layout_height="48dp"
                 android:background="@drawable/custom_edittext"
                 android:ems="10"
-                android:hint="   Pilih tanggal lahir"
+                android:hint="Pilih tanggal lahir"
                 android:inputType="date"
+                android:paddingLeft="20dp"
                 android:translationX="40dp"
                 android:translationY="-70dp" />
 
@@ -198,13 +202,14 @@
                 android:layout_height="10dp" />
 
             <EditText
-                android:id="@+id/txtProfil_Telepon"
+                android:id="@+id/txtKelProfil_Telepon"
                 android:layout_width="325dp"
                 android:layout_height="48dp"
                 android:background="@drawable/custom_edittext"
                 android:ems="10"
-                android:hint="   Masukkan nomor telepon"
+                android:hint="Masukkan nomor telepon"
                 android:inputType="phone"
+                android:paddingLeft="20dp"
                 android:translationX="40dp"
                 android:translationY="-70dp" />
 
@@ -227,13 +232,14 @@
                 android:layout_height="10dp" />
 
             <EditText
-                android:id="@+id/txtProfil_Email"
+                android:id="@+id/txtKelProfil_Email"
                 android:layout_width="325dp"
                 android:layout_height="48dp"
                 android:background="@drawable/custom_edittext"
                 android:ems="10"
-                android:hint="   Masukkan email"
+                android:hint="Masukkan email"
                 android:inputType="textEmailAddress"
+                android:paddingLeft="20dp"
                 android:translationX="40dp"
                 android:translationY="-70dp" />
 
@@ -256,13 +262,14 @@
                 android:layout_height="10dp" />
 
             <EditText
-                android:id="@+id/txtProfil_Pendidikan"
+                android:id="@+id/txtKelProfil_Pendidikan"
                 android:layout_width="325dp"
                 android:layout_height="48dp"
                 android:background="@drawable/custom_edittext"
                 android:ems="10"
-                android:hint="   Pilih pendidikan terakhir"
+                android:hint="Pilih pendidikan terakhir"
                 android:inputType="textPersonName"
+                android:paddingLeft="20dp"
                 android:minHeight="48dp"
                 android:translationX="40dp"
                 android:translationY="-70dp"
@@ -287,14 +294,16 @@
                 android:layout_height="10dp" />
 
             <EditText
-                android:id="@+id/txtProfil_Alamat"
+                android:id="@+id/txtKelProfil_Alamat"
                 android:layout_width="325dp"
                 android:layout_height="100dp"
                 android:background="@drawable/custom_edittext"
                 android:ems="10"
                 android:gravity="start|top"
-                android:hint="   Masukkan alamat pengguna"
+                android:hint="Masukkan alamat pengguna"
                 android:inputType="textMultiLine"
+                android:paddingTop="10dp"
+                android:paddingLeft="20dp"
                 android:translationX="40dp"
                 android:translationY="-70dp" />
 
@@ -317,13 +326,14 @@
                 android:layout_height="10dp" />
 
             <EditText
-                android:id="@+id/txtProfil_Keahlian"
+                android:id="@+id/txtKelProfil_Keahlian"
                 android:layout_width="325dp"
                 android:layout_height="48dp"
                 android:background="@drawable/custom_edittext"
                 android:ems="10"
-                android:hint="   Masukkan keahlian"
+                android:hint="Masukkan keahlian"
                 android:inputType="textPersonName"
+                android:paddingLeft="20dp"
                 android:minHeight="48dp"
                 android:translationX="40dp"
                 android:translationY="-70dp"
@@ -348,14 +358,16 @@
                 android:layout_height="10dp" />
 
             <EditText
-                android:id="@+id/txtProfil_PengalamanKerja"
+                android:id="@+id/txtKelProfil_PengalamanKerja"
                 android:layout_width="325dp"
                 android:layout_height="125dp"
                 android:background="@drawable/custom_edittext"
                 android:ems="10"
                 android:gravity="start|top"
-                android:hint="   Masukkan pengalaman kerja"
+                android:hint="Masukkan pengalaman kerja"
                 android:inputType="textMultiLine"
+                android:paddingTop="10dp"
+                android:paddingLeft="20dp"
                 android:translationX="40dp"
                 android:translationY="-70dp" />
 
@@ -378,13 +390,14 @@
                 android:layout_height="10dp" />
 
             <EditText
-                android:id="@+id/txtProfil_Kewarganegaraan"
+                android:id="@+id/txtKelProfil_Kewarganegaraan"
                 android:layout_width="325dp"
                 android:layout_height="48dp"
                 android:background="@drawable/custom_edittext"
                 android:ems="10"
-                android:hint="   Masukkan kewarganegaraan"
+                android:hint="Masukkan kewarganegaraan"
                 android:inputType="textPersonName"
+                android:paddingLeft="20dp"
                 android:minHeight="48dp"
                 android:translationX="40dp"
                 android:translationY="-70dp"
@@ -424,13 +437,14 @@
                 android:layout_height="10dp" />
 
             <EditText
-                android:id="@+id/txtProfil_SandiSekarang"
+                android:id="@+id/txtKelProfil_SandiSekarang"
                 android:layout_width="325dp"
                 android:layout_height="48dp"
                 android:background="@drawable/custom_edittext"
                 android:ems="10"
-                android:hint="   Masukkan kata sandi"
+                android:hint="Masukkan kata sandi"
                 android:inputType="textPassword"
+                android:paddingLeft="20dp"
                 android:translationX="40dp"
                 android:translationY="-70dp" />
 
@@ -453,13 +467,14 @@
                 android:layout_height="10dp" />
 
             <EditText
-                android:id="@+id/txtProfil_SandiBaru"
+                android:id="@+id/txtKelProfil_SandiBaru"
                 android:layout_width="325dp"
                 android:layout_height="48dp"
                 android:background="@drawable/custom_edittext"
                 android:ems="10"
-                android:hint="   Masukkan kata sandi baru"
+                android:hint="Masukkan kata sandi baru"
                 android:inputType="textPassword"
+                android:paddingLeft="20dp"
                 android:translationX="40dp"
                 android:translationY="-70dp" />
 
@@ -482,13 +497,14 @@
                 android:layout_height="10dp" />
 
             <EditText
-                android:id="@+id/txtProfil_KonfirSandi"
+                android:id="@+id/txtKelProfil_KonfirSandi"
                 android:layout_width="325dp"
                 android:layout_height="48dp"
                 android:background="@drawable/custom_edittext"
                 android:ems="10"
-                android:hint="   Masukkan ulang kata sandi baru"
+                android:hint="Masukkan ulang kata sandi baru"
                 android:inputType="textPassword"
+                android:paddingLeft="20dp"
                 android:translationX="40dp"
                 android:translationY="-70dp" />
 
@@ -497,7 +513,7 @@
                 android:layout_height="30dp" />
 
             <Button
-                android:id="@+id/btnProfil_Simpan"
+                android:id="@+id/btnKelProfil_Simpan"
                 android:layout_width="99dp"
                 android:layout_height="52dp"
                 android:text="Simpan"
