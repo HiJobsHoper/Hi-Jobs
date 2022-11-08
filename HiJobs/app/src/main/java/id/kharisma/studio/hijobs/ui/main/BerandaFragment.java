@@ -1,7 +1,5 @@
 package id.kharisma.studio.hijobs.ui.main;
 
-import androidx.lifecycle.ViewModelProvider;
-
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -26,7 +24,7 @@ public class BerandaFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_main, container, false);
-        final TextView textView = root.findViewById(R.id.text_beranda);
+        final TextView textView = root.findViewById(R.id.textView16);
         return root;
     }
 

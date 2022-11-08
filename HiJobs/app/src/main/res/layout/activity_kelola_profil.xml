@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".KelolaProfil">
+    tools:context=".KelolaProfil"
+    android:id="@+id/my_layout">
 
     <ScrollView
         android:layout_width="409dp"
@@ -39,10 +40,12 @@
                 android:id="@+id/txtKelProfil_Nama"
                 android:layout_width="172dp"
                 android:layout_height="wrap_content"
-                android:ems="10"
                 android:background="@null"
+                android:ems="10"
+                android:hint="Nama Pengguna"
                 android:inputType="textPersonName"
                 android:minHeight="48dp"
+                android:textSize="20sp"
                 android:translationX="155dp"
                 android:translationY="-75dp"
                 tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
@@ -140,17 +143,24 @@
                 android:layout_width="match_parent"
                 android:layout_height="10dp" />
 
-            <EditText
-                android:id="@+id/txtKelProfil_JenisKelamin"
+            <ImageView
+                android:id="@+id/imgProfil_SpinnerJK"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:translationX="330dp"
+                android:translationY="-60dp"
+                app:srcCompat="@drawable/ic_baseline_arrow_drop_down_24" />
+
+            <Spinner
+                android:id="@+id/spnKelProfil_JenisKelamin"
                 android:layout_width="325dp"
-                android:layout_height="48dp"
+                android:layout_height="wrap_content"
                 android:background="@drawable/custom_edittext"
-                android:ems="10"
-                android:hint="Pilih jenis kelamin"
-                android:inputType="textPersonName"
-                android:paddingLeft="20dp"
+                android:dropDownWidth="wrap_content"
+                android:minHeight="48dp"
+                android:paddingLeft="10dp"
                 android:translationX="40dp"
-                android:translationY="-70dp"
+                android:translationY="-95dp"
                 tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
             <Space
@@ -165,7 +175,7 @@
                 android:textColor="#000000"
                 android:textSize="18sp"
                 android:translationX="40dp"
-                android:translationY="-70dp" />
+                android:translationY="-95dp" />
 
             <Space
                 android:layout_width="match_parent"
@@ -181,7 +191,7 @@
                 android:inputType="date"
                 android:paddingLeft="20dp"
                 android:translationX="40dp"
-                android:translationY="-70dp" />
+                android:translationY="-95dp" />
 
             <Space
                 android:layout_width="match_parent"
@@ -195,7 +205,7 @@
                 android:textColor="#000000"
                 android:textSize="18sp"
                 android:translationX="40dp"
-                android:translationY="-70dp" />
+                android:translationY="-95dp" />
 
             <Space
                 android:layout_width="match_parent"
@@ -211,7 +221,7 @@
                 android:inputType="phone"
                 android:paddingLeft="20dp"
                 android:translationX="40dp"
-                android:translationY="-70dp" />
+                android:translationY="-95dp" />
 
             <Space
                 android:layout_width="match_parent"
@@ -225,7 +235,7 @@
                 android:textColor="#000000"
                 android:textSize="18sp"
                 android:translationX="40dp"
-                android:translationY="-70dp" />
+                android:translationY="-95dp" />
 
             <Space
                 android:layout_width="match_parent"
@@ -241,7 +251,7 @@
                 android:inputType="textEmailAddress"
                 android:paddingLeft="20dp"
                 android:translationX="40dp"
-                android:translationY="-70dp" />
+                android:translationY="-95dp" />
 
             <Space
                 android:layout_width="match_parent"
@@ -255,25 +265,31 @@
                 android:textColor="#000000"
                 android:textSize="18sp"
                 android:translationX="40dp"
-                android:translationY="-70dp" />
+                android:translationY="-95dp" />
 
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="10dp" />
 
-            <EditText
-                android:id="@+id/txtKelProfil_Pendidikan"
+            <Spinner
+                android:id="@+id/spnKelProfil_Pendidikan"
                 android:layout_width="325dp"
-                android:layout_height="48dp"
+                android:layout_height="wrap_content"
                 android:background="@drawable/custom_edittext"
-                android:ems="10"
-                android:hint="Pilih pendidikan terakhir"
-                android:inputType="textPersonName"
-                android:paddingLeft="20dp"
+                android:dropDownWidth="wrap_content"
                 android:minHeight="48dp"
+                android:paddingLeft="10dp"
                 android:translationX="40dp"
-                android:translationY="-70dp"
+                android:translationY="-95dp"
                 tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
+            <ImageView
+                android:id="@+id/imgProfil_SpinnerPK"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:translationX="330dp"
+                android:translationY="-130dp"
+                app:srcCompat="@drawable/ic_baseline_arrow_drop_down_24" />
 
             <Space
                 android:layout_width="match_parent"
@@ -287,7 +303,7 @@
                 android:textColor="#000000"
                 android:textSize="18sp"
                 android:translationX="40dp"
-                android:translationY="-70dp" />
+                android:translationY="-120dp" />
 
             <Space
                 android:layout_width="match_parent"
@@ -302,10 +318,10 @@
                 android:gravity="start|top"
                 android:hint="Masukkan alamat pengguna"
                 android:inputType="textMultiLine"
-                android:paddingTop="10dp"
                 android:paddingLeft="20dp"
+                android:paddingTop="10dp"
                 android:translationX="40dp"
-                android:translationY="-70dp" />
+                android:translationY="-120dp" />
 
             <Space
                 android:layout_width="match_parent"
@@ -319,7 +335,7 @@
                 android:textColor="#000000"
                 android:textSize="18sp"
                 android:translationX="40dp"
-                android:translationY="-70dp" />
+                android:translationY="-120dp" />
 
             <Space
                 android:layout_width="match_parent"
@@ -333,10 +349,10 @@
                 android:ems="10"
                 android:hint="Masukkan keahlian"
                 android:inputType="textPersonName"
-                android:paddingLeft="20dp"
                 android:minHeight="48dp"
+                android:paddingLeft="20dp"
                 android:translationX="40dp"
-                android:translationY="-70dp"
+                android:translationY="-120dp"
                 tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
             <Space
@@ -351,7 +367,7 @@
                 android:textColor="#000000"
                 android:textSize="18sp"
                 android:translationX="40dp"
-                android:translationY="-70dp" />
+                android:translationY="-120dp" />
 
             <Space
                 android:layout_width="match_parent"
@@ -366,10 +382,10 @@
                 android:gravity="start|top"
                 android:hint="Masukkan pengalaman kerja"
                 android:inputType="textMultiLine"
-                android:paddingTop="10dp"
                 android:paddingLeft="20dp"
+                android:paddingTop="10dp"
                 android:translationX="40dp"
-                android:translationY="-70dp" />
+                android:translationY="-120dp" />
 
             <Space
                 android:layout_width="match_parent"
@@ -383,7 +399,7 @@
                 android:textColor="#000000"
                 android:textSize="18sp"
                 android:translationX="40dp"
-                android:translationY="-70dp" />
+                android:translationY="-120dp" />
 
             <Space
                 android:layout_width="match_parent"
@@ -397,15 +413,15 @@
                 android:ems="10"
                 android:hint="Masukkan kewarganegaraan"
                 android:inputType="textPersonName"
-                android:paddingLeft="20dp"
                 android:minHeight="48dp"
+                android:paddingLeft="20dp"
                 android:translationX="40dp"
-                android:translationY="-70dp"
+                android:translationY="-120dp"
                 tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="40dp" />
+                android:layout_height="30dp" />
 
             <TextView
                 android:id="@+id/textView47"
@@ -416,25 +432,25 @@
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:translationX="40dp"
-                android:translationY="-70dp" />
+                android:translationY="-110dp" />
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="10dp" />
+                android:layout_height="5dp" />
 
             <TextView
                 android:id="@+id/textView48"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Kata Sandi Sekarang"
                 android:textColor="#000000"
                 android:textSize="18sp"
                 android:translationX="40dp"
-                android:translationY="-70dp" />
+                android:translationY="-110dp" />
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="10dp" />
+                android:layout_height="5dp" />
 
             <EditText
                 android:id="@+id/txtKelProfil_SandiSekarang"
@@ -446,11 +462,11 @@
                 android:inputType="textPassword"
                 android:paddingLeft="20dp"
                 android:translationX="40dp"
-                android:translationY="-70dp" />
+                android:translationY="-108dp" />
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="10dp" />
+                android:layout_height="5dp" />
 
             <TextView
                 android:id="@+id/textView49"
@@ -460,11 +476,11 @@
                 android:textColor="#000000"
                 android:textSize="18sp"
                 android:translationX="40dp"
-                android:translationY="-70dp" />
+                android:translationY="-105dp" />
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="10dp" />
+                android:layout_height="5dp" />
 
             <EditText
                 android:id="@+id/txtKelProfil_SandiBaru"
@@ -476,11 +492,11 @@
                 android:inputType="textPassword"
                 android:paddingLeft="20dp"
                 android:translationX="40dp"
-                android:translationY="-70dp" />
+                android:translationY="-103dp" />
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="10dp" />
+                android:layout_height="5dp" />
 
             <TextView
                 android:id="@+id/textView50"
@@ -490,11 +506,11 @@
                 android:textColor="#000000"
                 android:textSize="18sp"
                 android:translationX="40dp"
-                android:translationY="-70dp" />
+                android:translationY="-100dp" />
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="10dp" />
+                android:layout_height="5dp" />
 
             <EditText
                 android:id="@+id/txtKelProfil_KonfirSandi"
@@ -506,11 +522,11 @@
                 android:inputType="textPassword"
                 android:paddingLeft="20dp"
                 android:translationX="40dp"
-                android:translationY="-70dp" />
+                android:translationY="-98dp" />
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="30dp" />
+                android:layout_height="5dp" />
 
             <Button
                 android:id="@+id/btnKelProfil_Simpan"
@@ -518,7 +534,7 @@
                 android:layout_height="52dp"
                 android:text="Simpan"
                 android:translationX="265dp"
-                android:translationY="-50dp"
+                android:translationY="-60dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.855"
@@ -528,7 +544,7 @@
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="10dp" />
+                android:layout_height="5dp" />
 
         </LinearLayout>
     </ScrollView>

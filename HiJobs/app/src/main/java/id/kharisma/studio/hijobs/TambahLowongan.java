@@ -5,13 +5,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
-public class TambahLowongan extends AppCompatActivity {
+public class TambahLowongan extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     private EditText etNama, etDesk, etSyarat, etWaktu, etGaji;
+    private Spinner spnWaktu;
     private Button btnTambah;
 
     @Override
@@ -23,7 +27,7 @@ public class TambahLowongan extends AppCompatActivity {
         etNama = findViewById(R.id.txtTbhLow_Lowongan);
         etDesk = findViewById(R.id.txtTbhLow_DeskUsaha);
         etSyarat = findViewById(R.id.txtTbhLow_Syarat);
-        etWaktu = findViewById(R.id.txtTbhLow_WaktuKerja);
+        spnWaktu = findViewById(R.id.spnTbhLow_WaktuKerja);
         etGaji = findViewById(R.id.txtTbhLow_Gaji);
         btnTambah = findViewById(R.id.btnTbhLow_Tambah);
 
@@ -42,6 +46,14 @@ public class TambahLowongan extends AppCompatActivity {
         //Membuat tombol back pada Navigasi Bar
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+        //Membuat kolom waktu kerja
+        Spinner spinnerWK = findViewById(R.id.spnTbhLow_WaktuKerja);
+        ArrayAdapter<CharSequence> adapter3 = ArrayAdapter.createFromResource(
+                this, R.array.Waktu_Kerja, android.R.layout.simple_spinner_item);
+        adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerWK.setAdapter(adapter3);
+        spinnerWK.setOnItemSelectedListener(this);
     }
 
     //Kembali ke halaman login
@@ -65,7 +77,7 @@ public class TambahLowongan extends AppCompatActivity {
         String Nama = etNama.getText().toString();
         String Desk = etDesk.getText().toString();
         String Syarat = etSyarat.getText().toString();
-        String Waktu = etWaktu.getText().toString();
+        String Waktu = spnWaktu.getSelectedItem().toString();
         String Gaji = etGaji.getText().toString();
         boolean nilai = false;
 
@@ -75,8 +87,7 @@ public class TambahLowongan extends AppCompatActivity {
             etGaji.requestFocus();
         }
         if (Waktu.isEmpty()) {
-            etWaktu.setError("Waktu required");
-            etWaktu.requestFocus();
+            spnWaktu.requestFocus();
         }
         if (Syarat.isEmpty()) {
             etSyarat.setError("Syarat required");
@@ -99,5 +110,16 @@ public class TambahLowongan extends AppCompatActivity {
                     "Data anda belum lengkap", Toast.LENGTH_LONG).show();
         }
         return nilai;
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        String text = parent.getItemAtPosition(position).toString();
+        //Toast.makeText(parent.getContext(), text, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
     }
 }

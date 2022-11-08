@@ -163,22 +163,24 @@
                 android:layout_width="match_parent"
                 android:layout_height="10dp" />
 
-            <EditText
-                android:id="@+id/txtTbhLow_WaktuKerja"
+            <Spinner
+                android:id="@+id/spnTbhLow_WaktuKerja"
                 android:layout_width="315dp"
-                android:layout_height="48dp"
+                android:layout_height="wrap_content"
                 android:background="@drawable/custom_edittext"
-                android:ems="10"
-                android:hint="Masukkan waktu kerja"
-                android:inputType="textPersonName"
-                android:paddingLeft="20dp"
+                android:dropDownWidth="wrap_content"
+                android:minHeight="48dp"
+                android:paddingLeft="10dp"
                 android:translationX="50dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.531"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.671" />
+                tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
+            <ImageView
+                android:id="@+id/imgTbhLow_SpinnerWK"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:translationX="330dp"
+                android:translationY="-35dp"
+                app:srcCompat="@drawable/ic_baseline_arrow_drop_down_24" />
 
             <Space
                 android:layout_width="match_parent"
@@ -192,6 +194,7 @@
                 android:textColor="#000000"
                 android:textSize="18sp"
                 android:translationX="50dp"
+                android:translationY="-25dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.133"
@@ -213,6 +216,7 @@
                 android:inputType="number"
                 android:paddingLeft="20dp"
                 android:translationX="50dp"
+                android:translationY="-25dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.531"
@@ -229,7 +233,8 @@
                 android:layout_width="99dp"
                 android:layout_height="52dp"
                 android:text="Tambah"
-                android:translationX="265dp" />
+                android:translationX="265dp"
+                android:translationY="-5dp" />
 
             <Space
                 android:layout_width="match_parent"

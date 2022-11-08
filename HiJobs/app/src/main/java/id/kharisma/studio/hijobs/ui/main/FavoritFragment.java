@@ -7,6 +7,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -25,7 +26,14 @@ public class FavoritFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_main3, container, false);
         final TextView textView = root.findViewById(R.id.textView11);
+        setHasOptionsMenu(true); //Menghilangkan icon search dan chat
         return root;
+    }
+
+    //Menghilangkan option menu
+    @Override
+    public void onPrepareOptionsMenu(@NonNull Menu menu) {
+        menu.clear();
     }
 
 }

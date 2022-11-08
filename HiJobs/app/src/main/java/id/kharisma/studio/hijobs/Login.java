@@ -122,14 +122,14 @@ public class Login extends AppCompatActivity {
         firebaseauth.signInWithEmailAndPassword(Email,Pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful() && task.getResult()!=null) {
+                if (task.isSuccessful() && task.getResult()!= null) {
                     //Berhasil login
                     startActivity(new Intent(Login.this, HalamanUtama.class)); //Membuka halaman utama
                     finish(); //Menutup halaman login
                 } else {
                     //Gagal login
                     Toast.makeText(Login.this,
-                            task.getException().getLocalizedMessage(), Toast.LENGTH_LONG).show();
+                            "Email atau kata sandi tidak sesuai", Toast.LENGTH_LONG).show();
                 }
             }
         });

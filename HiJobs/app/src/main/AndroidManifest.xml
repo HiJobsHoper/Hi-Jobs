@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" >
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -23,7 +24,8 @@
         </activity>
         <activity
             android:name=".Chat"
-            android:exported="false" >
+            android:exported="false"
+            android:label="" >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -78,7 +80,8 @@
         </activity>
         <activity
             android:name=".Pekerjaan"
-            android:exported="false" >
+            android:exported="false"
+            android:label="" >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -101,15 +104,16 @@
         </activity>
         <activity
             android:name=".Pencarian"
-            android:exported="false" >
+            android:exported="false"
+            android:label="" >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Toko"
+            android:name=".Lowongan"
             android:exported="false"
-            android:label="Usaha Saya" >
+            android:label="Lowongan Saya" >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

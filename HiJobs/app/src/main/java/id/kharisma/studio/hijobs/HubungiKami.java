@@ -15,4 +15,17 @@ public class HubungiKami extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
     }
+
+    //Kembali ke halaman profil
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
+    }
+
+    //Mengaktifkan tombol kembali
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
 }

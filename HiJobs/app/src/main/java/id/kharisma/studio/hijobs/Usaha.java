@@ -9,6 +9,8 @@ import android.widget.Toast;
 
 import com.getbase.floatingactionbutton.FloatingActionButton;
 
+import id.kharisma.studio.hijobs.ui.main.ProfilFragment;
+
 public class Usaha extends AppCompatActivity {
 
     FloatingActionButton fab;
@@ -18,13 +20,14 @@ public class Usaha extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_usaha);
 
-        //Membuat Floating Action Button
+        //Inisialisasi material desain
         fab = findViewById(R.id.fabUsaha_Add);
 
+        //Membuat floating action button
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(Usaha.this, "You have click on floating button", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(Usaha.this, TambahUsaha.class));
             }
         });
 
@@ -33,12 +36,10 @@ public class Usaha extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
     }
 
-    //Kembali ke halaman login
+    //Kembali ke halaman profil
     @Override
     public boolean onSupportNavigateUp() {
         onBackPressed();
-        startActivity(new Intent(Usaha.this, TambahLowongan.class)); //Membuka halaman login
-        finish(); //Menutup halaman tambah lowongan
         return true;
     }
 

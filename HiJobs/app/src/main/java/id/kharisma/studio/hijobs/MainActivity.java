@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
                 } catch(InterruptedException ex) {
                     ex.printStackTrace();
                 } finally {
-                    startActivity(new Intent(MainActivity.this, HalamanUtama.class)); //Membuka halaman login
+                    startActivity(new Intent(MainActivity.this, Login.class)); //Membuka halaman login
                     finish(); //Menutup splash screen
                 }
             }
