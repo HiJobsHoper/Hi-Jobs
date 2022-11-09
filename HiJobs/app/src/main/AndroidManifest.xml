@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" >
-    <uses-permission android:name="android.permission.INTERNET"/>
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -11,13 +12,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HiJobs"
-        tools:targetApi="31" >
+        tools:targetApi="31">
+        <activity
+            android:name=".Rekomendasi"
+            android:exported="false"
+            android:label="Rekomendasi">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
             android:name=".HalamanUtama"
             android:exported="false"
             android:label="@string/title_activity_halaman_beranda"
-            android:theme="@style/Theme.HiJobs.NoActionBar" >
-
+            android:theme="@style/Theme.HiJobs.NoActionBar">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -25,7 +33,7 @@
         <activity
             android:name=".Chat"
             android:exported="false"
-            android:label="" >
+            android:label="">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -33,7 +41,7 @@
         <activity
             android:name=".DaftarChat"
             android:exported="false"
-            android:label="Chat" >
+            android:label="Chat">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -41,7 +49,7 @@
         <activity
             android:name=".HubungiKami"
             android:exported="false"
-            android:label="Hubungi Kami" >
+            android:label="Hubungi Kami">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -49,7 +57,7 @@
         <activity
             android:name=".Pengaturan"
             android:exported="false"
-            android:label="Pengaturan" >
+            android:label="Pengaturan">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -57,7 +65,7 @@
         <activity
             android:name=".KelolaProfil"
             android:exported="false"
-            android:label="Profil Saya" >
+            android:label="Profil Saya">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -65,7 +73,7 @@
         <activity
             android:name=".RiwayatLamaran"
             android:exported="false"
-            android:label="Riwayat Lamaran" >
+            android:label="Riwayat Lamaran">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -73,7 +81,7 @@
         <activity
             android:name=".DaftarLamaran"
             android:exported="false"
-            android:label="Daftar Lamaran" >
+            android:label="Daftar Lamaran">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -81,7 +89,7 @@
         <activity
             android:name=".Pekerjaan"
             android:exported="false"
-            android:label="" >
+            android:label="">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -89,7 +97,7 @@
         <activity
             android:name=".TambahLowongan"
             android:exported="false"
-            android:label="Tambah Lowongan" >
+            android:label="Tambah Lowongan">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -97,7 +105,7 @@
         <activity
             android:name=".TambahUsaha"
             android:exported="false"
-            android:label="Tambah Usaha" >
+            android:label="Tambah Usaha">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -105,7 +113,7 @@
         <activity
             android:name=".Pencarian"
             android:exported="false"
-            android:label="" >
+            android:label="">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -113,7 +121,7 @@
         <activity
             android:name=".Lowongan"
             android:exported="false"
-            android:label="Lowongan Saya" >
+            android:label="Lowongan Saya">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -121,7 +129,7 @@
         <activity
             android:name=".Usaha"
             android:exported="false"
-            android:label="Usaha Saya" >
+            android:label="Usaha Saya">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -129,7 +137,7 @@
         <activity
             android:name=".Registrasi"
             android:exported="false"
-            android:label="Registrasi Akun" >
+            android:label="Registrasi Akun">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -137,7 +145,7 @@
         <activity
             android:name=".Login"
             android:exported="false"
-            android:label="Hi Jobs!" >
+            android:label="Hi Jobs!">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -145,7 +153,7 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

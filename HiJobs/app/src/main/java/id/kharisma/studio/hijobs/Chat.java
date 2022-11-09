@@ -15,4 +15,17 @@ public class Chat extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
     }
+
+    //Kembali ke halaman daftar chat
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
+    }
+
+    //Mengaktifkan tombol kembali
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
 }

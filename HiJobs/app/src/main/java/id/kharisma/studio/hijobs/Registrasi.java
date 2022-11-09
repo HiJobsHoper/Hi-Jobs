@@ -7,10 +7,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -38,7 +41,28 @@ public class Registrasi extends AppCompatActivity {
         etPass = findViewById(R.id.txtReg_KataSandi);
         etPassKon = findViewById(R.id.txtReg_KonfirmasiSandi);
 
-        //Tombol simpan
+
+        //Show hide password menggunakan icon mata
+        ImageView imageViewShowHidePwd = findViewById(R.id.img_RegSandi);
+        imageViewShowHidePwd.setImageResource(R.drawable.ic_baseline_visibility_off_24);
+        imageViewShowHidePwd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (etPass.getTransformationMethod().equals(HideReturnsTransformationMethod.getInstance())){
+                    //Membuat password tidak kelihatan
+                    etPass.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                    //Mengganti icon
+                    imageViewShowHidePwd.setImageResource(R.drawable.ic_baseline_visibility_off_24);
+                }else {
+                    //Membuat password tidak kelihatan
+                    etPass.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                    //Mengganti icon
+                    imageViewShowHidePwd.setImageResource(R.drawable.ic_baseline_visibility_24);
+                }
+            }
+        });
+
+        //Button simpan
         btnSimpan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -147,7 +171,7 @@ public class Registrasi extends AppCompatActivity {
                     firebaseauth.getCurrentUser().sendEmailVerification(); //Mengirim pemberitahuan ke email
                     firebaseauth.signOut(); //Keluar dari akun
                     //Kembali ke halaman login
-                    startActivity(new Intent(Registrasi.this, Login.class)); //Membuka halaman login
+                    startActivity(new Intent(Registrasi.this, Rekomendasi.class)); //Membuka halaman rekomendasi
                     finish(); //Menutup halaman registrasi
                 } else {
                     //Akun gagal di buat

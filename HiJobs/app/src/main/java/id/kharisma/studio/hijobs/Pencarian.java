@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -19,6 +20,19 @@ public class Pencarian extends AppCompatActivity {
         //Membuat tombol kembali pada Navigasi Bar
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
+    }
+
+    //Kembali ke halaman utama
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
+    }
+
+    //Mengaktifkan tombol kembali
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
     }
 
     @Override

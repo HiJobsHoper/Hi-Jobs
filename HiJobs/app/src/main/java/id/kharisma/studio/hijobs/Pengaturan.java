@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -24,6 +25,7 @@ public class Pengaturan extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pengaturan);
 
+        //Inisialisasi material desain
         etSyarat = findViewById(R.id.txtPengaturan_SK);
         etHapus = findViewById(R.id.txtPengaturan_HapusAkun);
 
@@ -40,7 +42,7 @@ public class Pengaturan extends AppCompatActivity {
             }
         });
 
-        //Edit text
+        //Edit text hapus akun
         etHapus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -94,6 +96,10 @@ public class Pengaturan extends AppCompatActivity {
                                                 startActivity(new Intent(
                                                         Pengaturan.this, Login.class)); //Membuka halaman login
                                                 finish(); //Menutup halaman pengaturan
+                                            } else {
+                                                Toast.makeText(Pengaturan.this,
+                                                        "Terjadi kesalahan, silahkan coba lagi",
+                                                        Toast.LENGTH_SHORT).show();
                                             }
                                         }
                                     });
@@ -106,7 +112,6 @@ public class Pengaturan extends AppCompatActivity {
                                 dialog.cancel(); //Membatalkan alert dialog
                             }
                         });
-
                     AlertDialog alertDialog_1 = alertDialogBuilder_1.create(); //Membuat alert dialog dari builder
                     alertDialog_1.show(); //Menampilkan alert dialog
                 }
@@ -117,7 +122,6 @@ public class Pengaturan extends AppCompatActivity {
                     dialog.cancel(); //Membatalkan alert dialog
                 }
             });
-
         AlertDialog alertDialog = alertDialogBuilder.create(); //Membuat alert dialog dari builder
         alertDialog.show(); //Menampilkan alert dialog
     }

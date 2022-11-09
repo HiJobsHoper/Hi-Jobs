@@ -22,4 +22,17 @@ public class DaftarChat extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
     }
+
+    //Kembali ke halaman utama
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
+    }
+
+    //Mengaktifkan tombol chat
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
 }

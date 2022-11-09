@@ -23,7 +23,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class Login extends AppCompatActivity {
 
-    private TextView reg;
+    private TextView tvreg;
     private Button btnMasuk;
     private EditText etEmail,etPass;
     private CheckBox chkPass;
@@ -33,17 +33,17 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        //reload(); //Langsung ke halaman utama
+        skipLogin(); //Langsung ke halaman utama
 
         //Inisialisasi material desain
-        reg = findViewById(R.id.textView9);
+        tvreg = findViewById(R.id.textView9);
         btnMasuk = findViewById(R.id.btnLog_Masuk);
         etEmail = findViewById(R.id.txtLog_Email);
         etPass = findViewById(R.id.txtLog_KataSandi);
         chkPass = findViewById(R.id.chkLog_TampilSandi);
 
         //Membuka halaman registrasi
-        reg.setOnClickListener(new View.OnClickListener() {
+        tvreg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Login.this, Registrasi.class)); //Membuka halaman registrasi
@@ -63,7 +63,7 @@ public class Login extends AppCompatActivity {
             }
         });
 
-        //Tombol masuk
+        //Button masuk
         btnMasuk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -136,7 +136,7 @@ public class Login extends AppCompatActivity {
     }
 
     //Langsung masuk kalau sudah pernah login
-    public void reload() {
+    public void skipLogin() {
         FirebaseAuth firebaseauth = FirebaseAuth.getInstance();
         FirebaseUser currentUser = firebaseauth.getCurrentUser();
 

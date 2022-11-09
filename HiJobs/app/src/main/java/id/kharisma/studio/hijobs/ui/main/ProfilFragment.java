@@ -97,7 +97,7 @@ public class ProfilFragment extends Fragment {
             }
         });
 
-        //Edit text Keluar
+        //Edit text keluar
         etKeluar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

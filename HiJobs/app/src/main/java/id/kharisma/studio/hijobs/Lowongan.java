@@ -15,4 +15,17 @@ public class Lowongan extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
     }
+
+    //Kembali ke halaman...
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
+    }
+
+    //Mengaktifkan tombol kembali
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
 }

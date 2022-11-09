@@ -9,6 +9,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.OpenableColumns;
+import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
 import android.util.Patterns;
@@ -18,6 +19,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -47,7 +49,6 @@ public class KelolaProfil extends AppCompatActivity implements AdapterView.OnIte
     private FirebaseDatabase firebaseDatabase;
     private FirebaseAuth firebaseAuth;
     private String UserId;
-    private int RC_SIGN_IN = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -122,12 +123,51 @@ public class KelolaProfil extends AppCompatActivity implements AdapterView.OnIte
                 }
             }
         });
+
+        //Show hide kata sandi menggunakan icon mata pada sandi lama
+        ImageView imageViewShowHidePwd = findViewById(R.id.img_KelProfilSandiSkrg);
+        imageViewShowHidePwd.setImageResource(R.drawable.ic_baseline_visibility_off_24);
+        imageViewShowHidePwd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (etPass_L.getTransformationMethod().equals(HideReturnsTransformationMethod.getInstance())){
+                    //Membuat kata sandi kelihatan
+                    etPass_L.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                    //Mengganti icon
+                    imageViewShowHidePwd.setImageResource(R.drawable.ic_baseline_visibility_off_24);
+                }else {
+                    //Membuat kata sandi tidak kelihatan
+                    etPass_L.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                    //Mengganti icon
+                    imageViewShowHidePwd.setImageResource(R.drawable.ic_baseline_visibility_24);
+                }
+            }
+        });
+
+        //Show hide kata sandi menggunakan icon mata pada sandi baru
+        ImageView imageViewShowHidePwdNew = findViewById(R.id.img_KelProfilSandiBaru);
+        imageViewShowHidePwdNew.setImageResource(R.drawable.ic_baseline_visibility_off_24);
+        imageViewShowHidePwdNew.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (etPass_B.getTransformationMethod().equals(HideReturnsTransformationMethod.getInstance())){
+                    //Membuat kata sandi kelihatan
+                    etPass_B.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                    //Mengganti icon
+                    imageViewShowHidePwdNew.setImageResource(R.drawable.ic_baseline_visibility_off_24);
+                }else {
+                    //Membuat kata sandi tidak kelihatan
+                    etPass_B.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                    //Mengganti icon
+                    imageViewShowHidePwdNew.setImageResource(R.drawable.ic_baseline_visibility_24);
+                }
+            }
+        });
     }
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         String text = parent.getItemAtPosition(position).toString();
-        //Toast.makeText(parent.getContext(), text, Toast.LENGTH_SHORT).show();
     }
 
     @Override

@@ -15,4 +15,17 @@ public class DaftarLamaran extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
     }
+
+    //Kembali ke halaman usaha saya
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
+    }
+
+    //Mengaktifkan tombol kembali
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
 }

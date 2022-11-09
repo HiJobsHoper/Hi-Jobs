@@ -51,6 +51,8 @@
                 android:ems="10"
                 android:hint="Deskripsi usaha saya"
                 android:inputType="textMultiLine|textPersonName"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
                 android:translationX="50dp"
                 tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
@@ -85,6 +87,8 @@
                 android:ems="10"
                 android:hint="Lokasi usaha saya"
                 android:inputType="textMultiLine|textPersonName"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
                 android:translationX="50dp"
                 tools:ignore="SpeakableTextPresentCheck" />
 
@@ -130,6 +134,8 @@
                 android:ems="10"
                 android:hint="Lowongan pekerjaan yang tersedia"
                 android:inputType="textMultiLine|textPersonName"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
                 android:translationX="50dp"
                 tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
@@ -164,6 +170,8 @@
                 android:ems="10"
                 android:hint="Waktu kerja yang ada"
                 android:inputType="textPersonName"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
                 android:translationX="50dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -204,6 +212,8 @@
                 android:ems="10"
                 android:hint="Gaji dari lowongan yang ada"
                 android:inputType="number"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
                 android:translationX="50dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -245,6 +255,8 @@
                 android:gravity="end|start"
                 android:hint="Syarat yang dibutuhkan untuk bekerja"
                 android:inputType="textPersonName|textMultiLine"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
                 android:translationX="50dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
