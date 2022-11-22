@@ -1,0 +1,572 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SyaratKetentuan">
+
+    <ScrollView
+        android:layout_width="409dp"
+        android:layout_height="808dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="30dp" />
+
+            <TextView
+                android:id="@+id/textView52"
+                android:layout_width="380dp"
+                android:layout_height="wrap_content"
+                android:text="Syarat dan Ketentuan Penggunaan Hi Jobs! ini merupakan bentuk “Perjanjian” yang mengikat antara Kami, Hoper sebagai penyedia dan/atau pemberi akses terhadap layanan-layanan dan anda (“Pengguna”). Pengguna disarankan membaca dengan seksama karena dapat berdampak kepada hak dan kewajiban Pengguna di bawah hukum."
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:translationX="15dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5dp" />
+
+            <TextView
+                android:id="@+id/textView53"
+                android:layout_width="380dp"
+                android:layout_height="wrap_content"
+                android:text="Dengan mengunduh, mendaftar dan/atau menggunakan aplikasi Hi Jobs!, maka Pengguna dianggap telah membaca, mengerti, memahami dan menyetujui semua isi dalam Syarat dan Ketentuan. Syarat dan Ketentuan ini merupakan bentuk kesepakatan yang dituangkan dalam sebuah perjanjian yang sah. Jika Pengguna tidak menyetujui salah satu, sebagian, atau seluruh isi Syarat dan Ketentuan, maka Pengguna tidak diperkenankan menggunakan layanan aplikasi Hi Jobs!."
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:translationX="15dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="15dp" />
+
+            <TextView
+                android:id="@+id/textView54"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1.	DEFINISI"
+                android:textAlignment="viewStart"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:translationX="15dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5dp" />
+
+            <TextView
+                android:id="@+id/textView55"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:text="Setiap kata atau istilah berikut yang digunakan di dalam Syarat dan Ketentuan ini memiliki arti seperti berikut di bawah, kecuali jika kata atau istilah yang bersangkutan di dalam pemakaiannya dengan tegas menentukan lain."
+                android:textAlignment="viewStart"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:translationX="33dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5dp" />
+
+            <TextView
+                android:id="@+id/textView56"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:text="1.1	“Aplikasi” adalah aplikasi Hi Jobs! yang merupakan aplikasi milik dan dikembangkan oleh Hoper yang digunakan untuk memberikan dan mendapatkan akses terhadap Layanan."
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:translationX="33dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5dp" />
+
+            <TextView
+                android:id="@+id/textView57"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:text="1.2	“Kami”, berarti Hoper selaku pemilik dan pengelola aplikasi Hi Jobs!."
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:translationX="33dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5dp" />
+
+            <TextView
+                android:id="@+id/textView58"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:text="1.3	“Anda”, berarti tiap orang yang mengakses dan menggunakan layanan dan jasa yang disediakan oleh Kami."
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:translationX="33dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5dp" />
+
+            <TextView
+                android:id="@+id/textView59"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:text="1.4	 “Layanan”, berarti tiap dan keseluruhan jasa serta informasi yang ada, dan tidak terbatas pada informasi yang disediakan, layanan aplikasi dan fitur, dukungan data, serta aplikasi Hi Jobs!  yang disediakan oleh Kami."
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:translationX="33dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5dp" />
+
+            <TextView
+                android:id="@+id/textView60"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:text="1.5	“Pengguna” merupakan pihak yang menggunakan layanan Hi Jobs!, termasuk namun tidak terbatas pada Karyawan, Pebisnis maupun pihak lain yang sekedar berkunjung ke aplikasi Hi Jobs!."
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:translationX="33dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5dp" />
+
+            <TextView
+                android:id="@+id/textView61"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:text="1.6	“Informasi Pribadi”, berarti tiap dan seluruh data pribadi yang diberikan oleh Pengguna di aplikasi Kami, termasuk namun tidak terbatas pada nama, nomor identifikasi serta dokumen dan data lainnya sebagaimana diminta pada ringkasan pendaftaran akun serta pada ringkasan aplikasi registrasi."
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:translationX="33dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5dp" />
+
+            <TextView
+                android:id="@+id/textView62"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:text="1.7	“Partner” merupakan pihak-pihak yang bekerja sama dengan Kami sebagai penyedia Layanan pada Hi Jobs!."
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:translationX="33dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5dp" />
+
+            <TextView
+                android:id="@+id/textView63"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:text="1.8	“Periode Uji Coba” merupakan periode dimana Pengguna dapat menikmati fitur-fitur maupun konten-konten tertentu pada Aplikasi secara gratis sesuai dengan jangka waktu yang ditetapkan oleh Kami."
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:translationX="33dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="15dp" />
+
+            <TextView
+                android:id="@+id/textView64"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2.	LAYANAN DAN/ATAU JASA"
+                android:textAlignment="viewStart"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:translationX="15dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5dp" />
+
+            <TextView
+                android:id="@+id/textView65"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:text="Kami memberikan tiap dan/atau seluruh informasi mengenai produk-produk informasi lowongan kerja yang disediakan oleh Kami dan Mitra. Layanan ini memungkinkan Anda untuk dapat melihat, menelaah, membaca, serta membandingkan informasi tersebut."
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:translationX="33dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5dp" />
+
+            <TextView
+                android:id="@+id/textView66"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:text="2.1	Informasi yang terdapat dalam aplikasi Kami ditampilkan sesuai keadaan kenyataan untuk tujuan informasi umum. Kami berusaha untuk selalu menyediakan dan menampilkan informasi yang terbaru dan akurat, namun Kami tidak menjamin bahwa segala informasi sesuai dengan ketepatan waktu atau relevansi dengan kebutuhan Anda."
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:translationX="33dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5dp" />
+
+            <TextView
+                android:id="@+id/textView67"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:text="2.2	Informasi di aplikasi Kami ini disediakan untuk membantu Anda dalam memilih produk atau layanan informasi lowongan kerja yang sesuai dengan kebutuhan Anda. Anda sepenuhnya bertanggung jawab atas setiap dan seluruh keputusan terkait pemilihan produk dan layanan, atau dalam memilih informasi lowongan kerja yang berkaitan dengan sebuah produk atau layanan. Dengan menyelesaikan proses registrasi, Anda dianggap mengajukan diri dan setuju untuk mendapatkan suatu produk atau layanan tertentu."
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:translationX="33dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5dp" />
+
+            <TextView
+                android:id="@+id/textView68"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:text="2.3	Layanan yang Kami berikan tidak bersifat memaksa atau mengikat, serta tidak mengharuskan Anda untuk mengikuti informasi yang tersedia. Tidak ada situasi atau keadaan apapun yang dapat membuat Kami dikenakan tanggung jawab atas kemungkinan kerugian yang Anda alami karena pengambilan keputusan yang dilakukan oleh Anda sendiri terkait tindakan atas informasi produk yang Kami sampaikan di aplikasi Kami."
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:translationX="33dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5dp" />
+
+            <TextView
+                android:id="@+id/textView69"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:text="2.4	Kami memiliki hak untuk kapan saja menampilkan, mengubah, menghapus, menghilangkan, atau menambahkan segala konten yang ditampilkan dalam aplikasi Kami."
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:translationX="33dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="15dp" />
+
+            <TextView
+                android:id="@+id/textView70"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3.	PENGGUNA LAYANAN DAN JASA"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:translationX="15dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5dp" />
+
+            <TextView
+                android:id="@+id/textView71"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:text="Dengan Anda melanjutkan penggunaan atau pengaksesan aplikasi ini, berarti Anda telah menyatakan serta menjamin kepada Kami bahwa:"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:translationX="33dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5dp" />
+
+            <TextView
+                android:id="@+id/textView72"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:text="3.1	Anda hanya diperkenankan untuk mengakses dan/atau menggunakan aplikasi ini untuk keperluan informasi lowongan kerja yang berarti bahwa aplikasi ini hanya boleh diakses dan digunakan secara langsung oleh individu atau entitas yang sedang mencari informasi lowongan kerja untuk individu atau entitas tersebut. Akses dan penggunaan aplikasi di luar dari keperluan informasi lowongan kerja dilarang keras, dan melanggar Syarat dan Ketentuan ini."
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:translationX="33dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5dp" />
+
+            <TextView
+                android:id="@+id/textView73"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:text="3.2	Anda tidak diperkenankan menggunakan aplikasi dalam hal sebagai berikut :"
+                android:textAlignment="viewStart"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:translationX="33dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5dp" />
+
+            <TextView
+                android:id="@+id/textView74"
+                android:layout_width="325dp"
+                android:layout_height="wrap_content"
+                android:text="•	Untuk menyakiti, menyiksa, mempermalukan, memfitnah, mencemarkan nama baik, mengancam, mengintimidasi atau mengganggu orang atau entitas lain, menyampaikan komentar yang mengandung unsur menyinggung SARA (suku, agama, ras dan antar golongan), atau apapun yang melanggar privasi atau yang Kami anggap cabul, menghina, penuh kebencian, tidak senonoh, tidak patut, tidak pantas, tidak dapat diterima, mendiskriminasikan atau merusak."
+                android:textAlignment="viewStart"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:translationX="58dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5dp" />
+
+            <TextView
+                android:id="@+id/textView75"
+                android:layout_width="325dp"
+                android:layout_height="wrap_content"
+                android:text="•	Melanggar atau menyalahi hak orang lain, termasuk hak kekayaan intelektual tanpa kecuali: hak paten, merek dagang, hak cipta, rahasia dagang, publisitas, dan hak milik lainnya."
+                android:textAlignment="viewStart"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:translationX="58dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5dp" />
+
+            <TextView
+                android:id="@+id/textView76"
+                android:layout_width="325dp"
+                android:layout_height="wrap_content"
+                android:text="•	Mengubah atau mengatur ulang bagian apapun dalam aplikasi ini yang dapat mengganggu atau menaruh beban berlebihan pada sistem komunikasi dan teknis Kami."
+                android:textAlignment="viewStart"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:translationX="58dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5dp" />
+
+            <TextView
+                android:id="@+id/textView77"
+                android:layout_width="325dp"
+                android:layout_height="wrap_content"
+                android:text="•	Menggunakan kode komputer otomatis, proses, program, robot, net crawler, spider, pemrosesan data, trawling atau kode komputer, proses, program atau sistem ‘screen scraping’ alternatif."
+                android:textAlignment="viewStart"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:translationX="58dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5dp" />
+
+            <TextView
+                android:id="@+id/textView78"
+                android:layout_width="325dp"
+                android:layout_height="wrap_content"
+                android:text="•	Melanggar Syarat dan Ketentuan, atau petunjuk lainnya yang ada pada aplikasi Kami."
+                android:textAlignment="viewStart"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:translationX="58dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5dp" />
+
+            <TextView
+                android:id="@+id/textView79"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:text="3.3	Kami tidak bertanggung jawab atas kegagalan akibat kendala mengakses aplikasi Kami, dan metode penggunaan aplikasi yang berada di luar kendali Kami."
+                android:textAlignment="viewStart"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:translationX="33dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5dp" />
+
+            <TextView
+                android:id="@+id/textView80"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:text="3.4	Kami tidak bertanggung jawab atau dapat dipersalahkan atas kegagalan saat Anda mengakses atau menggunakan aplikasi ini."
+                android:textAlignment="viewStart"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:translationX="33dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="15dp" />
+
+            <TextView
+                android:id="@+id/textView81"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4.	APLIKASI"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:translationX="15dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5dp" />
+
+            <TextView
+                android:id="@+id/textView82"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:text="4.1	Pengguna memahami dan menyetujui bahwa Layanan Hi Jobs! terintegrasi dengan atau dapat berinteraksi dengan aplikasi."
+                android:textAlignment="viewStart"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:translationX="33dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5dp" />
+
+            <TextView
+                android:id="@+id/textView83"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:text="4.2	Pengguna memahami dan menyetujui bahwa aplikasi ini mungkin memiliki syarat dan ketentuan penggunaan dan kebijakan privasi tersendiri."
+                android:textAlignment="viewStart"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:translationX="33dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5dp" />
+
+            <TextView
+                android:id="@+id/textView84"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:text="4.3	Pengguna memahami dan menyetujui bahwa Hi Jobs! Kami tidak mendukung dan tidak bertanggung jawab atas perilaku, fitur, Layanan atau konten aplikasi, apapun yang mungkin Pengguna adakan dengan penyedia Aplikasi, ataupun Hi Jobs! tidak menjamin kompatibilitas atau keberlanjutan kompatibilitas Aplikasi dengan Layanan."
+                android:textAlignment="viewStart"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:translationX="33dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="15dp" />
+
+            <TextView
+                android:id="@+id/textView85"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5.	KOMENTAR"
+                android:textAlignment="viewStart"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:translationX="15dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5dp" />
+
+            <TextView
+                android:id="@+id/textView86"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:text="Jika Anda ingin memberikan komentar, masukan, ataupun sanggahan mengenai tiap atau keseluruhan Konten dan informasi dalam aplikasi, Kami menyediakan kontak email milik Kami. Anda diperbolehkan untuk memberi komentar, dan setuju bahwa jika diperlukan, akan Kami pergunakan untuk kepentingan informasi dan ditampilkan di aplikasi Kami. Dan harap diperhatikan bahwa komentar, masukan, atau sanggahan yang Anda berikan tidak boleh bertentangan dengan Syarat dan Ketentuan ini, terutama seperti tercantum dalam poin 3.2."
+                android:textAlignment="viewStart"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:translationX="33dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="15dp" />
+
+            <TextView
+                android:id="@+id/textView87"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="6.	UMUM"
+                android:textAlignment="viewStart"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:translationX="15dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5dp" />
+
+            <TextView
+                android:id="@+id/textView88"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:text="6.1	Penggunaan dan aplikasi ini diatur oleh Syarat dan Ketentuan serta Kebijakan Privasi Kami. Dengan mengakses atau menggunakan aplikasi ini, informasi, atau aplikasi lainnya yang disediakan oleh aplikasi Hi Jobs!, berarti Anda telah memahami dan menyetujui serta terikat dan tunduk dengan segala Syarat dan Ketentuan serta Kebijakan Privasi yang berlaku di aplikasi Kami."
+                android:textAlignment="viewStart"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:translationX="33dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5dp" />
+
+            <TextView
+                android:id="@+id/textView89"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:text="6.2	Kami berhak untuk menutup atau mengubah atau memperbaharui Syarat dan Ketentuan ini setiap saat tanpa pemberitahuan, dan berhak untuk membuat keputusan akhir jika ada ketidakcocokan. Kami tidak bertanggung jawab atas kerugian dalam bentuk apa pun yang timbul akibat perubahan pada Syarat dan Ketentuan."
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:translationX="33dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5dp" />
+
+            <TextView
+                android:id="@+id/textView90"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:text="6.3	Jika Anda masih memerlukan jawaban atas pertanyaan yang tidak terdapat dalam Syarat dan Ketentuan ini, Anda dapat menghubungi Kami di"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:translationX="33dp" />
+
+            <TextView
+                android:id="@+id/textView91"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:autoLink="email"
+                android:text="email : hijobsbyhoper@gmail.com"
+                android:textColor="#000000"
+                android:textColorLink="#0000FF"
+                android:textSize="16sp"
+                android:translationX="33dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="60dp" />
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
