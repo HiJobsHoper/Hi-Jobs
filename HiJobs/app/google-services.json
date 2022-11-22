@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "940426453472",
+    "firebase_url": "https://hi-jobs-a1a2b-default-rtdb.firebaseio.com",
     "project_id": "hi-jobs-a1a2b",
     "storage_bucket": "hi-jobs-a1a2b.appspot.com"
   },
@@ -13,6 +14,14 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "940426453472-362494qnseqakprjnhl6q4fugp6rm2f5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "id.kharisma.studio.hijobs",
+            "certificate_hash": "feddb765ac868a213506b7049a45c4762de4fdf9"
+          }
+        },
         {
           "client_id": "940426453472-fultj1n8qlj8v6dfrqemn9jf39l5713s.apps.googleusercontent.com",
           "client_type": 3
