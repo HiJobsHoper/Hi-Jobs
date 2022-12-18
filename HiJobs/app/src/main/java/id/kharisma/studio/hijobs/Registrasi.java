@@ -1,14 +1,14 @@
 package id.kharisma.studio.hijobs;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
@@ -17,21 +17,33 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FirebaseFirestore;
 
-import java.util.regex.Pattern;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Registrasi extends AppCompatActivity {
 
     private Button btnSimpan;
     private EditText etNama, etEmail, etTelvon, etPass, etPassKon;
+    private FirebaseAuth firebaseAuth;
+    private FirebaseFirestore db;
+    private static final String TAG = "Registrasi";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         setContentView(R.layout.activity_registrasi);
+
+        firebaseAuth = FirebaseAuth.getInstance(); //Menghubungkan dengan firebase authentifikasi
+        db = FirebaseFirestore.getInstance(); //Menghubungkan dengar cloud firestore
 
         //Inisialisasi material desain
         btnSimpan = findViewById(R.id.btnReg_Simpan);
@@ -42,7 +54,7 @@ public class Registrasi extends AppCompatActivity {
         etPassKon = findViewById(R.id.txtReg_KonfirmasiSandi);
 
         //Show hide password menggunakan icon mata
-        ImageView imageViewShowHidePwd = findViewById(R.id.img_RegSandi);
+        ImageView imageViewShowHidePwd = findViewById(R.id.imgReg_Sandi);
         imageViewShowHidePwd.setImageResource(R.drawable.ic_baseline_visibility_off_24);
         imageViewShowHidePwd.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,16 +73,36 @@ public class Registrasi extends AppCompatActivity {
             }
         });
 
+        //Show hide confirmation password menggunakan icon mata
+        ImageView imageViewShowHideConPwd = findViewById(R.id.imgReg_KonfirSandi);
+        imageViewShowHideConPwd.setImageResource(R.drawable.ic_baseline_visibility_off_24);
+        imageViewShowHideConPwd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (etPassKon.getTransformationMethod().equals(HideReturnsTransformationMethod.getInstance())){
+                    //Membuat password tidak kelihatan
+                    etPassKon.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                    //Mengganti icon
+                    imageViewShowHideConPwd.setImageResource(R.drawable.ic_baseline_visibility_off_24);
+                }else {
+                    //Membuat password tidak kelihatan
+                    etPassKon.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                    //Mengganti icon
+                    imageViewShowHideConPwd.setImageResource(R.drawable.ic_baseline_visibility_24);
+                }
+            }
+        });
+
         //Button simpan
         btnSimpan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //Inisialisasi data ke dalam variabel
                 String Nama = etNama.getText().toString();
-                String Email = etEmail.getText().toString();
+                String Email = etEmail.getText().toString().trim();
                 String Telvon = etTelvon.getText().toString();
-                String Pass = etPass.getText().toString();
-                String PassKon = etPassKon.getText().toString();
+                String Pass = etPass.getText().toString().trim();
+                String PassKon = etPassKon.getText().toString().trim();
 
                 if (cek_Reg(Nama,Email,Telvon,Pass,PassKon) == true) {
                     createAccound(Nama,Email,Telvon,Pass); //Membuat akun pada database
@@ -157,11 +189,11 @@ public class Registrasi extends AppCompatActivity {
     }
 
     //Menambahkan akun pada database
-    public void createAccound(String Nama,String Email,String Telvon,String Pass) {
+    public void createAccound(String nama,String email,String telvon,String pass) {
 
         FirebaseAuth firebaseauth = FirebaseAuth.getInstance();
 
-        firebaseauth.createUserWithEmailAndPassword(Email,Pass).addOnCompleteListener(
+        firebaseauth.createUserWithEmailAndPassword(email,pass).addOnCompleteListener(
                 Registrasi.this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
@@ -171,6 +203,8 @@ public class Registrasi extends AppCompatActivity {
                     firebaseauth.signOut(); //Keluar dari akun
                     //Kembali ke halaman login
                     startActivity(new Intent(Registrasi.this, Rekomendasi.class)); //Membuka halaman rekomendasi
+                    setDataAkun(nama,email,telvon); //Menyimpan data akun ke database
+                    //setDataProfil(email); //Menyimpan data profil ke database
                     finish(); //Menutup halaman registrasi
                 } else {
                     //Akun gagal di buat
@@ -179,5 +213,66 @@ public class Registrasi extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    //Memasukkan data ke database
+    public void setDataAkun(String nama,String email,String televon) {
+
+        //Membuat kolom user
+        Map<String, Object> akun = new HashMap<>();
+        akun.put("Nama", nama);
+        akun.put("Email", email);
+        akun.put("Nomor Televon", televon);
+
+        //Menyimpan referensi data pada database berdasarkan user id
+        db.collection("Akun").document(email)
+                .set(akun)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        //Log
+                        Log.d(TAG, "DocumentSnapshot successfully written!");
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        //Log
+                        Log.w(TAG, "Error writing document", e);
+                    }
+                });
+    }
+
+    //Memasukkan data ke database
+    public void setDataProfil(String email) {
+
+        //Membuat kolom user
+        Map<String, Object> profil = new HashMap<>();
+        profil.put("Nama", "");
+        profil.put("Jenis Kelamin", "");
+        profil.put("Tanggal Lahir", "");
+        profil.put("Pendidikan Terakhir", "");
+        profil.put("Alamat", "");
+        profil.put("Keahlian", "");
+        profil.put("Pengalaman Kerja", "");
+        profil.put("Kewarganegaraan", "");
+
+        //Menyimpan referensi data pada database berdasarkan user id
+        db.collection("Profil").document(email)
+                .set(profil)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        //Log
+                        Log.d(TAG, "DocumentSnapshot successfully written!");
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        //Log
+                        Log.w(TAG, "Error writing document", e);
+                    }
+                });
     }
 }

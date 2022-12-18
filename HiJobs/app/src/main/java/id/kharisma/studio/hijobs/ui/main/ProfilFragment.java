@@ -8,6 +8,7 @@ import androidx.lifecycle.ViewModelProvider;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -22,9 +23,14 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import id.kharisma.studio.hijobs.HubungiKami;
+import id.kharisma.studio.hijobs.KelolaAkun;
 import id.kharisma.studio.hijobs.KelolaProfil;
 import id.kharisma.studio.hijobs.Login;
 import id.kharisma.studio.hijobs.Pengaturan;
@@ -35,7 +41,9 @@ import id.kharisma.studio.hijobs.Usaha;
 
 public class ProfilFragment extends Fragment {
 
-    private EditText etNama, etProfil, etUsaha, etRiwayat, etHK, etPengaturan, etKeluar;
+    private EditText etNama, etProfil, etAkun, etUsaha, etRiwayat, etHK, etPengaturan, etKeluar, txtNama;
+    private String nama, email;
+    private FirebaseFirestore db;
 
     public static ProfilFragment newInstance() {return new ProfilFragment();}
 
@@ -51,17 +59,40 @@ public class ProfilFragment extends Fragment {
 
         etNama = fragmentView.findViewById(R.id.txtMain2_Nama);
         etProfil = fragmentView.findViewById(R.id.txtMain2_KelolaProfil);
+        etAkun = fragmentView.findViewById(R.id.txtMain2_KelolaAkun);
         etUsaha = fragmentView.findViewById(R.id.txtMain2_UsahaSaya);
         etRiwayat = fragmentView.findViewById(R.id.txtMain2_RiwayatLamaran);
         etHK = fragmentView.findViewById(R.id.txtMain2_HubKami);
         etPengaturan = fragmentView.findViewById(R.id.txtMain2_Pengaturan);
         etKeluar = fragmentView.findViewById(R.id.txtMain2_Keluar);
+        txtNama = fragmentView.findViewById(R.id.txtMain2_Nama);
+
+        db = FirebaseFirestore.getInstance(); //Menghubungkan dengar cloud firestore
+        SharedPreferences sharedPreferences = getContext().getSharedPreferences("HiJobs",0);
+        email = sharedPreferences.getString("Email",null);
+
+        CollectionReference query = db.collection("Akun");
+        query.document(email).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot snapshot) {
+                nama = snapshot.getString("Nama");
+                txtNama.setText(nama);
+            }
+        });
 
         //Edit text kelola profil
         etProfil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getActivity(), KelolaProfil.class)); //Membuka halaman kelola profil
+            }
+        });
+
+        //Edit text kelola akun
+        etAkun.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), KelolaAkun.class)); //Membuka halaman kelola akun
             }
         });
 

@@ -32,7 +32,7 @@
         android:inputType="textPersonName"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.386"
+        app:layout_constraintHorizontal_bias="0.191"
         app:layout_constraintStart_toEndOf="@+id/imgMain2_ProfilLogo"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
@@ -41,7 +41,7 @@
         android:id="@+id/txtMain2_UsahaSaya"
         android:layout_width="290dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="16dp"
         android:cursorVisible="false"
         android:ems="10"
         android:focusable="false"
@@ -52,13 +52,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtMain2_KelolaProfil" />
+        app:layout_constraintTop_toBottomOf="@+id/txtMain2_KelolaAkun" />
 
     <EditText
         android:id="@+id/txtMain2_RiwayatLamaran"
         android:layout_width="290dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="16dp"
         android:cursorVisible="false"
         android:ems="10"
         android:focusable="false"
@@ -75,7 +75,7 @@
         android:id="@+id/txtMain2_HubKami"
         android:layout_width="290dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="16dp"
         android:cursorVisible="false"
         android:ems="10"
         android:focusable="false"
@@ -92,7 +92,7 @@
         android:id="@+id/txtMain2_Pengaturan"
         android:layout_width="290dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="16dp"
         android:cursorVisible="false"
         android:ems="10"
         android:focusable="false"
@@ -109,7 +109,7 @@
         android:id="@+id/txtMain2_Keluar"
         android:layout_width="290dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="16dp"
         android:cursorVisible="false"
         android:ems="10"
         android:focusable="false"
@@ -126,7 +126,7 @@
         android:id="@+id/txtMain2_KelolaProfil"
         android:layout_width="290dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="48dp"
         android:cursorVisible="false"
         android:ems="10"
         android:focusable="false"
@@ -138,5 +138,22 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgMain2_ProfilLogo" />
+
+    <EditText
+        android:id="@+id/txtMain2_KelolaAkun"
+        android:layout_width="290dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:cursorVisible="false"
+        android:ems="10"
+        android:focusable="false"
+        android:inputType="textPersonName"
+        android:text="Kelola Akun"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtMain2_KelolaProfil" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

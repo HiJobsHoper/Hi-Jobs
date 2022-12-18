@@ -2,6 +2,7 @@ package id.kharisma.studio.hijobs;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -16,6 +17,7 @@ public class Pencarian extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         setContentView(R.layout.activity_pencarian);
 
         //Membuat tombol kembali pada Navigasi Bar
@@ -39,11 +41,6 @@ public class Pencarian extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.halaman_pencarian, menu);
-        /*MenuItem searchItem = menu.findItem(R.id.menu_search);
-        final SearchView searchView = (SearchView) searchItems.getActionView();
-        searchView.setQueryHint("Cari Toko");
-        searchView.setIconified(false);
-        searchView.clearFocus();*/
         return true;
     }
 

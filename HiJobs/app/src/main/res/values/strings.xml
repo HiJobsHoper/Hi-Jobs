@@ -16,6 +16,8 @@
     <string name="menu_chat">Chat</string>
     <string name="menu_filter">Filter</string>
 
+    <string name="db_id">0</string>
+
     <string-array name="Jenis_Kelamin">
         <item> Laki-Laki </item>
         <item> Perempuan </item>
@@ -25,6 +27,11 @@
         <item> SMA/SMK </item>
         <item> S1 </item>
         <item> S2 </item>
+    </string-array>
+
+    <string-array name="Kategori_Pekerjaan">
+        <item> Barang </item>
+        <item> Jasa </item>
     </string-array>
 
     <string-array name="Waktu_Kerja">

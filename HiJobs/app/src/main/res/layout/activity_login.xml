@@ -206,12 +206,4 @@
         app:layout_constraintTop_toTopOf="@+id/btnLog_MasukGoogle"
         app:srcCompat="@drawable/google" />
 
-    <ProgressBar
-        android:id="@+id/prograssBar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:elevation="10dp"
-        android:visibility="gone"
-        tools:ignore="MissingConstraints" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

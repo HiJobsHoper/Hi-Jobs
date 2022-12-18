@@ -1,6 +1,7 @@
 package id.kharisma.studio.hijobs;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +11,7 @@ public class SyaratKetentuan extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         setContentView(R.layout.activity_syarat_ketentuan);
 
         //Membuat tombol back pada Navigasi Bar

@@ -90,7 +90,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <ImageView
-        android:id="@+id/img_RegSandi"
+        android:id="@+id/imgReg_Sandi"
         android:layout_width="30dp"
         android:layout_height="32dp"
         android:layout_below="@+id/txtReg_KataSandi"
@@ -99,10 +99,10 @@
         android:layout_marginBottom="1dp"
         app:layout_constraintBottom_toBottomOf="@+id/txtReg_KataSandi"
         app:layout_constraintEnd_toEndOf="@+id/txtReg_KataSandi"
-        app:layout_constraintHorizontal_bias="0.965"
+        app:layout_constraintHorizontal_bias="0.966"
         app:layout_constraintStart_toStartOf="@+id/txtReg_KataSandi"
         app:layout_constraintTop_toTopOf="@+id/txtReg_KataSandi"
-        app:layout_constraintVertical_bias="0.285" />
+        app:layout_constraintVertical_bias="0.333" />
 
     <TextView
         android:id="@+id/textView4"
@@ -127,6 +127,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <ImageView
+        android:id="@+id/imgReg_KonfirSandi"
+        android:layout_width="30dp"
+        android:layout_height="32dp"
+        android:layout_below="@+id/txtReg_KonfirmasiSandi"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="1dp"
+        app:layout_constraintBottom_toBottomOf="@+id/txtReg_KonfirmasiSandi"
+        app:layout_constraintEnd_toEndOf="@+id/txtReg_KonfirmasiSandi"
+        app:layout_constraintHorizontal_bias="0.966"
+        app:layout_constraintStart_toStartOf="@+id/txtReg_KonfirmasiSandi"
+        app:layout_constraintTop_toTopOf="@+id/txtReg_KonfirmasiSandi"
+        app:layout_constraintVertical_bias="0.333" />
 
     <TextView
         android:id="@+id/textView5"

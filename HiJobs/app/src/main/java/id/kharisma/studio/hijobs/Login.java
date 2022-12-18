@@ -3,11 +3,13 @@ package id.kharisma.studio.hijobs;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.text.InputType;
@@ -32,12 +34,16 @@ import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class Login extends AppCompatActivity {
 
@@ -48,16 +54,16 @@ public class Login extends AppCompatActivity {
     private CheckBox chkPass;
     private FirebaseAuth mAuth;
     private GoogleSignInClient mGoogleSignInClient;
+    private FirebaseFirestore db;
+    private String email, nama;
     private static final String TAG = "Google Sign In";
     private static final int RC_SIGN_IN = 0704;
-    private ProgressBar loadingBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         setContentView(R.layout.activity_login);
-
-        skipLogin(); //Langsung ke halaman utama
 
         //Inisialisasi material desain
         tvReg = findViewById(R.id.textView9);
@@ -67,7 +73,9 @@ public class Login extends AppCompatActivity {
         etPass = findViewById(R.id.txtLog_KataSandi);
         chkPass = findViewById(R.id.chkLog_TampilSandi);
         btnGoogle = findViewById(R.id.btnLog_MasukGoogle);
-        loadingBar = findViewById(R.id.prograssBar);
+        db = FirebaseFirestore.getInstance();
+
+        skipLogin(); //Langsung ke halaman utama
 
         //Membuka halaman registrasi
         tvReg.setOnClickListener(new View.OnClickListener() {
@@ -82,7 +90,9 @@ public class Login extends AppCompatActivity {
         tvPass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showRecoverPasswordDialog();
+                //showRecoverPasswordDialog();
+                startActivity(new Intent(Login.this, LupaPassword.class)); //Membuka halaman lupa password
+                finish(); //Menutup halaman login
             }
         });
 
@@ -103,8 +113,8 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //inisialisasi data ke dalam variabel
-                String Email = etEmail.getText().toString();
-                String Pass = etPass.getText().toString();
+                String Email = etEmail.getText().toString().trim();
+                String Pass = etPass.getText().toString().trim();
 
                 if (cek_Log(Email,Pass) == true) {
                     loginAccound(Email,Pass); //Masuk menggunakan akun pada database
@@ -123,65 +133,6 @@ public class Login extends AppCompatActivity {
                 .requestEmail()
                 .build();
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
-    }
-
-    //Menampilkan pesan untuk mereset kata sandi
-    private void showRecoverPasswordDialog() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        LinearLayout linearLayout = new LinearLayout(this);
-        builder.setTitle("Recover Password");
-        final EditText email = new EditText(this);
-
-        //Alert dialog untuk reset kata sandi
-        email.setHint("Email");
-        email.setMinEms(16);
-        email.setInputType(InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS);
-        linearLayout.addView(email);
-        linearLayout.setPadding(10,10,10,10);
-        builder.setView(linearLayout);
-
-        //Tombol recover
-        builder.setPositiveButton("Recover", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                //Reset kata sandi
-                String mail = email.getText().toString().trim();
-                if (!mail.equals("")) {
-                    mAuth.sendPasswordResetEmail(mail).addOnCompleteListener(new OnCompleteListener<Void>() {
-                        @Override
-                        public void onComplete(@NonNull Task<Void> task) {
-                            loadingBar.setVisibility(View.VISIBLE);
-                            if (task.isSuccessful()) {
-                                //Pesan email berhasil di kirim
-                                Toast.makeText(Login.this,
-                                        "Silahkan cek inbox untuk link reset kata sandi", Toast.LENGTH_LONG).show();
-                            } else {
-                                //Pesan email gagal di kirim
-                                Toast.makeText(Login.this, "Link gagal dikirim", Toast.LENGTH_LONG).show();
-                            }
-                        }
-                    }).addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            loadingBar.setVisibility(View.VISIBLE);
-                            Toast.makeText(Login.this, "Error Failed", Toast.LENGTH_LONG).show();
-                        }
-                    });
-                } else {
-                    Toast.makeText(Login.this, "Email belum diisi", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-
-        //Tombol batal
-        builder.setNegativeButton("Batal", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.dismiss();
-            }
-        });
-
-        builder.create().show();
     }
 
     //Memastikan pengisian data sesuai ketentuan
@@ -229,9 +180,7 @@ public class Login extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful() && task.getResult()!= null) {
                     //Berhasil login
-                    //firebaseauth.getCurrentUser().sendEmailVerification();
-                    startActivity(new Intent(Login.this, HalamanUtama.class)); //Membuka halaman utama
-                    finish(); //Menutup halaman login
+                    login();
                 } else {
                     //Gagal login
                     Toast.makeText(Login.this,
@@ -293,8 +242,27 @@ public class Login extends AppCompatActivity {
         FirebaseUser currentUser = firebaseauth.getCurrentUser();
 
         if (currentUser != null) {
-            startActivity(new Intent(Login.this, HalamanUtama.class)); //Membuka halaman utama
-            finish(); //Menutup halaman login
+            login();
         }
+    }
+
+    public void login() {
+        email = FirebaseAuth.getInstance().getCurrentUser().getEmail();
+        CollectionReference query = db.collection("Akun");
+        query.document(email).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot snapshot) {
+                nama = snapshot.getString("Nama");
+
+                SharedPreferences sharedPreferences = getBaseContext().getSharedPreferences("HiJobs",0);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString("Nama",nama);
+                editor.putString("Email",email);
+                editor.commit();
+            }
+        });
+
+        startActivity(new Intent(Login.this, HalamanUtama.class)); //Membuka halaman utama
+        finish(); //Menutup halaman login
     }
 }

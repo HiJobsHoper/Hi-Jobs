@@ -1,6 +1,7 @@
 package id.kharisma.studio.hijobs;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import android.os.Bundle;
 import android.widget.SearchView;
@@ -12,6 +13,7 @@ public class DaftarChat extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         setContentView(R.layout.activity_daftar_chat);
 
         srchChat = findViewById(R.id.DaftarChat_Cari);

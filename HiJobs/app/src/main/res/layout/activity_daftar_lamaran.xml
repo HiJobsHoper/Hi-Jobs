@@ -30,7 +30,17 @@
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="380dp" />
+
+
         </LinearLayout>
+
     </ScrollView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvDaftarLamawan_item"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        tools:layout_editor_absoluteY="787dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

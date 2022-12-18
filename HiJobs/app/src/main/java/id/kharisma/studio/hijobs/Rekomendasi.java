@@ -1,6 +1,7 @@
 package id.kharisma.studio.hijobs;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
@@ -19,11 +20,12 @@ public class Rekomendasi extends AppCompatActivity {
 
     private Button btnLewati, btnLanjut;
     private CardView cvBarang, cvJasa;
-    private String Barang,Jasa = null;
+    private String Barang, Jasa = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         setContentView(R.layout.activity_rekomendasi);
 
         //Inisialisasi material desain
@@ -46,7 +48,6 @@ public class Rekomendasi extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //Syntax...
-                Toast.makeText(Rekomendasi.this, Barang +" "+ Jasa, Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(Rekomendasi.this, HalamanUtama.class)); //Membuka halaman utama
                 finish(); //Menutup halaman rekomendasi
             }
