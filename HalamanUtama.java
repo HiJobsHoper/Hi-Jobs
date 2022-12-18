@@ -1,10 +1,21 @@
 package id.kharisma.studio.hijobs;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatDelegate;
+import androidx.appcompat.widget.SearchView;
+import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -13,17 +24,21 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 
 import id.kharisma.studio.hijobs.databinding.ActivityHalamanUtamaBinding;
+import id.kharisma.studio.hijobs.ui.main.BerandaFragment;
 
 public class HalamanUtama extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityHalamanUtamaBinding binding;
+    private String nama, email;
+    private TextView txtnama, txtemail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         binding = ActivityHalamanUtamaBinding.inflate(getLayoutInflater());
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO); //Menonaktifkan night mode
         setContentView(binding.getRoot());
 
         setSupportActionBar(binding.appBarHalamanBeranda.toolbar);
@@ -39,12 +54,31 @@ public class HalamanUtama extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_halaman_beranda);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+
+        getSupportFragmentManager().beginTransaction().
+                replace(R.id.beranda, new BerandaFragment(), "beranda").
+                commit();
+        // Now later we can lookup the fragment by tag
+//        BerandaFragment berandaFragment = (BerandaFragment)
+//                getSupportFragmentManager().findFragmentByTag("beranda");
+
+        //Mengganti usernama dan email pada navigasi drawer
+        SharedPreferences sharedPreferences = getBaseContext().getSharedPreferences("HiJobs",0);
+        nama = sharedPreferences.getString("Nama",null);
+        email = sharedPreferences.getString("Email",null);
+        View nav_view = navigationView.getHeaderView(0);
+        txtnama = nav_view.findViewById(R.id.txtNav_Nama);
+        txtemail = nav_view.findViewById(R.id.txtNav_Email);
+        if (nama != null && email != null) {
+            txtnama.setText(nama);
+            txtemail.setText(email);
+        }
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.halaman_utama, menu);
+        getMenuInflater().inflate(R.menu.halaman_beranda, menu);
         return true;
     }
 
@@ -53,5 +87,20 @@ public class HalamanUtama extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_halaman_beranda);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.menu_search:
+                /*final SearchView searchView = (SearchView) item.getActionView();
+                searchView.setQueryHint("Kolom pencarian");
+                searchView.setIconified(false);
+                searchView.clearFocus();*/
+                break;
+            case R.id.menu_chat:
+                startActivity(new Intent(this, DaftarChat.class));
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
