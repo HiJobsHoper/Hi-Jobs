@@ -45,6 +45,9 @@ import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Login extends AppCompatActivity {
 
     private TextView tvReg,tvPass;
@@ -225,13 +228,11 @@ public class Login extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             //Sign in success, update UI with the signed-in user's information
                             Log.d(TAG,"signInWithCredential:success");
-                            FirebaseUser user = mAuth.getCurrentUser();
+                            login();
                         } else {
                             //If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithCredential:failure", task.getException());
                         }
-                        startActivity(new Intent(Login.this, HalamanUtama.class)); //Membuka halaman utama
-                        finish(); //Menutup halaman login
                     }
                 });
     }
@@ -253,16 +254,66 @@ public class Login extends AppCompatActivity {
             @Override
             public void onSuccess(DocumentSnapshot snapshot) {
                 nama = snapshot.getString("Nama");
-
-                SharedPreferences sharedPreferences = getBaseContext().getSharedPreferences("HiJobs",0);
-                SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putString("Nama",nama);
-                editor.putString("Email",email);
-                editor.commit();
+//                setData(); //Menyiapkan data akun dan profil kosong
+                Intent intent = new Intent(Login.this, HalamanUtama.class);
+                intent.putExtra("Nama", nama);
+                intent.putExtra("Email", email);
+                startActivity(intent); //Membuka halaman utama
+                finish(); //Menutup halaman login
             }
         });
+    }
 
-        startActivity(new Intent(Login.this, HalamanUtama.class)); //Membuka halaman utama
-        finish(); //Menutup halaman login
+    public void setData() {
+        Map<String, Object> akun = new HashMap<>();
+        akun.put("Nama", "");
+        akun.put("Email", "");
+        akun.put("Nomor Televon", "");
+        akun.put("Rekomendasi", "");
+
+        db.collection("Akun").document(email)
+                .set(akun)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        //Log
+                        Log.d(TAG, "DocumentSnapshot successfully written!");
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        //Log
+                        Log.w(TAG, "Error writing document", e);
+                    }
+                });
+
+        Map<String, Object> profil = new HashMap<>();
+        profil.put("Nama", "");
+        profil.put("Jenis Kelamin", "");
+        profil.put("Tanggal Lahir", "");
+        profil.put("Pendidikan Terakhir", "");
+        profil.put("Alamat", "");
+        profil.put("Keahlian", "");
+        profil.put("Pengalaman Kerja", "");
+        profil.put("Kewarganegaraan", "");
+
+        //Menyimpan referensi data pada database berdasarkan user id
+        db.collection("Profil").document(email)
+                .set(profil)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        //Log
+                        Log.d(TAG, "DocumentSnapshot successfully written!");
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        //Log
+                        Log.w(TAG, "Error writing document", e);
+                    }
+                });
     }
 }

@@ -11,8 +11,8 @@ android {
         applicationId "id.kharisma.studio.hijobs"
         minSdk 26
         targetSdk 32
-        versionCode 1
-        versionName "1.0"
+        versionCode 4
+        versionName "1.2"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -51,6 +51,7 @@ dependencies {
     implementation 'com.firebaseui:firebase-ui-firestore:7.1.1'
     implementation 'com.google.firebase:firebase-core:19.0.2'
     implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'com.google.firebase:firebase-analytics:21.2.0'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'

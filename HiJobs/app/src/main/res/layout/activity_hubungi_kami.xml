@@ -21,7 +21,7 @@
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginStart="42dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="40dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/email" />
@@ -31,7 +31,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="33dp"
+        android:layout_marginTop="41dp"
         android:text="Email : "
         android:textColor="#000000"
         android:textColorLink="#0000FF"

@@ -22,89 +22,6 @@
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="16dp" />
-
-            <TextView
-                android:id="@+id/textView26"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Deksripsi Usaha"
-                android:textColor="#000000"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:translationX="50dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.204"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.133" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="10dp" />
-
-            <EditText
-                android:id="@+id/txtDetLow_DeskUsaha"
-                android:layout_width="315dp"
-                android:layout_height="match_parent"
-                android:background="@null"
-                android:clickable="false"
-                android:ems="10"
-                android:focusable="false"
-                android:hint="Deskripsi usaha saya"
-                android:inputType="textMultiLine|textPersonName"
-                android:translationX="50dp"
-                tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,TouchTargetSizeCheck,TouchTargetSizeCheck" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="10dp" />
-
-            <TextView
-                android:id="@+id/textView27"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Lokasi Usaha"
-                android:textColor="#000000"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:translationX="50dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.161"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.338" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="10dp" />
-
-            <EditText
-                android:id="@+id/txtDetLow_AlamatUsaha"
-                android:layout_width="315dp"
-                android:layout_height="match_parent"
-                android:background="@null"
-                android:clickable="false"
-                android:ems="10"
-                android:focusable="false"
-                android:hint="Lokasi usaha saya"
-                android:inputType="textMultiLine|textPersonName"
-                android:translationX="50dp"
-                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-
-            <com.google.android.gms.maps.MapView
-                android:id="@+id/mapDetLow_GoogleMaps"
-                android:layout_width="315dp"
-                android:layout_height="125dp"
-                android:translationX="50dp"
-                android:visibility="gone"
-                tools:ignore="SpeakableTextPresentCheck"
-                tools:visibility="gone" />
-
-            <Space
-                android:layout_width="match_parent"
                 android:layout_height="10dp" />
 
             <TextView
@@ -128,17 +45,212 @@
                 android:layout_height="10dp" />
 
             <EditText
-                android:id="@+id/txtDetLow_LowDetLow"
+                android:id="@+id/txtDetLow_LowKerja"
                 android:layout_width="315dp"
                 android:layout_height="match_parent"
                 android:background="@null"
                 android:clickable="false"
                 android:ems="10"
                 android:focusable="false"
-                android:hint="Lowongan pekerjaan yang tersedia"
+                android:hint="Lowongan pekerjaan tersedia"
                 android:inputType="textMultiLine|textPersonName"
                 android:translationX="50dp"
                 tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,TouchTargetSizeCheck,TouchTargetSizeCheck" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <TextView
+                android:id="@+id/textView26"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Deksripsi Lowongan"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:translationX="50dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.204"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.133" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <EditText
+                android:id="@+id/txtDetLow_DeskLow"
+                android:layout_width="315dp"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:clickable="false"
+                android:ems="10"
+                android:focusable="false"
+                android:hint="Deskripsi lowongan"
+                android:inputType="textMultiLine|textPersonName"
+                android:translationX="50dp"
+                tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,TouchTargetSizeCheck,TouchTargetSizeCheck" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <TextView
+                android:id="@+id/textView93"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kategori Pekerjaan"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:translationX="50dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <EditText
+                android:id="@+id/txtDetLow_KateKerja"
+                android:layout_width="315dp"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:clickable="false"
+                android:ems="10"
+                android:focusable="false"
+                android:hint="Kategori pekerjaan"
+                android:inputType="textMultiLine|textPersonName"
+                android:translationX="50dp"
+                tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,TouchTargetSizeCheck,TouchTargetSizeCheck" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <TextView
+                android:id="@+id/textView27"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Alamat"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:translationX="50dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.161"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.338" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <EditText
+                android:id="@+id/txtDetLow_Alamat"
+                android:layout_width="315dp"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:clickable="false"
+                android:ems="10"
+                android:focusable="false"
+                android:hint="Alamat lowongan"
+                android:inputType="textMultiLine|textPersonName"
+                android:translationX="50dp"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+            <com.google.android.gms.maps.MapView
+                android:id="@+id/mapDetLow_GoogleMaps"
+                android:layout_width="315dp"
+                android:layout_height="125dp"
+                android:translationX="50dp"
+                android:visibility="gone"
+                tools:ignore="SpeakableTextPresentCheck"
+                tools:visibility="gone" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <TextView
+                android:id="@+id/textView72"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kota"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:translationX="50dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.161"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.338" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <EditText
+                android:id="@+id/txtDetLow_Kota"
+                android:layout_width="315dp"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:clickable="false"
+                android:ems="10"
+                android:focusable="false"
+                android:hint="Kota lowongan"
+                android:inputType="textMultiLine|textPersonName"
+                android:translationX="50dp"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <TextView
+                android:id="@+id/textView31"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Persyaratan Lowongan"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:translationX="50dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.161"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.338" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <EditText
+                android:id="@+id/txtDetLow_Syarat"
+                android:layout_width="315dp"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:clickable="false"
+                android:ems="10"
+                android:focusable="false"
+                android:gravity="end|start"
+                android:hint="Persyaratan untuk bekerja"
+                android:inputType="textPersonName|textMultiLine"
+                android:translationX="50dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.531"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.467"
+                tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
             <Space
                 android:layout_width="match_parent"
@@ -165,7 +277,7 @@
                 android:layout_height="10dp" />
 
             <EditText
-                android:id="@+id/txtDetLow_WaktuDetLow"
+                android:id="@+id/txtDetLow_WaktuKerja"
                 android:layout_width="315dp"
                 android:layout_height="match_parent"
                 android:background="@null"
@@ -225,56 +337,6 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.789"
                 tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="10dp" />
-
-            <TextView
-                android:id="@+id/textView31"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Syarat Pekerjaan"
-                android:textColor="#000000"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:translationX="50dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.161"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.338" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="10dp" />
-
-            <EditText
-                android:id="@+id/txtDetLow_Syarat"
-                android:layout_width="315dp"
-                android:layout_height="match_parent"
-                android:background="@null"
-                android:clickable="false"
-                android:ems="10"
-                android:focusable="false"
-                android:gravity="end|start"
-                android:hint="Syarat yang dibutuhkan untuk bekerja"
-                android:inputType="textPersonName|textMultiLine"
-                android:translationX="50dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.531"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.467"
-                tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="10dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
 
             <Space
                 android:layout_width="match_parent"

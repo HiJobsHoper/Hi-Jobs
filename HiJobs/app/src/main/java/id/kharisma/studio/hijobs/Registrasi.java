@@ -202,9 +202,13 @@ public class Registrasi extends AppCompatActivity {
                     firebaseauth.getCurrentUser().sendEmailVerification(); //Mengirim pemberitahuan ke email
                     firebaseauth.signOut(); //Keluar dari akun
                     //Kembali ke halaman login
-                    startActivity(new Intent(Registrasi.this, Rekomendasi.class)); //Membuka halaman rekomendasi
-                    setDataAkun(nama,email,telvon); //Menyimpan data akun ke database
-                    //setDataProfil(email); //Menyimpan data profil ke database
+                    Intent intent = new Intent(Registrasi.this, Rekomendasi.class);
+                    intent.putExtra("nama", nama);
+                    intent.putExtra("email", email);
+                    intent.putExtra("telvon", telvon);
+                    startActivity(intent); //Membuka halaman rekomendasi
+                    //setDataAkun(nama,email,telvon); //Menyimpan data akun ke database
+                    setDataProfil(email); //Menyimpan data profil ke database
                     finish(); //Menutup halaman registrasi
                 } else {
                     //Akun gagal di buat

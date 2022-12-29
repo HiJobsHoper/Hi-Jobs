@@ -22,7 +22,7 @@
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="16dp" />
+                android:layout_height="25dp" />
 
             <TextView
                 android:id="@+id/textView10"
@@ -44,7 +44,7 @@
                 android:layout_height="48dp"
                 android:background="@drawable/custom_edittext"
                 android:ems="10"
-                android:hint="Masukkan lowongan yang tersedia"
+                android:hint="Masukkan lowongan tersedia"
                 android:inputType="textPersonName"
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
@@ -80,7 +80,7 @@
                 android:layout_height="10dp" />
 
             <EditText
-                android:id="@+id/txtTbhLow_DeskUsaha"
+                android:id="@+id/txtTbhLow_Desk"
                 android:layout_width="315dp"
                 android:layout_height="125dp"
                 android:layout_gravity="center_vertical|end"
@@ -141,6 +141,106 @@
                 android:layout_height="10dp" />
 
             <TextView
+                android:id="@+id/textView25"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="sans-serif"
+                android:text="Alamat Lengkap"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:translationX="50dp"
+                android:translationY="-40dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/txtTbhLow_Alamat"
+                android:layout_width="315dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/custom_edittext"
+                android:ems="10"
+                android:gravity="start|top"
+                android:hint="Masukkan alamat lengkap"
+                android:inputType="textMultiLine"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:paddingRight="20dp"
+                android:translationX="50dp"
+                android:translationY="-38dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/textView24"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="sans-serif"
+                android:text="Kota"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:translationX="50dp"
+                android:translationY="-45dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/txtTbhLow_Kota"
+                android:layout_width="315dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/custom_edittext"
+                android:ems="10"
+                android:hint="Masukkan kota lowongan"
+                android:inputType="textPersonName"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:translationX="50dp"
+                android:translationY="-44dp" />
+
+            <TextView
+                android:id="@+id/textView19"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="sans-serif"
+                android:text="Link Google Maps"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:translationX="50dp"
+                android:translationY="-48dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/txtTbhLow_LinkMaps"
+                android:layout_width="315dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/custom_edittext"
+                android:ems="10"
+                android:hint="Masukkan link google maps"
+                android:inputType="textPersonName"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:translationX="50dp"
+                android:translationY="-47dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
                 android:id="@+id/textView27"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -148,7 +248,7 @@
                 android:textColor="#000000"
                 android:textSize="18sp"
                 android:translationX="50dp"
-                android:translationY="-25dp"
+                android:translationY="-37dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.161"
@@ -173,7 +273,7 @@
                 android:paddingTop="10dp"
                 android:paddingRight="20dp"
                 android:translationX="50dp"
-                android:translationY="-25dp"
+                android:translationY="-37dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.531"
@@ -193,7 +293,7 @@
                 android:textColor="#000000"
                 android:textSize="18sp"
                 android:translationX="50dp"
-                android:translationY="-25dp"
+                android:translationY="-37dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.161"
@@ -214,7 +314,7 @@
                 android:minHeight="48dp"
                 android:paddingLeft="10dp"
                 android:translationX="50dp"
-                android:translationY="-25dp"
+                android:translationY="-37dp"
                 tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
             <ImageView
@@ -222,7 +322,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:translationX="330dp"
-                android:translationY="-60dp"
+                android:translationY="-72dp"
                 app:srcCompat="@drawable/ic_baseline_arrow_drop_down_24" />
 
             <Space
@@ -237,7 +337,7 @@
                 android:textColor="#000000"
                 android:textSize="18sp"
                 android:translationX="50dp"
-                android:translationY="-50dp"
+                android:translationY="-60dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.133"
@@ -260,7 +360,7 @@
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:translationX="50dp"
-                android:translationY="-50dp"
+                android:translationY="-60dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.531"
@@ -274,7 +374,7 @@
 
             <Button
                 android:id="@+id/btnTbhLow_Tambah"
-                android:layout_width="99dp"
+                android:layout_width="wrap_content"
                 android:layout_height="52dp"
                 android:text="Tambah"
                 android:translationX="265dp"

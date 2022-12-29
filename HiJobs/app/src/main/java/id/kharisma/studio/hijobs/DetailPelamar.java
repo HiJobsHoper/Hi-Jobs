@@ -15,7 +15,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 public class DetailPelamar extends AppCompatActivity {
 
     private FirebaseFirestore db;
-    private EditText etNama, etJenis, etTanggal, etUmur, etPendidikan, etAlamat, etKeahlian,
+    private EditText etNama, etJenis, etTanggal, etUmur, etNomor, etPendidikan, etAlamat, etKeahlian,
             etPengalaman, etKewarganegaraan;
 
     @Override
@@ -28,6 +28,7 @@ public class DetailPelamar extends AppCompatActivity {
         etJenis = findViewById(R.id.txtDetPel_JenisKelamin);
         etTanggal = findViewById(R.id.txtDetPel_TglLahir);
         etUmur = findViewById(R.id.txtDetPel_Umur);
+        etNomor = findViewById(R.id.txtDetPel_Nomor);
         etPendidikan = findViewById(R.id.txtDetPel_Pendidikan);
         etAlamat = findViewById(R.id.txtDetPel_Alamat);
         etKeahlian = findViewById(R.id.txtDetPel_Keahlian);
@@ -35,17 +36,17 @@ public class DetailPelamar extends AppCompatActivity {
         etKewarganegaraan = findViewById(R.id.txtDetPel_Kewarganegaraan);
         db = FirebaseFirestore.getInstance();
 
-        SharedPreferences sharedPreferences = getBaseContext().getSharedPreferences("HiJobs",0);
-        String idLow = sharedPreferences.getString("Id_Low",null);
+        String idLow = getIntent().getStringExtra("Id_Low");
 
         CollectionReference query = db.collection("DaftarPelamar");
-        query.document(getIntent().getStringExtra("Id_Low")).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+        query.document(idLow).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
             public void onSuccess(DocumentSnapshot snapshot) {
                 etNama.setText(snapshot.getString("Nama"));
                 etJenis.setText(snapshot.getString("Jenis Kelamin"));
                 etTanggal.setText(snapshot.getString("Tanggal Lahir"));
                 etUmur.setText(snapshot.getString("Umur"));
+                etNomor.setText(snapshot.getString("Nomor Televon"));
                 etPendidikan.setText(snapshot.getString("Pendidikan Terakhir"));
                 etAlamat.setText(snapshot.getString("Alamat"));
                 etKeahlian.setText(snapshot.getString("Keahlian"));

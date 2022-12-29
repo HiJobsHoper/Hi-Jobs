@@ -1,11 +1,7 @@
 package id.kharisma.studio.hijobs.ui.main;
 
 import androidx.appcompat.app.AlertDialog;
-import androidx.fragment.app.FragmentActivity;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.lifecycle.ViewModelProvider;
 
-import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -21,7 +17,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -33,15 +28,14 @@ import id.kharisma.studio.hijobs.HubungiKami;
 import id.kharisma.studio.hijobs.KelolaAkun;
 import id.kharisma.studio.hijobs.KelolaProfil;
 import id.kharisma.studio.hijobs.Login;
+import id.kharisma.studio.hijobs.Lowongan;
 import id.kharisma.studio.hijobs.Pengaturan;
 import id.kharisma.studio.hijobs.R;
-import id.kharisma.studio.hijobs.Registrasi;
 import id.kharisma.studio.hijobs.RiwayatLamaran;
-import id.kharisma.studio.hijobs.Usaha;
 
 public class ProfilFragment extends Fragment {
 
-    private EditText etNama, etProfil, etAkun, etUsaha, etRiwayat, etHK, etPengaturan, etKeluar, txtNama;
+    private EditText etNama, etProfil, etAkun, etLowongan, etRiwayat, etHK, etPengaturan, etKeluar, txtNama;
     private String nama, email;
     private FirebaseFirestore db;
 
@@ -60,7 +54,7 @@ public class ProfilFragment extends Fragment {
         etNama = fragmentView.findViewById(R.id.txtMain2_Nama);
         etProfil = fragmentView.findViewById(R.id.txtMain2_KelolaProfil);
         etAkun = fragmentView.findViewById(R.id.txtMain2_KelolaAkun);
-        etUsaha = fragmentView.findViewById(R.id.txtMain2_UsahaSaya);
+        etLowongan = fragmentView.findViewById(R.id.txtMain2_LowonganSaya);
         etRiwayat = fragmentView.findViewById(R.id.txtMain2_RiwayatLamaran);
         etHK = fragmentView.findViewById(R.id.txtMain2_HubKami);
         etPengaturan = fragmentView.findViewById(R.id.txtMain2_Pengaturan);
@@ -84,7 +78,9 @@ public class ProfilFragment extends Fragment {
         etProfil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getActivity(), KelolaProfil.class)); //Membuka halaman kelola profil
+                Intent intent = new Intent(getActivity(), KelolaProfil.class); //Membuka halaman kelola profil
+                intent.putExtra("Email",email);
+                startActivity(intent);
             }
         });
 
@@ -92,15 +88,19 @@ public class ProfilFragment extends Fragment {
         etAkun.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getActivity(), KelolaAkun.class)); //Membuka halaman kelola akun
+                Intent intent = new Intent(getActivity(), KelolaAkun.class); //Membuka halaman kelola akun
+                intent.putExtra("Email",email);
+                startActivity(intent);
             }
         });
 
-        //Edit text usaha saya
-        etUsaha.setOnClickListener(new View.OnClickListener() {
+        //Edit text lowongan saya
+        etLowongan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getActivity(), Usaha.class)); //Membuka halaman usaha
+                Intent intent = new Intent(getActivity(), Lowongan.class); //Membuka halaman lowongan
+                intent.putExtra("Email",email);
+                startActivity(intent);
             }
         });
 
@@ -108,7 +108,9 @@ public class ProfilFragment extends Fragment {
         etRiwayat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getActivity(), RiwayatLamaran.class)); //Membuka halaman riwayat lamaran
+                Intent intent = new Intent(getActivity(), RiwayatLamaran.class); //Membuka halaman riwayat lamaran
+                intent.putExtra("Email",email);
+                startActivity(intent);
             }
         });
 

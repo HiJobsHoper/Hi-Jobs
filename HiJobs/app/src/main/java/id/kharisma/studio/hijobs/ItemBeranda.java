@@ -8,22 +8,30 @@ public class ItemBeranda{
     @DocumentId
     private String DocumentId;
 
-    private String Nama, Nama_Usaha, Lokasi_Usaha;
+    private String Nama, Alamat, Kota;
 
-    public String getNama_Usaha() {
-        return Nama_Usaha;
+    public String getNama() {
+        return Nama;
     }
 
-    public void setNama_Usaha(String nama_Usaha) {
-        Nama_Usaha = nama_Usaha;
+    public void setNama(String nama) {
+        Nama = nama;
     }
 
-    public String getLokasi_Usaha() {
-        return Lokasi_Usaha;
+    public String getAlamat() {
+        return Alamat;
     }
 
-    public void setLokasi_Usaha(String lokasi_Usaha) {
-        Lokasi_Usaha = lokasi_Usaha;
+    public void setAlamat(String alamat) {
+        Alamat = alamat;
+    }
+
+    public String getKota() {
+        return Kota;
+    }
+
+    public void setKota(String kota) {
+        Kota = kota;
     }
 
     public String getDocumentId() {
@@ -37,18 +45,10 @@ public class ItemBeranda{
 
     public ItemBeranda() {}
 
-    public ItemBeranda(String documentId,String nama,String nama_Usaha,String lokasi_Usaha) {
+    public ItemBeranda(String documentId,String nama,String alamat,String kota) {
         Nama = nama;
+        Alamat = alamat;
+        Kota = kota;
         DocumentId = documentId;
-        Nama_Usaha = nama_Usaha;
-        Lokasi_Usaha = lokasi_Usaha;
-    }
-
-    public String getNama() {
-        return Nama;
-    }
-
-    public void setNama(String nama) {
-        Nama = nama;
     }
 }

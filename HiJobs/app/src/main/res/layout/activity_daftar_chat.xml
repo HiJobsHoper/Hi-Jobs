@@ -29,7 +29,7 @@
                 android:backgroundTint="#EDEEEF"
                 android:queryHint="Cari Kontak Toko &amp; Pelamar"
                 android:translationX="35dp"
-                android:translationY="20dp"
+                android:translationY="25dp"
                 app:iconifiedByDefault="false">
 
             </SearchView>

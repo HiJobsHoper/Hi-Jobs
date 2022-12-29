@@ -65,7 +65,7 @@ public class KelolaProfil extends AppCompatActivity implements AdapterView.OnIte
     private Button btnSimpan;
     private FirebaseAuth firebaseAuth;
     private FirebaseFirestore db;
-    private String nama, email;
+    private String email;
     private static final String TAG = "Kelola Profil";
 
     @Override
@@ -90,15 +90,54 @@ public class KelolaProfil extends AppCompatActivity implements AdapterView.OnIte
         btnSimpan = findViewById(R.id.btnKelProfil_Simpan);
         txtNama = findViewById(R.id.txtKelProfil_Nama);
 
-        SharedPreferences sharedPreferences = getBaseContext().getSharedPreferences("HiJobs",0);
-        email = sharedPreferences.getString("Email",null);
+        email = getIntent().getStringExtra("Email");
 
         CollectionReference query = db.collection("Akun");
         query.document(email).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
             public void onSuccess(DocumentSnapshot snapshot) {
-                nama = snapshot.getString("Nama");
-                txtNama.setText(nama);
+                txtNama.setText(snapshot.getString("Nama"));
+            }
+        });
+        CollectionReference query1 = db.collection("Profil");
+        query1.document(email).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot snapshot) {
+                String jenis = snapshot.getString("Jenis Kelamin");
+                String pendidikan = snapshot.getString("Pendidikan Terakhir");
+
+                etNama.setText(snapshot.getString("Nama"));
+                etTanggal.setText(snapshot.getString("Tanggal Lahir"));
+                etUmur.setText(snapshot.getString("Umur"));
+                etAlamat.setText(snapshot.getString("Alamat"));
+                etKeahlian.setText(snapshot.getString("Keahlian"));
+                etPengalaman.setText(snapshot.getString("Pengalaman Kerja"));
+                etKewarganegaraan.setText(snapshot.getString("Kewarganegaraan"));
+
+                if (!jenis.equals("")) {
+                    if (jenis.equals("Laki-laki")) {
+                        spnJenis.setSelection(1);
+                    } else if (jenis.equals("Perempuan")) {
+                        spnJenis.setSelection(2);
+                    } else {
+                        spnJenis.setSelection(0);
+                    }
+                } else {
+                    spnJenis.setSelection(0);
+                }
+                if (!pendidikan.equals("")) {
+                    if (pendidikan.equals("SMA/SMK")) {
+                        spnPendidikan.setSelection(1);
+                    } else if (pendidikan.equals("S1")) {
+                        spnPendidikan.setSelection(2);
+                    } else if (pendidikan.equals("S2")) {
+                        spnPendidikan.setSelection(3);
+                    } else {
+                        spnPendidikan.setSelection(0);
+                    }
+                } else {
+                    spnPendidikan.setSelection(0);
+                }
             }
         });
 
@@ -263,8 +302,8 @@ public class KelolaProfil extends AppCompatActivity implements AdapterView.OnIte
             spnPendidikan.requestFocus();
         }
         if (Umur.isEmpty()) {
-            etNama.setError("Age required");
-            etNama.requestFocus();
+            etUmur.setError("Age required");
+            etUmur.requestFocus();
         }
         if (Tanggal.isEmpty()) {
             etTanggal.setError("Birth required");
@@ -303,8 +342,6 @@ public class KelolaProfil extends AppCompatActivity implements AdapterView.OnIte
     public void setData(String Nama,String Jenis,String Tanggal,String Umur,String Pendidikan,
                         String Alamat,String Keahlian,String Pengalaman,String Kewarganegaraan) {
 
-        final String email = firebaseAuth.getCurrentUser().getEmail();
-
         //Membuat kolom user
         Map<String, Object> user = new HashMap<>();
         user.put("Nama", Nama);
@@ -319,19 +356,19 @@ public class KelolaProfil extends AppCompatActivity implements AdapterView.OnIte
 
         //Menyimpan referensi data pada database berdasarkan user id
         db.collection("Profil").document(email)
-                .set(user)
+                .update(user)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
-                        etNama.setText("");
-                        spnJenis.setSelection(0);
-                        etTanggal.setText("");
-                        etUmur.setText("");
-                        spnPendidikan.setSelection(0);
-                        etAlamat.setText("");
-                        etKeahlian.setText("");
-                        etPengalaman.setText("");
-                        etKewarganegaraan.setText("");
+//                        etNama.setText("");
+//                        spnJenis.setSelection(0);
+//                        etTanggal.setText("");
+//                        etUmur.setText("");
+//                        spnPendidikan.setSelection(0);
+//                        etAlamat.setText("");
+//                        etKeahlian.setText("");
+//                        etPengalaman.setText("");
+//                        etKewarganegaraan.setText("");
                         Snackbar.make(findViewById(R.id.btnKelProfil_Simpan),
                                 "Data berhasil ditambahkan", Snackbar.LENGTH_LONG).show();
                         //Log

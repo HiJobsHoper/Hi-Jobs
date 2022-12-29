@@ -24,10 +24,10 @@ public class FirestoreAdapterBeranda extends FirestoreRecyclerAdapter<ItemBerand
 
     @Override
     protected void onBindViewHolder(@NonNull ItemBerandaViewHolder holder, int position, @NonNull ItemBeranda model) {
-        holder.Nama.setText(model.getNama());
-        holder.NamaUsaha.setText(model.getNama_Usaha());
-        holder.Alamat.setText(model.getLokasi_Usaha());
-        holder.Nama.setTag(R.string.db_id,model.getDocumentId());
+        holder.nama.setText(model.getNama());
+        holder.alamat.setText(model.getAlamat());
+        holder.kota.setText(model.getKota());
+        holder.nama.setTag(R.string.db_id,model.getDocumentId());
     }
 
     @NonNull
@@ -39,13 +39,13 @@ public class FirestoreAdapterBeranda extends FirestoreRecyclerAdapter<ItemBerand
 
     public class ItemBerandaViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        private TextView Nama, NamaUsaha, Alamat;
+        private TextView nama, alamat, kota;
 
         public ItemBerandaViewHolder(@NonNull View itemView) {
             super(itemView);
-            Nama = itemView.findViewById(R.id.txtItemBeranda_NamaBeranda);
-            NamaUsaha = itemView.findViewById(R.id.txtItemBeranda_NamaUsaha);
-            Alamat = itemView.findViewById(R.id.txtItemBeranda_Alamat);
+            nama = itemView.findViewById(R.id.txtItemBeranda_NamaLow);
+            alamat = itemView.findViewById(R.id.txtItemBeranda_Alamat);
+            kota = itemView.findViewById(R.id.txtItemBeranda_Kota);
             itemView.setOnClickListener(this);
         }
 

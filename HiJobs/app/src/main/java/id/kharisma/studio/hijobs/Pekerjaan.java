@@ -32,16 +32,14 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.HashMap;
 import java.util.Map;
 
-import id.kharisma.studio.hijobs.ui.main.FavoritFragment;
-
 public class Pekerjaan extends AppCompatActivity {
 
     private FirebaseFirestore db;
-    private String email, lowongan;
-    private TextView txtdeskusaha, txtlokasi, txtdesklow, txtwaktu, txtgaji, txtsyarat;
+    private String email, lowongan, telvon;
+    private TextView txtDesk, txtAlamat, txtKota, txtSyarat, txtWaktu, txtGaji;
     private Button btnlamar;
     private ImageView imgchat, imgfav;
-    private String nama, jenis, tanggal, umur, pendidikan, alamat, keahlian, pengalaman, kewarganegaraan;
+    private String nama, jenis, tanggal, umur, pendidikan, alamat, keahlian, pengalaman, kewarganegaraan = "";
     private final String TAG = "Pekerjaan";
 
     @Override
@@ -52,20 +50,20 @@ public class Pekerjaan extends AppCompatActivity {
 
         //Inisialisasi material desain
         db = FirebaseFirestore.getInstance(); //Menghubungkan dengan cloud firestore
-        txtdeskusaha = findViewById(R.id.txtKerja_DeskUsaha);
-        txtlokasi = findViewById(R.id.txtKerja_AlamatUsaha);
-        txtdesklow = findViewById(R.id.txtKerja_LowKerja);
-        txtwaktu = findViewById(R.id.txtKerja_WaktuKerja);
-        txtgaji = findViewById(R.id.txtKerja_Gaji);
-        txtsyarat = findViewById(R.id.txtKerja_Syarat);
+        txtDesk = findViewById(R.id.txtKerja_DeskLow);
+        txtAlamat = findViewById(R.id.txtKerja_Alamat);
+        txtKota = findViewById(R.id.txtKerja_Kota);
+        txtSyarat = findViewById(R.id.txtKerja_Syarat);
+        txtWaktu = findViewById(R.id.txtKerja_WaktuDetLow);
+        txtGaji = findViewById(R.id.txtKerja_Gaji);
         btnlamar = findViewById(R.id.btnKerja_Lamar);
         imgchat = findViewById(R.id.imgKerja_Chat);
         imgfav = findViewById(R.id.imgKerja_Favorite);
 
         SharedPreferences sharedPreferences = getBaseContext().getSharedPreferences("HiJobs",0);
         email = sharedPreferences.getString("Email",null);
-        lowongan = sharedPreferences.getString("NamaLow",null);
         String idLow = getIntent().getStringExtra("Id_Low");
+        lowongan = getIntent().getStringExtra("Nama_Low");
         setTitle(lowongan); //Mengubah nama label pada activity
 
         //Query
@@ -73,12 +71,12 @@ public class Pekerjaan extends AppCompatActivity {
         query.document(idLow).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
             public void onSuccess(DocumentSnapshot snapshot) {
-                txtdeskusaha.setText(snapshot.getString("Deskripsi_Usaha"));
-                txtlokasi.setText(snapshot.getString("Lokasi_Usaha"));
-                txtdesklow.setText(snapshot.getString("Deskripsi"));
-                txtwaktu.setText(snapshot.getString("Waktu"));
-                txtgaji.setText("Rp." + snapshot.getString("Gaji"));
-                txtsyarat.setText(snapshot.getString("Syarat"));
+                txtDesk.setText(snapshot.getString("Deskripsi"));
+                txtAlamat.setText(snapshot.getString("Alamat"));
+                txtKota.setText(snapshot.getString("Kota"));
+                txtSyarat.setText(snapshot.getString("Syarat"));
+                txtWaktu.setText(snapshot.getString("Waktu"));
+                txtGaji.setText("Rp." + snapshot.getString("Gaji"));
             }
         });
 
@@ -99,19 +97,29 @@ public class Pekerjaan extends AppCompatActivity {
 
                         String idLow = getIntent().getStringExtra("Id_Low");
 
-                        Map<String, String> pelamar = new HashMap<>();
-                        pelamar.put("Nama", nama);
-                        pelamar.put("Jenis Kelamin", jenis);
-                        pelamar.put("Tanggal Lahir", tanggal);
-                        pelamar.put("Umur", umur);
-                        pelamar.put("Pendidikan Terakhir", pendidikan);
-                        pelamar.put("Alamat", alamat);
-                        pelamar.put("Keahlian", keahlian);
-                        pelamar.put("Pengalaman Kerja", pengalaman);
-                        pelamar.put("Kewarganegaraan",kewarganegaraan);
-                        pelamar.put("Id_Low", idLow);
+                        db.collection("Akun").document(email)
+                                .get()
+                                .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                                    @Override
+                                    public void onSuccess(DocumentSnapshot snapshot) {
+                                        telvon = snapshot.getString("Nomor Televon");
 
-                        BtnLamar(pelamar);
+                                        Map<String, String> pelamar = new HashMap<>();
+                                        pelamar.put("Nama", nama);
+                                        pelamar.put("Jenis Kelamin", jenis);
+                                        pelamar.put("Tanggal Lahir", tanggal);
+                                        pelamar.put("Umur", umur);
+                                        pelamar.put("Pendidikan Terakhir", pendidikan);
+                                        pelamar.put("Alamat", alamat);
+                                        pelamar.put("Keahlian", keahlian);
+                                        pelamar.put("Pengalaman Kerja", pengalaman);
+                                        pelamar.put("Kewarganegaraan",kewarganegaraan);
+                                        pelamar.put("Nomor Televon", telvon);
+                                        pelamar.put("Id_Low", idLow);
+
+                                        BtnLamar(pelamar);
+                                    }
+                                });
                     }
                 });
 
@@ -125,7 +133,7 @@ public class Pekerjaan extends AppCompatActivity {
         imgfav.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Toast.makeText(Pekerjaan.this, "Fitur ini masih belum tersedia", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -139,27 +147,85 @@ public class Pekerjaan extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String idLow = getIntent().getStringExtra("Id_Low");
+                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(Pekerjaan.this);
 
-                //Menyimpan referensi data pada database berdasarkan user id
-                db.collection("DaftarPelamar").document(idLow)
-                        .set(pelamar)
-                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                alertDialogBuilder.setTitle("");
+                alertDialogBuilder.setMessage("Apakah anda yakin ingin melamar pekerjaan ini?")
+                        .setCancelable(false)
+                        .setPositiveButton("Lamar", new DialogInterface.OnClickListener() {
                             @Override
-                            public void onSuccess(Void aVoid) {
-                                Toast.makeText(Pekerjaan.this, "Lamaran anda telah terkirim", Toast.LENGTH_SHORT).show();
-                                //Log
-                                Log.d(TAG, "DocumentSnapshot successfully written!");
+                            public void onClick(DialogInterface dialog, int which) {
+                                if (!nama.equals("") && !jenis.equals("") && !tanggal.equals("") &&
+                                        !umur.equals("") && !pendidikan.equals("") &&
+                                        !alamat.equals("") && !kewarganegaraan.equals("")) {
+                                    //Menyimpan referensi data pada database berdasarkan user id
+                                    db.collection("DaftarPelamar").document()
+                                            .set(pelamar)
+                                            .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                @Override
+                                                public void onSuccess(Void aVoid) {
+                                                    AlertDialog.Builder alertDialogBuilder1 = new AlertDialog.Builder(Pekerjaan.this);
+
+                                                    alertDialogBuilder1.setTitle("");
+                                                    alertDialogBuilder1.setMessage("Lamaran anda telah terkirim!")
+                                                            .setCancelable(false)
+                                                            .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                                                                @Override
+                                                                public void onClick(DialogInterface dialog, int which) {
+
+                                                                }
+                                                            });
+                                                    AlertDialog alertDialog1 = alertDialogBuilder1.create();
+                                                    alertDialog1.show();
+                                                    //Log
+                                                    Log.d(TAG, "DocumentSnapshot successfully written!");
+                                                }
+                                            })
+                                            .addOnFailureListener(new OnFailureListener() {
+                                                @Override
+                                                public void onFailure(@NonNull Exception e) {
+                                                    AlertDialog.Builder alertDialogBuilder2 = new AlertDialog.Builder(Pekerjaan.this);
+
+                                                    alertDialogBuilder2.setTitle("");
+                                                    alertDialogBuilder2.setMessage("Lamaran anda gagal dikirim!")
+                                                            .setCancelable(false)
+                                                            .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                                                                @Override
+                                                                public void onClick(DialogInterface dialog, int which) {
+
+                                                                }
+                                                            });
+                                                    AlertDialog alertDialog2 = alertDialogBuilder2.create();
+                                                    alertDialog2.show();
+                                                    //Log
+                                                    Log.w(TAG, "Error writing document", e);
+                                                }
+                                            });
+                                } else {
+                                    AlertDialog.Builder alertDialogBuilder3 = new AlertDialog.Builder(Pekerjaan.this);
+
+                                    alertDialogBuilder3.setTitle("");
+                                    alertDialogBuilder3.setMessage("Data diri anda belum lengkap, " +
+                                                    "silahkan isi data diri profil anda terlebih dahulu.")
+                                            .setCancelable(false)
+                                            .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                                                @Override
+                                                public void onClick(DialogInterface dialog, int which) {
+
+                                                }
+                                            });
+                                    AlertDialog alertDialog3 = alertDialogBuilder3.create();
+                                    alertDialog3.show();
+                                }
                             }
-                        })
-                        .addOnFailureListener(new OnFailureListener() {
+                        }).setNegativeButton("Batal", new DialogInterface.OnClickListener() {
                             @Override
-                            public void onFailure(@NonNull Exception e) {
-                                Toast.makeText(Pekerjaan.this, "Lamaran anda gagal dikirim", Toast.LENGTH_SHORT).show();
-                                //Log
-                                Log.w(TAG, "Error writing document", e);
+                            public void onClick(DialogInterface dialog, int which) {
+
                             }
                         });
+                AlertDialog alertDialog = alertDialogBuilder.create();
+                alertDialog.show();
             }
         });
     }

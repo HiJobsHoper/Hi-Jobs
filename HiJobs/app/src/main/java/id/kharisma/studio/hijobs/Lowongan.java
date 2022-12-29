@@ -20,6 +20,7 @@ import com.getbase.floatingactionbutton.FloatingActionButton;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
@@ -34,7 +35,7 @@ import java.util.Vector;
 public class Lowongan extends AppCompatActivity implements FirestoreAdapterLowongan.OnListItemClick {
 
     private FloatingActionButton fab_Daf, fab_Tbh;
-    private String email, idUsaha;
+    private String email;
     private FirebaseFirestore db;
     private RecyclerView recyclerView;
     private FirestoreAdapterLowongan adapter;
@@ -53,12 +54,10 @@ public class Lowongan extends AppCompatActivity implements FirestoreAdapterLowon
         recyclerView = findViewById(R.id.rvLowongan_item);
         txtLabel = findViewById(R.id.textView21);
 
-        SharedPreferences sharedPreferences = getBaseContext().getSharedPreferences("HiJobs",0);
-        email = sharedPreferences.getString("Email",null);
-        idUsaha = sharedPreferences.getString("Id_Usaha",null);
+        email = getIntent().getStringExtra("Email");
 
         //Query
-        Query query = db.collection("Lowongan").whereEqualTo("Id_Usaha",idUsaha);
+        Query query = db.collection("Lowongan").whereEqualTo("Owner",email);
 
         //RecyclerOptions
         FirestoreRecyclerOptions<ItemLowongan> options = new FirestoreRecyclerOptions.Builder<ItemLowongan>()
@@ -85,7 +84,9 @@ public class Lowongan extends AppCompatActivity implements FirestoreAdapterLowon
         fab_Tbh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Lowongan.this, TambahLowongan.class));
+                Intent intent = new Intent(new Intent(Lowongan.this, TambahLowongan.class));
+                intent.putExtra("Email",email);
+                startActivity(intent);
             }
         });
 
@@ -101,6 +102,7 @@ public class Lowongan extends AppCompatActivity implements FirestoreAdapterLowon
                 }
                 Intent intent = new Intent(Lowongan.this, DaftarLamaran.class);
                 intent.putExtra("idLowList",idLowList);
+                intent.putExtra("Email",email);
                 startActivity(intent);
             }
         });
@@ -137,14 +139,12 @@ public class Lowongan extends AppCompatActivity implements FirestoreAdapterLowon
 
     @Override
     public void onItemClick(View view) {
-        TextView usaha = (TextView) view.findViewById(R.id.txtItemLowongan_NamaLowongan);
-        String namalow = usaha.getText().toString();
+        TextView lowongan = (TextView) view.findViewById(R.id.txtItemLowongan_NamaLowongan);
+        String namalow = lowongan.getText().toString();
 
-        SharedPreferences sharedPreferences = getBaseContext().getSharedPreferences("HiJobs",0);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString("NamaLow", namalow);
-        editor.commit();
-
-        startActivity(new Intent(Lowongan.this,DetailLowongan.class));
+        Intent intent = new Intent(Lowongan.this,DetailLowongan.class);
+        intent.putExtra("Nama_Low",namalow);
+        intent.putExtra("Email",email);
+        startActivity(intent);
     }
 }

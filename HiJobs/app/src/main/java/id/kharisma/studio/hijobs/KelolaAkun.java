@@ -82,8 +82,7 @@ public class KelolaAkun extends AppCompatActivity {
         etPassKon_B = findViewById(R.id.txtKelAkun_KonfirSandi);
         btnSimpan = findViewById(R.id.btnKelAkun_Simpan);
 
-        SharedPreferences sharedPreferences = getBaseContext().getSharedPreferences("HiJobs",0);
-        email = sharedPreferences.getString("Email",null);
+        email = getIntent().getStringExtra("Email");
 
         CollectionReference query = db.collection("Akun");
         query.document(email).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
@@ -242,13 +241,13 @@ public class KelolaAkun extends AppCompatActivity {
 
         //Menyimpan referensi data pada database berdasarkan user id
         db.collection("Akun").document(email)
-                .set(user)
+                .update(user)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
-                        etNama.setText("");
-                        etNomor.setText("");
-                        etEmail.setText("");
+//                        etNama.setText("");
+//                        etNomor.setText("");
+//                        etEmail.setText("");
                         Snackbar.make(findViewById(R.id.btnKelAkun_Simpan),
                                 "Data berhasil ditambahkan", Snackbar.LENGTH_LONG).show();
                         //Log

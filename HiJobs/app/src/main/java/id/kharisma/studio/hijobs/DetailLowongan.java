@@ -14,7 +14,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 public class DetailLowongan extends AppCompatActivity {
 
-    private TextView txtdeskusaha, txtlokasi, txtdesklow, txtwaktu, txtgaji, txtsyarat;
+    private TextView txtNama, txtDesk, txtKategori, txtAlamat, txtKota, txtSyarat, txtWaktu, txtGaji;
     private FirebaseFirestore db;
     private String email, lowongan;
 
@@ -25,28 +25,31 @@ public class DetailLowongan extends AppCompatActivity {
 
         //Inisialisasi material desain
         db = FirebaseFirestore.getInstance(); //Menghubungkan dengan cloud firestore
-        txtdeskusaha = findViewById(R.id.txtDetLow_DeskUsaha);
-        txtlokasi = findViewById(R.id.txtDetLow_AlamatUsaha);
-        txtdesklow = findViewById(R.id.txtDetLow_LowDetLow);
-        txtwaktu = findViewById(R.id.txtDetLow_WaktuDetLow);
-        txtgaji = findViewById(R.id.txtDetLow_Gaji);
-        txtsyarat = findViewById(R.id.txtDetLow_Syarat);
+        txtNama = findViewById(R.id.txtDetLow_LowKerja);
+        txtDesk = findViewById(R.id.txtDetLow_DeskLow);
+        txtKategori = findViewById(R.id.txtDetLow_KateKerja);
+        txtAlamat = findViewById(R.id.txtDetLow_Alamat);
+        txtKota = findViewById(R.id.txtDetLow_Kota);
+        txtSyarat = findViewById(R.id.txtDetLow_Syarat);
+        txtWaktu = findViewById(R.id.txtDetLow_WaktuKerja);
+        txtGaji = findViewById(R.id.txtDetLow_Gaji);
 
-        SharedPreferences sharedPreferences = getBaseContext().getSharedPreferences("HiJobs",0);
-        email = sharedPreferences.getString("Email",null);
-        lowongan = sharedPreferences.getString("NamaLow",null);
+        email = getIntent().getStringExtra("Email");
+        lowongan = getIntent().getStringExtra("Nama_Low");
 
         //Query
         CollectionReference query = db.collection("Lowongan");
         query.document(email+"_"+lowongan).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
             public void onSuccess(DocumentSnapshot snapshot) {
-                txtdeskusaha.setText(snapshot.getString("Deskripsi_Usaha"));
-                txtlokasi.setText(snapshot.getString("Lokasi_Usaha"));
-                txtdesklow.setText(snapshot.getString("Deskripsi"));
-                txtwaktu.setText(snapshot.getString("Waktu"));
-                txtgaji.setText("Rp." + snapshot.getString("Gaji"));
-                txtsyarat.setText(snapshot.getString("Syarat"));
+                txtNama.setText(snapshot.getString("Nama"));
+                txtDesk.setText(snapshot.getString("Deskripsi"));
+                txtKategori.setText(snapshot.getString("Kategori"));
+                txtAlamat.setText(snapshot.getString("Alamat"));
+                txtKota.setText(snapshot.getString("Kota"));
+                txtWaktu.setText(snapshot.getString("Waktu"));
+                txtGaji.setText("Rp." + snapshot.getString("Gaji"));
+                txtSyarat.setText(snapshot.getString("Syarat"));
             }
         });
 

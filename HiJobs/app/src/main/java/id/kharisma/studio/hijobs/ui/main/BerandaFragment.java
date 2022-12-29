@@ -1,7 +1,6 @@
 package id.kharisma.studio.hijobs.ui.main;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -10,24 +9,17 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 
 import id.kharisma.studio.hijobs.FirestoreAdapterBeranda;
-import id.kharisma.studio.hijobs.FirestoreAdapterLowongan;
-import id.kharisma.studio.hijobs.FirestoreAdapterUsaha;
 import id.kharisma.studio.hijobs.ItemBeranda;
-import id.kharisma.studio.hijobs.ItemUsaha;
-import id.kharisma.studio.hijobs.Lowongan;
 import id.kharisma.studio.hijobs.Pekerjaan;
 import id.kharisma.studio.hijobs.R;
 
@@ -89,17 +81,12 @@ public class BerandaFragment extends Fragment implements FirestoreAdapterBeranda
 
     @Override
     public void onItemClick(View view) {
-        TextView low = (TextView) view.findViewById(R.id.txtItemBeranda_NamaBeranda);
+        TextView low = (TextView) view.findViewById(R.id.txtItemBeranda_NamaLow);
         namalow = low.getText().toString();
-
-        SharedPreferences sharedPreferences = getContext().getSharedPreferences("HiJobs",0);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString("NamaLow",namalow);
-        editor.commit();
 
         Intent intent = new Intent(getActivity(), Pekerjaan.class);
         intent.putExtra("Id_Low",low.getTag(R.string.db_id).toString());
-
+        intent.putExtra("Nama_Low",namalow);
         startActivity(intent);
     }
 }

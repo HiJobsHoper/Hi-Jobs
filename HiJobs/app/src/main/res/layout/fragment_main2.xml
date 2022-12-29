@@ -7,153 +7,151 @@
     android:layout_height="match_parent"
     tools:context=".ui.main.ProfilFragment">
 
-    <ImageView
-        android:id="@+id/imgMain2_ProfilLogo"
-        android:layout_width="135dp"
-        android:layout_height="135dp"
-        android:layout_marginTop="80dp"
-        android:src="@drawable/logo_profil"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.141"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/txtMain2_Nama"
-        android:layout_width="190dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="124dp"
-        android:background="@color/white"
-        android:cursorVisible="false"
-        android:ems="10"
-        android:enabled="false"
-        android:focusable="false"
-        android:hint="Nama Pengguna"
-        android:inputType="textPersonName"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.191"
-        app:layout_constraintStart_toEndOf="@+id/imgMain2_ProfilLogo"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/txtMain2_UsahaSaya"
-        android:layout_width="290dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:cursorVisible="false"
-        android:ems="10"
-        android:focusable="false"
-        android:inputType="textPersonName"
-        android:text="Usaha Saya"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtMain2_KelolaAkun" />
+            <ImageView
+                android:id="@+id/imgMain2_ProfilLogo"
+                android:layout_width="135dp"
+                android:layout_height="135dp"
+                android:layout_marginTop="70dp"
+                android:src="@drawable/logo_profil"
+                android:translationX="40dp"
+                android:translationY="20dp" />
 
-    <EditText
-        android:id="@+id/txtMain2_RiwayatLamaran"
-        android:layout_width="290dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:cursorVisible="false"
-        android:ems="10"
-        android:focusable="false"
-        android:inputType="textPersonName"
-        android:text="Riwayat Lamaran"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtMain2_UsahaSaya" />
+            <EditText
+                android:id="@+id/txtMain2_Nama"
+                android:layout_width="220dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="116dp"
+                android:layout_marginEnd="8dp"
+                android:background="@color/white"
+                android:cursorVisible="false"
+                android:ems="10"
+                android:enabled="false"
+                android:focusable="false"
+                android:hint="Nama Pengguna"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:translationX="172dp"
+                android:translationY="-185dp"
+                tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
-    <EditText
-        android:id="@+id/txtMain2_HubKami"
-        android:layout_width="290dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:cursorVisible="false"
-        android:ems="10"
-        android:focusable="false"
-        android:inputType="textPersonName"
-        android:text="Hubungi Kami"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtMain2_RiwayatLamaran" />
+            <EditText
+                android:id="@+id/txtMain2_KelolaProfil"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                android:cursorVisible="false"
+                android:ems="10"
+                android:focusable="false"
+                android:inputType="textPersonName"
+                android:text="Kelola Profil"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:translationX="50dp"
+                android:translationY="-140dp" />
 
-    <EditText
-        android:id="@+id/txtMain2_Pengaturan"
-        android:layout_width="290dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:cursorVisible="false"
-        android:ems="10"
-        android:focusable="false"
-        android:inputType="textPersonName"
-        android:text="Pengaturan"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtMain2_HubKami" />
+            <EditText
+                android:id="@+id/txtMain2_KelolaAkun"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:cursorVisible="false"
+                android:ems="10"
+                android:focusable="false"
+                android:inputType="textPersonName"
+                android:text="Kelola Akun"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:translationX="50dp"
+                android:translationY="-144dp" />
 
-    <EditText
-        android:id="@+id/txtMain2_Keluar"
-        android:layout_width="290dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:cursorVisible="false"
-        android:ems="10"
-        android:focusable="false"
-        android:inputType="textPersonName"
-        android:text="Keluar"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtMain2_Pengaturan" />
+            <EditText
+                android:id="@+id/txtMain2_LowonganSaya"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:cursorVisible="false"
+                android:ems="10"
+                android:focusable="false"
+                android:inputType="textPersonName"
+                android:text="Lowongan Saya"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:translationX="50dp"
+                android:translationY="-149dp" />
 
-    <EditText
-        android:id="@+id/txtMain2_KelolaProfil"
-        android:layout_width="290dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:cursorVisible="false"
-        android:ems="10"
-        android:focusable="false"
-        android:inputType="textPersonName"
-        android:text="Kelola Profil"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgMain2_ProfilLogo" />
+            <EditText
+                android:id="@+id/txtMain2_RiwayatLamaran"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:cursorVisible="false"
+                android:ems="10"
+                android:focusable="false"
+                android:inputType="textPersonName"
+                android:text="Riwayat Lamaran"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:translationX="50dp"
+                android:translationY="-152dp" />
 
-    <EditText
-        android:id="@+id/txtMain2_KelolaAkun"
-        android:layout_width="290dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:cursorVisible="false"
-        android:ems="10"
-        android:focusable="false"
-        android:inputType="textPersonName"
-        android:text="Kelola Akun"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtMain2_KelolaProfil" />
+            <EditText
+                android:id="@+id/txtMain2_HubKami"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:cursorVisible="false"
+                android:ems="10"
+                android:focusable="false"
+                android:inputType="textPersonName"
+                android:text="Hubungi Kami"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:translationX="50dp"
+                android:translationY="-158dp" />
+
+            <EditText
+                android:id="@+id/txtMain2_Pengaturan"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:cursorVisible="false"
+                android:ems="10"
+                android:focusable="false"
+                android:inputType="textPersonName"
+                android:text="Pengaturan"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:translationX="50dp"
+                android:translationY="-163dp" />
+
+            <EditText
+                android:id="@+id/txtMain2_Keluar"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:cursorVisible="false"
+                android:ems="10"
+                android:focusable="false"
+                android:inputType="textPersonName"
+                android:text="Keluar"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:translationX="50dp"
+                android:translationY="-166dp" />
+
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,164 +7,195 @@
     android:background="@color/white"
     tools:context=".Registrasi">
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/txtReg_Nama"
-        android:layout_width="345dp"
-        android:layout_height="60dp"
-        android:hint="Masukkan nama"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView1" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck">
 
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text=" Nama Pengguna"
-        android:textColor="#000000"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.12"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
 
-    <EditText
-        android:id="@+id/txtReg_Email"
-        android:layout_width="345dp"
-        android:layout_height="60dp"
-        android:ems="10"
-        android:hint="Masukkan email"
-        android:inputType="textEmailAddress"
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="25dp" />
 
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text=" Nama Pengguna"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:translationX="30dp"
+                android:translationY="-25dp" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text=" Email"
-        android:textColor="#000000"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.091"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtReg_Nama" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
-    <EditText
-        android:id="@+id/txtReg_Telepon"
-        android:layout_width="345dp"
-        android:layout_height="60dp"
-        android:ems="10"
-        android:hint="Masukkan nomor telepon"
-        android:inputType="phone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtReg_Nama"
+                android:layout_width="345dp"
+                android:layout_height="60dp"
+                android:hint="Masukkan nama"
+                android:translationX="30dp"
+                android:translationY="-25dp" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text=" Nomor Telepon"
-        android:textColor="#000000"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.116"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtReg_Email" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
-    <EditText
-        android:id="@+id/txtReg_KataSandi"
-        android:layout_width="345dp"
-        android:layout_height="60dp"
-        android:ems="10"
-        android:hint="Masukkan kata sandi"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text=" Email"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:translationX="30dp"
+                android:translationY="-25dp" />
 
-    <ImageView
-        android:id="@+id/imgReg_Sandi"
-        android:layout_width="30dp"
-        android:layout_height="32dp"
-        android:layout_below="@+id/txtReg_KataSandi"
-        android:layout_marginTop="3dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="1dp"
-        app:layout_constraintBottom_toBottomOf="@+id/txtReg_KataSandi"
-        app:layout_constraintEnd_toEndOf="@+id/txtReg_KataSandi"
-        app:layout_constraintHorizontal_bias="0.966"
-        app:layout_constraintStart_toStartOf="@+id/txtReg_KataSandi"
-        app:layout_constraintTop_toTopOf="@+id/txtReg_KataSandi"
-        app:layout_constraintVertical_bias="0.333" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text=" Kata Sandi"
-        android:textColor="#000000"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.103"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtReg_Telepon" />
+            <EditText
+                android:id="@+id/txtReg_Email"
+                android:layout_width="345dp"
+                android:layout_height="60dp"
+                android:ems="10"
+                android:hint="Masukkan email"
+                android:inputType="textEmailAddress"
 
-    <EditText
-        android:id="@+id/txtReg_KonfirmasiSandi"
-        android:layout_width="345dp"
-        android:layout_height="60dp"
-        android:ems="10"
-        android:hint="Masukkan ulang kata sandi"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+                android:translationX="30dp"
+                android:translationY="-25dp" />
 
-    <ImageView
-        android:id="@+id/imgReg_KonfirSandi"
-        android:layout_width="30dp"
-        android:layout_height="32dp"
-        android:layout_below="@+id/txtReg_KonfirmasiSandi"
-        android:layout_marginTop="3dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="1dp"
-        app:layout_constraintBottom_toBottomOf="@+id/txtReg_KonfirmasiSandi"
-        app:layout_constraintEnd_toEndOf="@+id/txtReg_KonfirmasiSandi"
-        app:layout_constraintHorizontal_bias="0.966"
-        app:layout_constraintStart_toStartOf="@+id/txtReg_KonfirmasiSandi"
-        app:layout_constraintTop_toTopOf="@+id/txtReg_KonfirmasiSandi"
-        app:layout_constraintVertical_bias="0.333" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text=" Konfirmasi Kata Sandi"
-        android:textColor="#000000"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.143"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtReg_KataSandi" />
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text=" Nomor Telepon"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:translationX="30dp"
+                android:translationY="-25dp" />
 
-    <Button
-        android:id="@+id/btnReg_Simpan"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="40dp"
-        android:text="Simpan"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.895"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtReg_KonfirmasiSandi" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/txtReg_Telepon"
+                android:layout_width="345dp"
+                android:layout_height="60dp"
+                android:ems="10"
+                android:hint="Masukkan nomor telepon"
+                android:inputType="phone"
+                android:translationX="30dp"
+                android:translationY="-25dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text=" Kata Sandi"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:translationX="30dp"
+                android:translationY="-25dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/txtReg_KataSandi"
+                android:layout_width="345dp"
+                android:layout_height="60dp"
+                android:ems="10"
+                android:hint="Masukkan kata sandi"
+                android:inputType="textPassword"
+                android:translationX="30dp"
+                android:translationY="-25dp" />
+
+            <ImageView
+                android:id="@+id/imgReg_Sandi"
+                android:layout_width="30dp"
+                android:layout_height="32dp"
+                android:layout_below="@+id/txtReg_KataSandi"
+                android:layout_marginTop="3dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="1dp"
+                android:translationX="315dp"
+                android:translationY="-75dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text=" Konfirmasi Kata Sandi"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:translationX="30dp"
+                android:translationY="-60dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/txtReg_KonfirmasiSandi"
+                android:layout_width="345dp"
+                android:layout_height="60dp"
+                android:ems="10"
+                android:hint="Masukkan ulang kata sandi"
+                android:inputType="textPassword"
+                android:translationX="30dp"
+                android:translationY="-60dp" />
+
+            <ImageView
+                android:id="@+id/imgReg_KonfirSandi"
+                android:layout_width="30dp"
+                android:layout_height="32dp"
+                android:layout_below="@+id/txtReg_KonfirmasiSandi"
+                android:layout_marginTop="3dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="1dp"
+                android:translationX="315dp"
+                android:translationY="-110dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/btnReg_Simpan"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="40dp"
+                android:text="Simpan"
+                android:translationX="273dp"
+                android:translationY="-90dp" />
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -43,9 +43,9 @@ public class DaftarLamaran extends AppCompatActivity implements FirestoreAdapter
         recyclerView = findViewById(R.id.rvDaftarLamawan_item);
         txtLabel = findViewById(R.id.textView32);
 
-        SharedPreferences sharedPreferences = getBaseContext().getSharedPreferences("HiJobs",0);
-        nama_Low = sharedPreferences.getString("Nama_Low",null);
-        email = sharedPreferences.getString("Email",null);
+//        SharedPreferences sharedPreferences = getBaseContext().getSharedPreferences("HiJobs",0);
+//        nama_Low = sharedPreferences.getString("Nama_Low",null);
+        email = getIntent().getStringExtra("Email");
 
         //Query
         ArrayList<String> idLowList = (ArrayList<String>) getIntent().getSerializableExtra("idLowList");
@@ -96,11 +96,10 @@ public class DaftarLamaran extends AppCompatActivity implements FirestoreAdapter
         getSupportActionBar().setDisplayShowHomeEnabled(true);
     }
 
-    //Kembali ke halaman usaha saya
+    //Kembali ke halaman lowongan saya
     @Override
     public boolean onSupportNavigateUp() {
         onBackPressed();
-        startActivity(new Intent(DaftarLamaran.this, Lowongan.class));
         finish();
         return true;
     }

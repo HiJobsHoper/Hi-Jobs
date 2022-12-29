@@ -10,7 +10,11 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatDelegate;
@@ -30,8 +34,9 @@ public class HalamanUtama extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityHalamanUtamaBinding binding;
-    private String nama, email;
     private TextView txtnama, txtemail;
+    private FirebaseFirestore db;
+    private String nama, email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,16 +68,34 @@ public class HalamanUtama extends AppCompatActivity {
 //                getSupportFragmentManager().findFragmentByTag("beranda");
 
         //Mengganti usernama dan email pada navigasi drawer
-        SharedPreferences sharedPreferences = getBaseContext().getSharedPreferences("HiJobs",0);
-        nama = sharedPreferences.getString("Nama",null);
-        email = sharedPreferences.getString("Email",null);
         View nav_view = navigationView.getHeaderView(0);
         txtnama = nav_view.findViewById(R.id.txtNav_Nama);
         txtemail = nav_view.findViewById(R.id.txtNav_Email);
+        db = FirebaseFirestore.getInstance();
+
+        nama = getIntent().getStringExtra("Nama");
+        email = getIntent().getStringExtra("Email");
+        SharedPreferences sharedPreferences = getBaseContext().getSharedPreferences("HiJobs",0);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("Email",email);
+        editor.commit();
+
         if (nama != null && email != null) {
             txtnama.setText(nama);
             txtemail.setText(email);
         }
+
+        CollectionReference query = db.collection("Akun");
+        query.document(email).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot snapshot) {
+                nama = snapshot.getString("Nama");
+                if (nama != null && email != null) {
+                    txtnama.setText(nama);
+                    txtemail.setText(email);
+                }
+            }
+        });
     }
 
     @Override
