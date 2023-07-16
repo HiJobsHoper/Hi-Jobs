@@ -18,12 +18,15 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.io.File;
 
 public class Pengaturan extends AppCompatActivity {
 
     private EditText etSyarat, etHapus;
+    private String email;
+    private FirebaseFirestore db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +37,9 @@ public class Pengaturan extends AppCompatActivity {
         //Inisialisasi material desain
         etSyarat = findViewById(R.id.txtPengaturan_SK);
         etHapus = findViewById(R.id.txtPengaturan_HapusAkun);
+
+        db = FirebaseFirestore.getInstance(); //Menghubungkan dengan cloud firestore
+        email = getIntent().getStringExtra("Email");
 
         //Membuat tombol kembali pada Navigasi Bar
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -79,6 +85,8 @@ public class Pengaturan extends AppCompatActivity {
                                                         @Override
                                                         public void onComplete(@NonNull Task<Void> task) {
                                                             if (task.isSuccessful()) {
+                                                                db.collection("Akun").document(email).delete(); //Menghapus akun dari database
+                                                                db.collection("Profil").document(email).delete(); //Menghapus profil dari database
                                                                 startActivity(new Intent(
                                                                         Pengaturan.this, Login.class)); //Membuka halaman login
                                                                 finish(); //Menutup halaman pengaturan

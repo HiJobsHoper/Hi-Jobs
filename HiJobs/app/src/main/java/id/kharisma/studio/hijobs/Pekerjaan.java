@@ -35,7 +35,7 @@ import java.util.Map;
 public class Pekerjaan extends AppCompatActivity {
 
     private FirebaseFirestore db;
-    private String email, lowongan, telvon;
+    private String email, lowongan, telvon, idLow;
     private TextView txtDesk, txtAlamat, txtKota, txtSyarat, txtWaktu, txtGaji;
     private Button btnlamar;
     private ImageView imgchat, imgfav;
@@ -62,7 +62,7 @@ public class Pekerjaan extends AppCompatActivity {
 
         SharedPreferences sharedPreferences = getBaseContext().getSharedPreferences("HiJobs",0);
         email = sharedPreferences.getString("Email",null);
-        String idLow = getIntent().getStringExtra("Id_Low");
+        idLow = getIntent().getStringExtra("Id_Low");
         lowongan = getIntent().getStringExtra("Nama_Low");
         setTitle(lowongan); //Mengubah nama label pada activity
 
@@ -80,6 +80,7 @@ public class Pekerjaan extends AppCompatActivity {
             }
         });
 
+        //Mengisi database Daftar Pelamar
         db.collection("Profil").document(email)
                 .get()
                 .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
@@ -142,6 +143,48 @@ public class Pekerjaan extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
     }
 
+    //Mengisi database Riwayar Lamaran
+    public void BtnLamar1() {
+        //Mengisi database Daftar Pelamar
+        CollectionReference query = db.collection("Lowongan");
+        query.document(idLow).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot snapshot) {
+                String alamat = snapshot.getString("Alamat");
+                String desk = snapshot.getString("Deskripsi");
+                String gaji = snapshot.getString("Gaji");
+                String kategori = snapshot.getString("Kategori");
+                String kota = snapshot.getString("Kota");
+                String link = snapshot.getString("Link_Map");
+                String syarat = snapshot.getString("Syarat");
+                String waktu = snapshot.getString("Waktu");
+
+                Map<String, String> riwayat = new HashMap<>();
+                riwayat.put("Email", email);
+                riwayat.put("Id_Low", idLow);
+                riwayat.put("Lowongan", lowongan);
+                riwayat.put("Alamat", alamat);
+                riwayat.put("Deskripsi",desk);
+                riwayat.put("Gaji",gaji);
+                riwayat.put("Kategori",kategori);
+                riwayat.put("Kota", kota);
+                riwayat.put("Link_Map",link);
+                riwayat.put("Syarat",syarat);
+                riwayat.put("Waktu",waktu);
+
+                db.collection("RiwayatLamaran").document(idLow+"_"+email)
+                        .set(riwayat).addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void unused) {
+                                //Log
+                                Log.d(TAG, "Riwayat Lamaran successfully written!");
+                            }
+                        });
+            }
+        });
+
+    }
+
     public void BtnLamar(Map<String, String> pelamar) {
         btnlamar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -159,13 +202,14 @@ public class Pekerjaan extends AppCompatActivity {
                                         !umur.equals("") && !pendidikan.equals("") &&
                                         !alamat.equals("") && !kewarganegaraan.equals("")) {
                                     //Menyimpan referensi data pada database berdasarkan user id
-                                    db.collection("DaftarPelamar").document()
+                                    db.collection("DaftarPelamar").document(idLow+"_"+email)
                                             .set(pelamar)
                                             .addOnSuccessListener(new OnSuccessListener<Void>() {
                                                 @Override
                                                 public void onSuccess(Void aVoid) {
                                                     AlertDialog.Builder alertDialogBuilder1 = new AlertDialog.Builder(Pekerjaan.this);
 
+                                                    BtnLamar1(); //Menambahkan Riwayat Lamaran pada database
                                                     alertDialogBuilder1.setTitle("");
                                                     alertDialogBuilder1.setMessage("Lamaran anda telah terkirim!")
                                                             .setCancelable(false)

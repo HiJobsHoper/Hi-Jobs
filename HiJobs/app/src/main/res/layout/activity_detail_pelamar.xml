@@ -13,41 +13,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck">
+        tools:ignore="SpeakableTextPresentCheck">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical">
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="25dp" />
-
-            <TextView
-                android:id="@+id/textView35"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Ubah"
-                android:textColor="#000000"
-                android:textSize="18sp"
-                android:translationX="70dp"
-                android:translationY="-63dp" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <TextView
-                android:id="@+id/textView36"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Identitas Diri"
-                android:textColor="#000000"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:translationX="40dp"
-                android:translationY="-25dp" />
 
             <Space
                 android:layout_width="match_parent"
@@ -60,8 +31,14 @@
                 android:text="Nama Lengkap"
                 android:textColor="#000000"
                 android:textSize="18sp"
-                android:translationX="40dp"
-                android:translationY="-25dp" />
+                android:textStyle="bold"
+                android:translationX="50dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.161"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.614" />
 
             <Space
                 android:layout_width="match_parent"
@@ -69,19 +46,16 @@
 
             <EditText
                 android:id="@+id/txtDetPel_NamaLengkap"
-                android:layout_width="325dp"
-                android:layout_height="48dp"
-                android:background="@drawable/custom_edittext"
+                android:layout_width="315dp"
+                android:layout_height="match_parent"
+                android:background="@null"
                 android:clickable="false"
                 android:ems="10"
                 android:focusable="false"
-                android:hint="Nama lengkap"
-                android:inputType="textPersonName"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
-                android:translationX="40dp"
-                android:translationY="-25dp"
-                tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+                android:hint="Nama Lengkap"
+                android:inputType="textMultiLine|textPersonName"
+                android:translationX="50dp"
+                tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
             <Space
                 android:layout_width="match_parent"
@@ -94,8 +68,14 @@
                 android:text="Jenis Kelamin"
                 android:textColor="#000000"
                 android:textSize="18sp"
-                android:translationX="40dp"
-                android:translationY="-25dp" />
+                android:textStyle="bold"
+                android:translationX="50dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.204"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.133" />
 
             <Space
                 android:layout_width="match_parent"
@@ -103,19 +83,16 @@
 
             <EditText
                 android:id="@+id/txtDetPel_JenisKelamin"
-                android:layout_width="325dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/custom_edittext"
+                android:layout_width="315dp"
+                android:layout_height="match_parent"
+                android:background="@null"
                 android:clickable="false"
-                android:dropDownWidth="wrap_content"
+                android:ems="10"
                 android:focusable="false"
-                android:hint="Jenis kelamin"
-                android:minHeight="48dp"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
-                android:translationX="40dp"
-                android:translationY="-25dp"
-                tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+                android:hint="Jenis Kelamin"
+                android:inputType="textMultiLine|textPersonName"
+                android:translationX="50dp"
+                tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
             <Space
                 android:layout_width="match_parent"
@@ -128,8 +105,8 @@
                 android:text="Tanggal Lahir"
                 android:textColor="#000000"
                 android:textSize="18sp"
-                android:translationX="40dp"
-                android:translationY="-25dp" />
+                android:textStyle="bold"
+                android:translationX="50dp" />
 
             <Space
                 android:layout_width="match_parent"
@@ -137,22 +114,16 @@
 
             <EditText
                 android:id="@+id/txtDetPel_TglLahir"
-                android:layout_width="325dp"
-                android:layout_height="48dp"
-                android:background="@drawable/custom_edittext"
+                android:layout_width="315dp"
+                android:layout_height="match_parent"
+                android:background="@null"
                 android:clickable="false"
                 android:ems="10"
                 android:focusable="false"
-                android:hint="Tanggal lahir"
-                android:inputType="date"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
-                android:translationX="40dp"
-                android:translationY="-25dp" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:hint="Tanggal Lahir"
+                android:inputType="textMultiLine|textPersonName"
+                android:translationX="50dp"
+                tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
             <Space
                 android:layout_width="match_parent"
@@ -165,8 +136,14 @@
                 android:text="Umur"
                 android:textColor="#000000"
                 android:textSize="18sp"
-                android:translationX="40dp"
-                android:translationY="-25dp" />
+                android:textStyle="bold"
+                android:translationX="50dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.161"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.338" />
 
             <Space
                 android:layout_width="match_parent"
@@ -174,16 +151,25 @@
 
             <EditText
                 android:id="@+id/txtDetPel_Umur"
-                android:layout_width="325dp"
-                android:layout_height="48dp"
-                android:background="@drawable/custom_edittext"
+                android:layout_width="315dp"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:clickable="false"
                 android:ems="10"
+                android:focusable="false"
                 android:hint="Umur"
-                android:inputType="textPersonName"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
-                android:translationX="40dp"
-                android:translationY="-25dp" />
+                android:inputType="textMultiLine|textPersonName"
+                android:translationX="50dp"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+            <com.google.android.gms.maps.MapView
+                android:id="@+id/mapDetLow_GoogleMaps"
+                android:layout_width="315dp"
+                android:layout_height="125dp"
+                android:translationX="50dp"
+                android:visibility="gone"
+                tools:ignore="SpeakableTextPresentCheck"
+                tools:visibility="gone" />
 
             <Space
                 android:layout_width="match_parent"
@@ -196,8 +182,14 @@
                 android:text="Nomor Telepon"
                 android:textColor="#000000"
                 android:textSize="18sp"
-                android:translationX="40dp"
-                android:translationY="-25dp" />
+                android:textStyle="bold"
+                android:translationX="50dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.161"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.338" />
 
             <Space
                 android:layout_width="match_parent"
@@ -205,16 +197,16 @@
 
             <EditText
                 android:id="@+id/txtDetPel_Nomor"
-                android:layout_width="325dp"
-                android:layout_height="48dp"
-                android:background="@drawable/custom_edittext"
+                android:layout_width="315dp"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:clickable="false"
                 android:ems="10"
-                android:hint="Nomor telepon"
-                android:inputType="textPersonName"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
-                android:translationX="40dp"
-                android:translationY="-25dp" />
+                android:focusable="false"
+                android:hint="Nomor Telepon"
+                android:inputType="textMultiLine|textPersonName"
+                android:translationX="50dp"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
             <Space
                 android:layout_width="match_parent"
@@ -227,8 +219,14 @@
                 android:text="Pendidikan Terakhir"
                 android:textColor="#000000"
                 android:textSize="18sp"
-                android:translationX="40dp"
-                android:translationY="-25dp" />
+                android:textStyle="bold"
+                android:translationX="50dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.161"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.338" />
 
             <Space
                 android:layout_width="match_parent"
@@ -236,19 +234,23 @@
 
             <EditText
                 android:id="@+id/txtDetPel_Pendidikan"
-                android:layout_width="325dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/custom_edittext"
+                android:layout_width="315dp"
+                android:layout_height="match_parent"
+                android:background="@null"
                 android:clickable="false"
-                android:dropDownWidth="wrap_content"
+                android:ems="10"
                 android:focusable="false"
-                android:hint="Pendidikan terakhir"
-                android:minHeight="48dp"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
-                android:translationX="40dp"
-                android:translationY="-25dp"
-                tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+                android:gravity="end|start"
+                android:hint="Pendidikan Terakhir"
+                android:inputType="textPersonName|textMultiLine"
+                android:translationX="50dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.531"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.467"
+                tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
             <Space
                 android:layout_width="match_parent"
@@ -261,8 +263,14 @@
                 android:text="Alamat"
                 android:textColor="#000000"
                 android:textSize="18sp"
-                android:translationX="40dp"
-                android:translationY="-25dp" />
+                android:textStyle="bold"
+                android:translationX="50dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.161"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.614" />
 
             <Space
                 android:layout_width="match_parent"
@@ -270,20 +278,22 @@
 
             <EditText
                 android:id="@+id/txtDetPel_Alamat"
-                android:layout_width="325dp"
-                android:layout_height="100dp"
-                android:background="@drawable/custom_edittext"
+                android:layout_width="315dp"
+                android:layout_height="match_parent"
+                android:background="@null"
                 android:clickable="false"
                 android:ems="10"
                 android:focusable="false"
-                android:gravity="start|top"
                 android:hint="Alamat"
-                android:inputType="textMultiLine"
-                android:paddingLeft="20dp"
-                android:paddingTop="10dp"
-                android:paddingRight="20dp"
-                android:translationX="40dp"
-                android:translationY="-25dp" />
+                android:inputType="textPersonName"
+                android:translationX="50dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.531"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.671"
+                tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
             <Space
                 android:layout_width="match_parent"
@@ -296,8 +306,14 @@
                 android:text="Keahlian"
                 android:textColor="#000000"
                 android:textSize="18sp"
-                android:translationX="40dp"
-                android:translationY="-25dp" />
+                android:textStyle="bold"
+                android:translationX="50dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.133"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.726" />
 
             <Space
                 android:layout_width="match_parent"
@@ -305,20 +321,22 @@
 
             <EditText
                 android:id="@+id/txtDetPel_Keahlian"
-                android:layout_width="325dp"
-                android:layout_height="48dp"
-                android:background="@drawable/custom_edittext"
+                android:layout_width="315dp"
+                android:layout_height="match_parent"
+                android:background="@null"
                 android:clickable="false"
                 android:ems="10"
                 android:focusable="false"
                 android:hint="Keahlian"
-                android:inputType="textPersonName"
-                android:minHeight="48dp"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
-                android:translationX="40dp"
-                android:translationY="-25dp"
-                tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+                android:inputType="number"
+                android:translationX="50dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.531"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.789"
+                tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
             <Space
                 android:layout_width="match_parent"
@@ -331,8 +349,14 @@
                 android:text="Pengalaman Kerja"
                 android:textColor="#000000"
                 android:textSize="18sp"
-                android:translationX="40dp"
-                android:translationY="-25dp" />
+                android:textStyle="bold"
+                android:translationX="50dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.161"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.614" />
 
             <Space
                 android:layout_width="match_parent"
@@ -340,20 +364,22 @@
 
             <EditText
                 android:id="@+id/txtDetPel_PengalamanKerja"
-                android:layout_width="325dp"
-                android:layout_height="125dp"
-                android:background="@drawable/custom_edittext"
+                android:layout_width="315dp"
+                android:layout_height="match_parent"
+                android:background="@null"
                 android:clickable="false"
                 android:ems="10"
                 android:focusable="false"
-                android:gravity="start|top"
                 android:hint="Pengalaman Kerja"
-                android:inputType="textMultiLine"
-                android:paddingLeft="20dp"
-                android:paddingTop="10dp"
-                android:paddingRight="20dp"
-                android:translationX="40dp"
-                android:translationY="-25dp" />
+                android:inputType="textPersonName"
+                android:translationX="50dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.531"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.671"
+                tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
             <Space
                 android:layout_width="match_parent"
@@ -366,8 +392,14 @@
                 android:text="Kewarganegaraan"
                 android:textColor="#000000"
                 android:textSize="18sp"
-                android:translationX="40dp"
-                android:translationY="-25dp" />
+                android:textStyle="bold"
+                android:translationX="50dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.133"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.726" />
 
             <Space
                 android:layout_width="match_parent"
@@ -375,24 +407,26 @@
 
             <EditText
                 android:id="@+id/txtDetPel_Kewarganegaraan"
-                android:layout_width="325dp"
-                android:layout_height="48dp"
-                android:background="@drawable/custom_edittext"
+                android:layout_width="315dp"
+                android:layout_height="match_parent"
+                android:background="@null"
                 android:clickable="false"
                 android:ems="10"
                 android:focusable="false"
                 android:hint="Kewarganegaraan"
-                android:inputType="textPersonName"
-                android:minHeight="48dp"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
-                android:translationX="40dp"
-                android:translationY="-25dp"
-                tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+                android:inputType="number"
+                android:translationX="50dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.531"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.789"
+                tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="40dp" />
+                android:layout_height="30dp" />
 
         </LinearLayout>
     </ScrollView>

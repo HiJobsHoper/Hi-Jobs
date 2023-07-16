@@ -30,7 +30,7 @@ public class DaftarLamaran extends AppCompatActivity implements FirestoreAdapter
     private String nama_Low, email;
     private FirebaseFirestore db;
     private RecyclerView recyclerView;
-    private FirestoreAdapterDaftar adapter;
+    private FirestoreAdapterDaftar adapter = null;
     private TextView txtLabel;
 
     @Override
@@ -50,11 +50,37 @@ public class DaftarLamaran extends AppCompatActivity implements FirestoreAdapter
         //Query
         ArrayList<String> idLowList = (ArrayList<String>) getIntent().getSerializableExtra("idLowList");
         for (int i = 0; i < idLowList.size(); i++) {
-            Log.d("Test",idLowList.get(i)+"");
+//            Log.d("Test",idLowList.get(i)+"");
         }
-        //Log.d("Test",idLowList.get(0)+"");
+//        Log.d("Test",idLowList.get(0)+"");
         db = FirebaseFirestore.getInstance();
-        Query query = db.collection("DaftarPelamar").whereIn("Id_Low",idLowList);
+
+        try {
+            Query query = db.collection("DaftarPelamar").whereIn("Id_Low", idLowList);
+
+            FirestoreRecyclerOptions<ItemDaftar> options = new FirestoreRecyclerOptions.Builder<ItemDaftar>()
+                    .setQuery(query, ItemDaftar.class)
+                    .build();
+
+            adapter = new FirestoreAdapterDaftar(options,this);
+
+            recyclerView.setHasFixedSize(true);
+            recyclerView.setLayoutManager(new LinearLayoutManager(this));
+            recyclerView.setAdapter(adapter);
+
+            query.addSnapshotListener(new EventListener<QuerySnapshot>() {
+                @Override
+                public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+                    if (value.isEmpty()) {
+                        txtLabel.setVisibility(View.VISIBLE);
+                    } else {
+                        txtLabel.setVisibility(View.INVISIBLE);
+                    }
+                }
+            });
+        } catch(Exception e) {
+            txtLabel.setVisibility(View.VISIBLE);
+        }
                 //.whereIn("Id_Low", test);
 //        query.addSnapshotListener(new EventListener<QuerySnapshot>() {
 //            @Override
@@ -70,26 +96,7 @@ public class DaftarLamaran extends AppCompatActivity implements FirestoreAdapter
 //        });
 
         //RecyclerOptions
-        FirestoreRecyclerOptions<ItemDaftar> options = new FirestoreRecyclerOptions.Builder<ItemDaftar>()
-                .setQuery(query, ItemDaftar.class)
-                .build();
 
-        adapter = new FirestoreAdapterDaftar(options,this);
-
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(adapter);
-
-        query.addSnapshotListener(new EventListener<QuerySnapshot>() {
-            @Override
-            public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
-                if (value.isEmpty()) {
-                    txtLabel.setVisibility(View.VISIBLE);
-                } else {
-                    txtLabel.setVisibility(View.INVISIBLE);
-                }
-            }
-        });
 
         //Membuat tombol back pada Navigasi Bar
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -113,13 +120,17 @@ public class DaftarLamaran extends AppCompatActivity implements FirestoreAdapter
     @Override
     protected void onStart() {
         super.onStart();
-        adapter.startListening();
+        if (adapter != null) {
+            adapter.startListening();
+        }
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        adapter.stopListening();
+        if (adapter != null) {
+            adapter.stopListening();
+        }
     }
 
     @Override

@@ -15,6 +15,14 @@
         android:theme="@style/Theme.HiJobs"
         tools:targetApi="31">
         <activity
+            android:name=".DetailRiwayat"
+            android:exported="false"
+            android:label="Detail Pekerjaan">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".DetailPelamar"
             android:exported="false"
             android:label="Detail Pelamar">

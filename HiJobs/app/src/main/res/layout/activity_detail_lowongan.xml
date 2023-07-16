@@ -342,6 +342,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="30dp" />
 
+            <Button
+                android:id="@+id/btnDetLow_Hapus"
+                android:layout_width="315dp"
+                android:layout_height="52dp"
+                android:translationX="50dp"
+                android:text="Hapus Lowongan" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="30dp" />
+
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

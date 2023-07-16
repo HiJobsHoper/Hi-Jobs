@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
@@ -126,7 +127,9 @@ public class ProfilFragment extends Fragment {
         etPengaturan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getActivity(), Pengaturan.class)); //Membuka halaman pengaturan
+                Intent intent = new Intent(getActivity(), Pengaturan.class); //Membuka halaman pengaturan
+                intent.putExtra("Email",email);
+                startActivity(intent);
             }
         });
 

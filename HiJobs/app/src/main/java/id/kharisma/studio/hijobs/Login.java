@@ -78,7 +78,7 @@ public class Login extends AppCompatActivity {
         btnGoogle = findViewById(R.id.btnLog_MasukGoogle);
         db = FirebaseFirestore.getInstance();
 
-        skipLogin(); //Langsung ke halaman utama
+//        skipLogin(); //Langsung ke halaman utama
 
         //Membuka halaman registrasi
         tvReg.setOnClickListener(new View.OnClickListener() {
@@ -238,15 +238,15 @@ public class Login extends AppCompatActivity {
     }
 
     //Langsung masuk kalau sudah pernah login
-    public void skipLogin() {
-        FirebaseAuth firebaseauth = FirebaseAuth.getInstance();
-        FirebaseUser currentUser = firebaseauth.getCurrentUser();
-
-        if (currentUser != null) {
-            login();
-        }
-    }
-
+//    public void skipLogin() {
+//        FirebaseAuth firebaseauth = FirebaseAuth.getInstance();
+//        FirebaseUser currentUser = firebaseauth.getCurrentUser();
+//
+//        if (currentUser != null) {
+//            login();
+//        }
+//    }
+//
     public void login() {
         email = FirebaseAuth.getInstance().getCurrentUser().getEmail();
         CollectionReference query = db.collection("Akun");
